@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+  - name: Install ansible
+    package:
+      name:
+      - ansible
+      - linux
+      - linux-headers
+      - virtualbox-guest-dkms
+      state: present
+
+# - name: Uninstall Virtualbox guest utils nox
+#   pacman:
+#     name: virtualbox-guest-utils-nox
+#     state: absent
