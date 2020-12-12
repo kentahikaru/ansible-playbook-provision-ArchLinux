@@ -8,15 +8,14 @@
     #     - installPackages_xorg.yaml
 
   tasks:
-    - name: Install xorg
+    - name: Load list of xorg packages into variable
       include_vars:
         file: vars/installPackages_xorg.yaml
         name: xorg_list
-    - debug:
-        var: xorg_list
 
-    - name: install xorg 2
+    - name: Install xorg
       include_role:
         name: installpackages
       vars:
         packages_list: "{{ xorg_list.packages_list }}"
+        install_what: "{{ xorg_list.install_what }}"
