@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
   #iosim
   config.vm.define "iosim" do |io|
     io.vm.hostname = "iosim.test"
-    io.vm.network :private_network, ip:"172.16.3.21"
+    io.vm.network :private_network, ip:"172.16.3.22"
   end
 
   # Disable automatic box update checking. If you disable this, then
