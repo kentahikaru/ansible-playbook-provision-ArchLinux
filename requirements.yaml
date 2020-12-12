@@ -1,3 +1,5 @@
 ---
 - name: adduser
   src: https://github.com/kentahikaru/ansible-role-adduser
+- name: installpackages
+  src: https://github.com/kentahikaru/ansible-role-install-packages.git
