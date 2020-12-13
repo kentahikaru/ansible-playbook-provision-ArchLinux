@@ -6,6 +6,11 @@
     # - role: installpackages
     #   vars_files: 
     #     - installPackages_xorg.yaml
+  pre_tasks:
+    - name: Updating cache
+      pacman:
+        update-cache: true
+      become: true
 
   tasks:
     - import_tasks: tasks/installPackages.yaml   

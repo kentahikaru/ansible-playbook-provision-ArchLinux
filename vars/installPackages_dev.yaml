@@ -1,0 +1,11 @@
+---
+install_what: "devel"
+packages_list:
+  - git
+  - ansible
+  - ansible-lint
+  - vagrant
+  - virtualbox
+  - virtualbox-host-dkms
+  - virtualbox-guest-iso
+  

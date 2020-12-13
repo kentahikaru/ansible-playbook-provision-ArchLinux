@@ -1,0 +1,11 @@
+---
+install_what: "dev"
+packages_list:
+  - cups
+  - cups-filters
+  - cups-pdf
+  - keepassxc
+  - screen
+  - links
+  - htop
+  - tree

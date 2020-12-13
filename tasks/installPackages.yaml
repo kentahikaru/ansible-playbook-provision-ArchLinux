@@ -2,11 +2,35 @@
 - name: Load list of xorg packages into variable
   include_vars:
     file: vars/installPackages_xorg.yaml
-    name: xorg_list
+    name: installPackagesVars
 
 - name: Install xorg
   include_role:
     name: installpackages
   vars:
-    packages_list: "{{ xorg_list.packages_list }}"
-    install_what: "{{ xorg_list.install_what }}"
+    packages_list: "{{ installPackagesVars.packages_list }}"
+    install_what: "{{ installPackagesVars.install_what }}"
+
+- name: Load list of utilities packages into variable
+  include_vars:
+    file: vars/installPackages_utilities.yaml
+    name: installPackagesVars
+
+- name: Install utilities
+  include_role:
+    name: installpackages
+  vars:
+    packages_list: "{{ installPackagesVars.packages_list }}"
+    install_what: "{{ installPackagesVars.install_what }}"
+
+- name: Load list of dev packages into variable
+  include_vars:
+    file: vars/installPackages_dev.yaml
+    name: installPackagesVars
+
+- name: Install dev
+  include_role:
+    name: installpackages
+  vars:
+    packages_list: "{{ installPackagesVars.packages_list }}"
+    install_what: "{{ installPackagesVars.install_what }}"
