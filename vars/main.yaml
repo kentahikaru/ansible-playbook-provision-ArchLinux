@@ -1,0 +1,4 @@
+as_user: vagrant
+config_redshift_dest_path: ~/.config/redshift
+config_redshift_dest_path_dir: ~/.config
+config_redshift_src_file: files/redshift_config

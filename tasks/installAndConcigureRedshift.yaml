@@ -1,0 +1,29 @@
+---
+
+
+  - name: Install redshift
+    pacman:
+      name: redshift
+      state: present
+    become: true
+
+  - name: Make sure the .config directory is present
+    file:
+      path: "{{ config_redshift_dest_path_dir }}"
+      state: directory
+      mode: 0744
+    become_user: "{{ as_user }}"
+
+  - name: Make sure the destination directory for redshift config is present
+    file:
+      path: "{{ config_redshift_dest_path }}"
+      state: directory
+      mode: 0744
+    become_user: "{{ as_user }}"
+
+  - name: Copy config file
+    copy:
+      src: "{{ config_redshift_src_file }}"
+      dest: "{{ config_redshift_dest_path }}/config"
+      mode: 0644
+    become_user: "{{ as_user }}"
