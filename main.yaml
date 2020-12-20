@@ -5,7 +5,7 @@
     - vars/main.yaml
 
   roles:
-    # - role: adduser
+    - role: adduser
     # - role: installpackages
     #   vars_files: 
     #     - installPackages_xorg.yaml
