@@ -2,15 +2,21 @@
 - hosts: all
   become: true
 
+  vars:
+    install_what: "bootstrap software"
+    packages_list:
+      - ansible
+      - linux
+      - linux-headers
+      - virtualbox-guest-dkms
+
   tasks:
-  - name: Install ansible
-    package:
-      name:
-        - ansible
-        - linux
-        - linux-headers
-        - virtualbox-guest-dkms
-      state: present
+    - name: "Install {{ install_what }}"
+      become: true
+      pacman:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages_list }}"
 
 # - name: Uninstall Virtualbox guest utils nox
 #   pacman:
