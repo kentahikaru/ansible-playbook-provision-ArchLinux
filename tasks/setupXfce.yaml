@@ -1,1 +1,2 @@
 - import_tasks: tasks/xfce/setupXfcePanel1.yaml
+- import_tasks: tasks/xfce/setupXfcePanel2.yaml
