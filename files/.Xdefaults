@@ -1,0 +1,10 @@
+*customization: -color
+xterm*Background: black
+XTerm*foreground: grey
+xterm*cursorColor: blue
+XTerm.scrollBar: False
+XTerm.shading: 80
+XTerm.transparent: True
+XTerm.font: Medium
+XTerm.dpi: 96
+xterm*metaSendsEscape: true

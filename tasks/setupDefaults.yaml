@@ -1,0 +1,7 @@
+---
+- name: Copy defaults
+  become: true
+  become_user: "{{ as_user }}"
+  copy: 
+    src: files/.Xdefaults
+    dest: ~/

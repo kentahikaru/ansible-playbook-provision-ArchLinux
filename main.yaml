@@ -6,9 +6,7 @@
 
   roles:
     - role: adduser
-    # - role: installpackages
-    #   vars_files: 
-    #     - installPackages_xorg.yaml
+
   pre_tasks:
     - name: Updating cache
       pacman:
@@ -19,4 +17,5 @@
     - import_tasks: tasks/installPackages.yaml   
     - import_tasks: tasks/installAndConcigureRedshift.yaml
     - import_tasks: tasks/setupUim.yaml
+    - import_tasks: tasks/setupDefaults.yaml
     - import_tasks: tasks/setupXfce.yaml
