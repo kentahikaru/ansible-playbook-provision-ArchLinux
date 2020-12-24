@@ -30,3 +30,4 @@
 - import_tasks: tasks/xfce/setupXfcePanel2.yaml
 - import_tasks: tasks/xfce/setupXfcePanel3.yaml
 - import_tasks: tasks/xfce/setupXfcePanel4.yaml
+- import_tasks: tasks/xfce/setupXfcePanel5.yaml
