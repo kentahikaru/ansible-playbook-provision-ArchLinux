@@ -1,0 +1,100 @@
+---
+- name: panel-4 set autohide-behavior
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/autohide-behavior"
+    value_type: "int"
+    value: "2"
+
+- name: panel-4 set length
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/length"
+    value_type: "int"
+    value: "10"
+
+- name: panel-4 set mode
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/mode"
+    value_type: "int"
+    value: "1"
+
+- name: panel-4 set nrows
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/nrows"
+    value_type: "int"
+    value: "2"
+
+- name: panel-4 set plugin-ids
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/plugin-ids"
+    value_type: "int"
+    value: "19"
+    force_array: true
+
+- name: panel-4 set position
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/position"
+    value_type: "string"
+    value: "p=7;x=26;y=728"
+
+- name: panel-4 set position-locked
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/position-locked"
+    value_type: "bool"
+    value: "TRUE"
+
+- name: panel-4 set size
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/size"
+    value_type: "int"
+    value: "48"
+
+- name: panel-4 set span-monitors
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/panel-4/span-monitors"
+    value_type: "bool"
+    value: "FALSE"
