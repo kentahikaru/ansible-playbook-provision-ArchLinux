@@ -1,0 +1,1179 @@
+---
+- name: plugin-1
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-1"
+    value_type: "string"
+    value: "applicationsmenu"
+
+- name: plugin-10 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-10"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-10-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-10/items"
+    value_type: "string"
+    value: "15874141241.desktop"
+    force_array: true
+
+- name: plugin-11 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-11"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-11 style
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-11/style"
+    value_type: "int"
+    value: "0"
+
+- name: plugin-12 - clock
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-12"
+    value_type: "string"
+    value: "clock"
+
+- name: plugin-12 mode
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-12/mode"
+    value_type: "int"
+    value: "2"
+
+- name: plugin-13 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-13"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-13 style
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-13/style"
+    value_type: "int"
+    value: "0"
+
+- name: plugin-14 - actions
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-14"
+    value_type: "string"
+    value: "actions"
+
+- name: plugin-15 - clock
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-15"
+    value_type: "string"
+    value: "clock"
+
+- name: plugin-15 - clock digital-format
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-15/digital-format"
+    value_type: "string"
+    value: "%k:%M"
+
+- name: plugin-15 - clock mode
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-15/mode"
+    value_type: "int"
+    value: "2"
+
+- name: plugin-15 - clock timezone
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-15/timezone"
+    value_type: "string"
+    value: "HongKong"
+
+- name: plugin-15 - clock tooltip format
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-15/tooltip-format"
+    value_type: "string"
+    value: "HK %A %d %B %Y"
+
+- name: plugin-16 - datetime
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-16"
+    value_type: "string"
+    value: "datetime"
+
+- name: plugin-17 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-17"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-17-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-17/items"
+    value_type: "string"
+    value: "15874142492.desktop"
+    force_array: true
+
+- name: plugin-18 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-18"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-18-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-18/items"
+    value_type: "string"
+    value: "15874143233.desktop"
+    force_array: true
+
+- name: plugin-19 pager
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-19"
+    value_type: "string"
+    value: "pager"
+
+- name: plugin-2 tasklist
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-2"
+    value_type: "string"
+    value: "tasklist"
+
+- name: plugin-2 tasklist grouping
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-2/grouping"
+    value_type: "int"
+    value: "1"
+
+- name: plugin-20 - clock
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-20"
+    value_type: "string"
+    value: "clock"
+
+- name: plugin-20 - clock digital-format
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-20/digital-format"
+    value_type: "string"
+    value: "%k:%M"
+
+- name: plugin-20 - clock mode
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-20/mode"
+    value_type: "int"
+    value: "2"
+
+- name: plugin-20 - clock timezone
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-20/timezone"
+    value_type: "string"
+    value: "Japan"
+
+- name: plugin-20 - clock tooltip format
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-20/tooltip-format"
+    value_type: "string"
+    value: "JP %A %d %B %Y"
+
+- name: plugin-21 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-21"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-22 - cpugraph
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-22"
+    value_type: "string"
+    value: "cpugraph"
+
+- name: plugin-23 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-23"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-23-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-23/items"
+    value_type: "string"
+    value: "15897112851.desktop"
+    force_array: true
+
+- name: plugin-24 systemload
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-24"
+    value_type: "string"
+    value: "systemload"
+
+- name: plugin-25 netload
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-25"
+    value_type: "string"
+    value: "netload"
+
+- name: plugin-26 separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-26"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-27 diskperf
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-27"
+    value_type: "string"
+    value: "diskperf"
+
+- name: plugin-28 diskperf
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-28"
+    value_type: "string"
+    value: "diskperf"
+
+- name: plugin-29 diskperf
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-29"
+    value_type: "string"
+    value: "diskperf"
+
+- name: plugin-3 separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-3"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-3 separator expand
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-3/expand"
+    value_type: "bool"
+    value: "TRUE"
+
+- name: plugin-3 separator style
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-3/style"
+    value_type: "int"
+    value: "0"
+
+- name: plugin-30 diskperf
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-30"
+    value_type: "string"
+    value: "diskperf"
+
+- name: plugin-31 fsguard
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-31"
+    value_type: "string"
+    value: "fsguard"
+
+- name: plugin-32 fsguard
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-32"
+    value_type: "string"
+    value: "fsguard"
+
+- name: plugin-33 fsguard
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-33"
+    value_type: "string"
+    value: "fsguard"
+
+- name: plugin-34 fsguard
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-34"
+    value_type: "string"
+    value: "fsguard"
+
+- name: plugin-35 separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-35"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-36 separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-36"
+    value_type: "string"
+    value: "xkb"
+
+- name: plugin-37 screenshooter
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-37"
+    value_type: "string"
+    value: "screenshooter"
+
+- name: plugin-38 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-38"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-38-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-38/items"
+    value_type: "string"
+    value: "15874145544.desktop"
+    force_array: true
+
+- name: plugin-39 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-39"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-39-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-39/items"
+    value_type: "string"
+    value: "15874821941.desktop"
+    force_array: true
+
+- name: plugin-4 pulseaudio
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-4"
+    value_type: "string"
+    value: "pulseaudio"
+
+- name: plugin-4 pulseaudio enable-keyboard-shortcuts
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-4/enable-keyboard-shortcuts"
+    value_type: "bool"
+    value: "TRUE"
+
+- name: plugin-4 pulseaudio mpris-players
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-4/enable-keyboard-shortcuts"
+    value_type: "string"
+    value: "audacious;chromium.instance1000;chromium.instance1002;chromium.instance1007;chromium.instance1009;chromium.instance1016;chromium.instance1017;chromium.instance1020;chromium.instance1021;chromium.instance1033;chromium.instance103377;chromium.instance1037;chromium.instance105583;chromium.instance107221;chromium.instance1079;chromium.instance1105;chromium.instance1109;chromium.instance111875;chromium.instance112462;chromium.instance113402;chromium.instance114254;chromium.instance1156;chromium.instance1160;chromium.instance116121;chromium.instance1177;chromium.instance119158;chromium.instance1192;chromium.instance11931;chromium.instance119807;chromium.instance120407;chromium.instance120759;chromium.instance120815;chromium.instance1218;chromium.instance122162;chromium.instance1226;chromium.instance123931;chromium.instance1252;chromium.instance1257;chromium.instance1262;chromium.instance129629;chromium.instance131113;chromium.instance1312;chromium.instance131664;chromium.instance1328;chromium.instance1343;chromium.instance1345;chromium.instance1346;chromium.instance1354;chromium.instance1356;chromium.instance1359;chromium.instance1362;chromium.instance1366;chromium.instance137050;chromium.instance138666;chromium.instance1388;chromium.instance1390;chromium.instance1403;chromium.instance14040;chromium.instance141034;chromium.instance1415;chromium.instance1438;chromium.instance1448;chromium.instance1453;chromium.instance1472;chromium.instance1473;chromium.instance1480;chromium.instance1486;chromium.instance148706;chromium.instance150176;chromium.instance154120;chromium.instance154222;chromium.instance154574;chromium.instance156084;chromium.instance156289;chromium.instance156997;chromium.instance15726;chromium.instance15888;chromium.instance160277;chromium.instance165301;chromium.instance168624;chromium.instance1693;chromium.instance17035;chromium.instance171088;chromium.instance175420;chromium.instance182219;chromium.instance182898;chromium.instance186701;chromium.instance187119;chromium.instance1906;chromium.instance191851;chromium.instance197741;chromium.instance198662;chromium.instance204470;chromium.instance215541;chromium.instance217559;chromium.instance217972;chromium.instance220218;chromium.instance2207;chromium.instance22143;chromium.instance227879;chromium.instance242340;chromium.instance24657;chromium.instance248821;chromium.instance258448;chromium.instance26131;chromium.instance26618;chromium.instance26809;chromium.instance268579;chromium.instance271102;chromium.instance275201;chromium.instance27658;chromium.instance276603;chromium.instance2843;chromium.instance285612;chromium.instance28852;chromium.instance2947;chromium.instance3040;chromium.instance31499;chromium.instance3150;chromium.instance322953;chromium.instance32864;chromium.instance3301;chromium.instance340509;chromium.instance34288;chromium.instance345545;chromium.instance35759;chromium.instance35812;chromium.instance35905;chromium.instance36584;chromium.instance37406;chromium.instance37594;chromium.instance37830;chromium.instance3788;chromium.instance378983;chromium.instance39152;chromium.instance394767;chromium.instance42527;chromium.instance42756;chromium.instance43810;chromium.instance45968;chromium.instance46527;chromium.instance48807;chromium.instance49943;chromium.instance50173;chromium.instance50292;chromium.instance51031;chromium.instance51561;chromium.instance52259;chromium.instance52714;chromium.instance53530;chromium.instance54211;chromium.instance5494;chromium.instance57455;chromium.instance58439;chromium.instance62932;chromium.instance64137;chromium.instance64522;chromium.instance65286;chromium.instance65546;chromium.instance66776;chromium.instance66950;chromium.instance68242;chromium.instance69928;chromium.instance70764;chromium.instance71404;chromium.instance755;chromium.instance761;chromium.instance768;chromium.instance770;chromium.instance772;chromium.instance773;chromium.instance775;chromium.instance7765;chromium.instance77746;chromium.instance778;chromium.instance781;chromium.instance786;chromium.instance788;chromium.instance789;chromium.instance790;chromium.instance79067;chromium.instance79215;chromium.instance793;chromium.instance794;chromium.instance795;chromium.instance7979;chromium.instance79956;chromium.instance803;chromium.instance80543;chromium.instance806;chromium.instance811;chromium.instance812;chromium.instance813;chromium.instance81406;chromium.instance816;chromium.instance81615;chromium.instance817;chromium.instance821;chromium.instance824;chromium.instance825;chromium.instance842;chromium.instance844;chromium.instance845;chromium.instance8476;chromium.instance856;chromium.instance858;chromium.instance859;chromium.instance862;chromium.instance863;chromium.instance864;chromium.instance866;chromium.instance867;chromium.instance868;chromium.instance869;chromium.instance870;chromium.instance871;chromium.instance872;chromium.instance873;chromium.instance874;chromium.instance875;chromium.instance877;chromium.instance878;chromium.instance879;chromium.instance880;chromium.instance881;chromium.instance88145;chromium.instance882;chromium.instance883;chromium.instance884;chromium.instance886;chromium.instance89205;chromium.instance893;chromium.instance90086;chromium.instance91023;chromium.instance939;chromium.instance941;chromium.instance944;chromium.instance947;chromium.instance95153;chromium.instance960;chromium.instance961;chromium.instance96258;chromium.instance965;chromium.instance967;chromium.instance972;chromium.instance973;chromium.instance975;chromium.instance976;chromium.instance97666;chromium.instance980;chromium.instance983;chromium.instance987;chromium.instance98769;firefox.instance100621;firefox.instance101250;firefox.instance101256;firefox.instance10418;firefox.instance107524;firefox.instance11208;firefox.instance113328;firefox.instance115204;firefox.instance133416;firefox.instance137529;firefox.instance139811;firefox.instance145351;firefox.instance14824;firefox.instance148643;firefox.instance152685;firefox.instance160064;firefox.instance163149;firefox.instance16738;firefox.instance168336;firefox.instance171828;firefox.instance177248;firefox.instance198072;firefox.instance205161;firefox.instance206196;firefox.instance208398;firefox.instance209153;firefox.instance211594;firefox.instance224356;firefox.instance225359;firefox.instance22928;firefox.instance23860;firefox.instance24563;firefox.instance246649;firefox.instance24816;firefox.instance2726;firefox.instance274286;firefox.instance286871;firefox.instance299912;firefox.instance304628;firefox.instance306768;firefox.instance31578;firefox.instance32965;firefox.instance3456;firefox.instance364225;firefox.instance394119;firefox.instance395284;firefox.instance40459;firefox.instance45230;firefox.instance53885;firefox.instance58411;firefox.instance63092;firefox.instance64051;firefox.instance64863;firefox.instance65464;firefox.instance71789;firefox.instance72514;firefox.instance73103;firefox.instance75140;firefox.instance76276;firefox.instance83786;firefox.instance84976;firefox.instance85906;firefox.instance86545;firefox.instance86855;firefox.instance90580;smplayer"
+
+- name: plugin-40 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-40"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-40-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-40/items"
+    value_type: "string"
+    value: "15879160521.desktop"
+    force_array: true
+
+- name: plugin-41 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-41"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-41-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-41/items"
+    value_type: "string"
+    value: "15889355671.desktop"
+    force_array: true
+
+- name: plugin-42 xfce4-sensor-plugin
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-42"
+    value_type: "string"
+    value: "xfce4-sensor-plugin"
+
+- name: plugin-43 xfce4-notes-plugin
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-43"
+    value_type: "string"
+    value: "xfce4-notes-plugin"
+
+- name: plugin-44 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-44"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-44-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-44/items"
+    value_type: "string"
+    value: "15900815621.desktop"
+    force_array: true
+
+- name: plugin-45 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-45"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-45-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-45/items"
+    value_type: "string"
+    value: "15900815722.desktop"
+    force_array: true
+
+- name: plugin-46 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-46"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-46-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-46/items"
+    value_type: "string"
+    value: "15919031112.desktop"
+    force_array: true
+
+- name: plugin-47 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-47"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-47-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-47/items"
+    value_type: "string"
+    value: "15925981951.desktop"
+    force_array: true
+
+- name: plugin-48 separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-48"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-49 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-49"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-49-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-49/items"
+    value_type: "string"
+    value: "15938690032.desktop"
+    force_array: true
+
+- name: plugin-5 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-5"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-5 style
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-5/style"
+    value_type: "int"
+    value: "0"
+
+- name: plugin-50 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-50"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-50-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-50/items"
+    value_type: "string"
+    value: "15947631162.desktop"
+    force_array: true
+
+- name: plugin-51 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-51"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-51-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-51/items"
+    value_type: "string"
+    value: "15951569851.desktop"
+    force_array: true
+
+- name: plugin-52 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-52"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-53 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-53"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-53-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-53/items"
+    value_type: "string"
+    value: "15965597161.desktop"
+    force_array: true
+
+- name: plugin-54 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-54"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-54-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-54/items"
+    value_type: "string"
+    value: "15965682103.desktop"
+    force_array: true
+
+- name: plugin-55 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-55"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-55-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-55/items"
+    value_type: "string"
+    value: "15980393141.desktop"
+    force_array: true
+
+- name: plugin-56 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-56"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-56-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-56/items"
+    value_type: "string"
+    value: "15986816841.desktop"
+    force_array: true
+
+- name: plugin-57 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-57"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-57-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-57/items"
+    value_type: "string"
+    value: "15988198841.desktop"
+    force_array: true
+
+- name: plugin-58 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-58"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-58-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-58/items"
+    value_type: "string"
+    value: "16033612171.desktop"
+    force_array: true
+
+- name: plugin-59 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-59"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-59-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-59/items"
+    value_type: "string"
+    value: "16034490022.desktop"
+    force_array: true
+
+- name: plugin-6 systray
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-6"
+    value_type: "string"
+    value: "systray"
+
+- name: plugin-6 systray names-ordered
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-6/names-ordered"
+    value_type: "string"
+    value: "teams,thunar,remmina,skypeforlinux,skype-call-recorder,zoom,redshift-gtk,deluge,task manager,stardict,blueman,blueman-tray"
+
+- name: plugin-6 systray show-frame
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-6/show-frame"
+    value_type: "bool"
+    value: "FALSE"
+
+- name: plugin-6 systray square-icons
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-6/square-icons"
+    value_type: "bool"
+    value: "TRUE"
+
+- name: plugin-60 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-60"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-61 - separator
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-61"
+    value_type: "string"
+    value: "separator"
+
+- name: plugin-62 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-62"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-62-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-62/items"
+    value_type: "string"
+    value: "16035563643.desktop"
+    force_array: true
+
+- name: plugin-7 launcher
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-7"
+    value_type: "string"
+    value: "launcher"
+
+- name: plugin-7-items
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-7/items"
+    value_type: "string"
+    value: "15817800231.desktop"
+    force_array: true
+
+- name: plugin-8 fsguard
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/plugin-8"
+    value_type: "string"
+    value: "fsguard"

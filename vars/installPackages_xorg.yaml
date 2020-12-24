@@ -12,6 +12,7 @@ packages_list:
   - xfce4-netload-plugin
   - xfce4-notes-plugin
   - xfce4-pulseaudio-plugin
+  - xfce4-screenshooter
   - xfce4-sensors-plugin
   - xfce4-smartbookmark-plugin
   - xfce4-systemload-plugin
@@ -37,3 +38,5 @@ packages_list:
   - chromium
   - firefox
   - libreoffice
+  - stardict
+  - deluge

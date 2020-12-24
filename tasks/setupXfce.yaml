@@ -1,5 +1,6 @@
 - import_tasks: tasks/xfce/setupXfceGeneral.yaml
 - import_tasks: tasks/xfce/setupXfceMiscellaneous.yaml
-# - import_tasks: tasks/xfce/setupXfcePlugins.yaml
+- import_tasks: tasks/xfce/setupXfcePlugins.yaml
 - import_tasks: tasks/xfce/setupXfcePanel1.yaml
 - import_tasks: tasks/xfce/setupXfcePanel2.yaml
+- import_tasks: tasks/xfce/setupXfcePanel3.yaml
