@@ -31,3 +31,4 @@
 - import_tasks: tasks/xfce/setupXfcePanel3.yaml
 - import_tasks: tasks/xfce/setupXfcePanel4.yaml
 - import_tasks: tasks/xfce/setupXfcePanel5.yaml
+- import_tasks: tasks/xfce/setupXfceKeyboard.yaml

@@ -1,0 +1,87 @@
+---
+- name: Remove some custom shortcuts
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-keyboard-shortcuts"
+    property: "/commands/custom/{{ item.property }}"
+    value_type: "string"
+    value: "{{ item.value }}"
+    state: absent
+  with_items:
+    - { property: "<Alt>F1", value: ""}
+    - { property: "<Alt>F2", value: ""}
+    - { property: "<Alt>F3", value: ""}
+
+- name: Remove some default shortcuts
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-keyboard-shortcuts"
+    property: "/commands/default/{{ item.property }}"
+    value_type: "string"
+    value: "{{ item.value }}"
+    state: absent
+  with_items:
+    - { property: "<Alt>F1", value: ""}
+    - { property: "<Alt>F2", value: ""}
+    - { property: "<Alt>F3", value: ""}
+
+- name: Setup custom keyboard shortcuts
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-keyboard-shortcuts"
+    property: "/commands/custom/{{ item.property }}"
+    value_type: "string"
+    value: "{{ item.value }}"
+  with_items:
+    - { property: "<Alt>a", value: "ssh-agent xterm"}
+    - { property: "<Alt>d", value: "thunar"}
+    - { property: "<Alt>e", value: "chromium"}
+    - { property: "<Alt>n", value: "deluge"}
+    - { property: "<Alt>q", value: "audacious"}
+    - { property: "<Alt>r", value: "xfrun4"}
+    - { property: "<Alt>s", value: "stardict"}
+    - { property: "<Alt>w", value: "firefox"}
+    - { property: "<Alt>u", value: "xterm -geometry 159x40"}
+    - { property: "<Alt>y", value: "xterm -geometry 159x25"}
+    - { property: "AudioLowerVolume", value: "pamixer -d 2"}
+    - { property: "AudioMute", value: "pamixer -t"}
+    - { property: "AudioRaiseVolume", value: "pamixer -i 2"}
+    - { property: "Calculator", value: "gnome-calculator"}
+    - { property: "HomePage", value: "chromium"}
+
+- name: Setup xfce4 keyboard shortcuts
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xfce4-keyboard-shortcuts"
+    property: "/xfwm4/custom/{{ item.property }}"
+    value_type: "string"
+    value: "{{ item.value }}"
+  with_items:
+    - { property: "<Alt>F1", value: "workspace_1_key"}
+    - { property: "<Alt>F2", value: "workspace_2_key"}
+    - { property: "<Alt>F3", value: "workspace_3_key"}
+    - { property: "<Alt>F4", value: "workspace_4_key"}
+    - { property: "<Alt>F5", value: "workspace_5_key"}
+    - { property: "<Alt>F6", value: "workspace_6_key"}
+    - { property: "<Alt>F7", value: "workspace_7_key"}
+    - { property: "<Alt>F8", value: "workspace_8_key"}
+    - { property: "<Alt>F9", value: "workspace_9_key"}
+    - { property: "<Alt>F10", value: "workspace_10_key"}
+    - { property: "<Alt>F11", value: "workspace_11_key"}
+    - { property: "<Alt>F12", value: "workspace_12_key"}
+    - { property: "<Alt>c", value: "close_window_key"}
+    - { property: "<Alt>v", value: "maximize_window_key"}
+    - { property: "<Alt>x", value: "stick_window_key"}
+
