@@ -27,6 +27,10 @@ Vagrant.configure("2") do |config|
     v.linked_clone = true
     # v.check_guest_additions = true
     v.customize ["modifyvm", :id, "--vram", "128"]
+    v.customize ["modifyvm", :id, "--audio", "pulse"]
+    v.customize ["modifyvm", :id, "--audioin", "on"]
+    v.customize ["modifyvm", :id, "--audioout", "on"]
+    v.customize ["modifyvm", :id, "--audiocontroller", "hda"]
     # v.customize ["modifyvm", :id, "--accelerate3d", "on"]
     # v.customize ['storageattach', :id,  "--storagectl", "IDE Controller", "--port", 1, "--device", 0, "--type", "dvddrive", "--medium", "host:/dev/sr0"]
   end
