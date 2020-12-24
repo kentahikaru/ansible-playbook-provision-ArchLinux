@@ -1,5 +1,5 @@
 ---
-- name: panel set autohide-behavior
+- name: panel-2 set autohide-behavior
   become: true
   become_user: "{{ as_user }}"
   environment:
@@ -10,7 +10,7 @@
     value_type: "int"
     value: "2"
 
-- name: panel set mode
+- name: panel-2 set mode
   become: true
   become_user: "{{ as_user }}"
   environment:
@@ -21,7 +21,7 @@
     value_type: "int"
     value: "2"
 
-- name: panel set plugin-ids
+- name: panel-2 set plugin-ids
   become: true
   become_user: "{{ as_user }}"
   environment:
@@ -32,7 +32,7 @@
     value_type: "int"
     value: "16,15,20,21,25,22,42,24,26,27,28,29,30,31,32,34,33,8,35,36,37,43"
 
-- name: panel set position
+- name: panel-2 set position
   become: true
   become_user: "{{ as_user }}"
   environment:
@@ -43,7 +43,7 @@
     value_type: "string"
     value: "p=1;x=3807;y=554"
 
-- name: panel set position-locked
+- name: panel-2 set position-locked
   become: true
   become_user: "{{ as_user }}"
   environment:
@@ -54,7 +54,7 @@
     value_type: "bool"
     value: "TRUE"
 
-- name: panel set size
+- name: panel-2 set size
   become: true
   become_user: "{{ as_user }}"
   environment:

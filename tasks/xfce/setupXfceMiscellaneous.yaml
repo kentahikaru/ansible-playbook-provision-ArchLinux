@@ -1,0 +1,44 @@
+---
+- name: xsettings set curson theme name
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xsettings"
+    property: "/Gtk/CursorThemeName"
+    value_type: "string"
+    value: "Adwaita"
+
+- name: xsettings set curson theme size
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xsettings"
+    property: "/Gtk/CursorThemeSize"
+    value_type: "int"
+    value: "0"
+
+- name: xsettings set icon theme
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xsettings"
+    property: "/Net/IconThemeName"
+    value_type: "string"
+    value: "Adwaita"
+
+- name: xsettings set theme name
+  become: true
+  become_user: "{{ as_user }}"
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  xfconf:
+    channel: "xsettings"
+    property: "/Net/ThemeName"
+    value_type: "string"
+    value: "Adwaita-dark"

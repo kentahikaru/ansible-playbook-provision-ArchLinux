@@ -8,4 +8,5 @@ packages_list:
   - virtualbox
   - virtualbox-host-dkms
   - virtualbox-guest-iso
-  
+  - vi
+  - vim
