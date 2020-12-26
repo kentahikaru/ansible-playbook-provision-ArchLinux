@@ -1,7 +1,7 @@
 ---
-- name: set home variable
-  set_fact:
-    home: "/home/{{ as_user }}/"
+# - name: set home variable
+#   set_fact:
+#     home: "/home/{{ as_user }}/"
 
 - name: Make direcotry for aur installation
   become: true

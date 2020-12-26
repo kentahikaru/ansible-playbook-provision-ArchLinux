@@ -1,9 +1,9 @@
 ---
-- name: Set repo_dir variable
-  set_fact:
-    cacheable: false
-    repo_dir: /opt/aur_repo
-    repo_name: aur_repo.db.tar.gz
+# - name: Set repo_dir variable
+#   set_fact:
+#     cacheable: false
+#     repo_dir: /opt/aur_repo
+#     repo_name: aur_repo.db.tar.gz
 
 - name: Create repo directory
   become: true
@@ -33,9 +33,15 @@
     src: "/etc/pacman.conf"
   register: pacmanconf
 
-- name: Get package version
+- name: Is pacman.conf configured?
   set_fact:
     aurrepoconf: "{{ pacmanconf['content'] | b64decode | regex_findall('aur_repo') }}"
+
+- debug:
+    var: aurrepoconf
+
+- debug:
+    var: not aurrepoconf
 
 - name: Insert configuration for aur repo into pacman.conf
   become: true
@@ -48,3 +54,4 @@
       [aur_repo]
       SigLevel = Optional TrustAll
       Server = file:///opt/aur_repo
+  when: not aurrepoconf

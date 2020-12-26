@@ -1,0 +1,6 @@
+---
+- name: Copy fstab
+  become: true
+  copy: 
+    src: files/fstab
+    dest: /etc/fstab

@@ -1,0 +1,41 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sdc2
+UUID=d4fe6d6f-b294-41de-8107-8a85484dc2fa	/         	xfs       	rw,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota	0 1
+
+# /dev/sdc3
+UUID=59fc5b80-963a-4ac5-9977-fc0d873642a7	none      	swap      	defaults  	0 0
+
+
+# /dev/sda5 LABEL=home
+#UUID=22aef098-4ce6-4c63-a7d5-99860908e414	/home     	xfs       	rw,relatime,attr2,inode64,noquota	0 2
+#/dev/sda5	/home     	xfs       	rw,relatime,attr2,inode64,noquota	0 2
+
+# /dev/sda6
+#UUID=1d8f6e48-eca6-4606-89cc-dbe6ab1ee308	/mnt/orage	xfs       	rw,relatime,attr2,inode64,noquota	0 2
+/dev/sda6	/mnt/orage	xfs       	rw,relatime,attr2,inode64,noquota	0 2
+
+# /mnt/orage/ARCHLINUXHOME	/home     	none       	defaults,bind	0 0
+
+# /dev/sdj1
+UUID=8ab49a35-ad2a-476a-b622-c443941447cd	/mnt/f    	xfs       	rw,relatime,attr2,inode64,noquota,noauto,nofail	0 0
+
+# /dev/sdb1
+UUID=887638527638436C	/mnt/h    	ntfs-3g       	rw,relatime,attr2,inode64,noquota	0 2
+#/dev/sdb1	/mnt/h    	ntfs-3g       	rw,relatime,attr2,inode64,noquota	0 2
+
+# /dev/sdc1
+UUID=8f81e8fa-fc24-412d-b988-754c9ee44ee6	/mnt/g    	xfs       	rw,relatime,attr2,inode64,noquota	0 0
+#/dev/sdi1	/mnt/g    	xfs       	rw,relatime,attr2,inode64,noquota	0 0
+
+# /dev/sda3
+#UUID=167d80a6-1375-449d-99e1-7eff2f365ed8	none      	swap      	defaults  	0 0
+/dev/sda3	none      	swap      	defaults  	0 0
+
+# /dev/sdk1
+#UUID=4E1AEA7B1AEA6007				/mnt/sdk	ntfs-3g		rw,relatime,attr2,inode64,noquota	0 0
+
+# /dev/sdk1
+UUID=05abc696-a7dc-4966-b431-2f19dd25d3e3	/mnt/backup	xfs		rw,relatime,attr2,inode64,noquota,noauto,nofail	0 0

@@ -14,7 +14,8 @@
       become: true
 
   tasks:
-    - import_tasks: tasks/installPackages.yaml   
+    - import_tasks: tasks/setupSystem.yaml
+    - import_tasks: tasks/installPackages.yaml
     - import_tasks: tasks/setupAur.yaml
     - import_tasks: tasks/installAndConcigureRedshift.yaml
     - import_tasks: tasks/setupXfce.yaml
