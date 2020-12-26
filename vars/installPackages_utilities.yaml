@@ -12,3 +12,4 @@ packages_list:
   - wget
   - eog
   - evince
+  - mc

@@ -1,0 +1,6 @@
+---
+- name: Copy Xfce plugins configurations and launcher configurations
+  become: true
+  copy: 
+    src: files/.config
+    dest: "/home/{{ as_user }}"

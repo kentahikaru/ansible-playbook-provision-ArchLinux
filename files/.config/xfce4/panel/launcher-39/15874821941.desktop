@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Endless Sky
+Comment=Space exploration and combat game
+Exec=endless-sky
+Icon=endless-sky
+Path=
+Terminal=false
+StartupNotify=false

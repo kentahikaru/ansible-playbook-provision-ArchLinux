@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=gnome-packagekit
+Comment=
+Exec=gpk-application
+Icon=/usr/share/icons/hicolor/scalable/apps/gpk-repo.svg
+Path=
+Terminal=false
+StartupNotify=false

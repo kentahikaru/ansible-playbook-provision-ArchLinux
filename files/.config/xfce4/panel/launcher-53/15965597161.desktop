@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=rpi-imager
+Comment=
+Exec=/usr/bin/rpi-imager
+Icon=/usr/share/icons/hicolor/128x128/apps/rpi-imager.png
+Path=
+Terminal=false
+StartupNotify=false

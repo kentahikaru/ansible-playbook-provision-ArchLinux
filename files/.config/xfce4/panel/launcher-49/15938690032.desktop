@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Azure Data Studio
+Comment=
+Exec=/opt/azuredatastudio-linux-x64/bin/azuredatastudio
+Icon=/opt/azuredatastudio-linux-x64/resources/app/resources/linux/code.png
+Path=
+Terminal=false
+StartupNotify=false
