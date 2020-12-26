@@ -1,5 +1,5 @@
 ---
-install_what: "dev"
+install_what: "utilities"
 packages_list:
   - cups
   - cups-filters
@@ -9,3 +9,5 @@ packages_list:
   - links
   - htop
   - tree
+  - eog
+  - evince

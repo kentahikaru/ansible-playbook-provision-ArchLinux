@@ -5,3 +5,10 @@
   copy: 
     src: files/.Xdefaults
     dest: ~/
+
+- name: Copy .xinitrc
+  become: true
+  become_user: "{{ as_user }}"
+  copy: 
+    src: files/.xinitrc
+    dest: ~/

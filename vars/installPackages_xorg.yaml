@@ -58,6 +58,8 @@ packages_list:
   - xfce4-taskmanager
   - xf86-video-fbdev
   - xf86-video-vesa
+  - nvidia
+  - nvidia-utils
   - sdl
   - sdl2
   - xterm

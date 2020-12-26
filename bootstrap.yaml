@@ -10,6 +10,12 @@
       - linux-headers
       - virtualbox-guest-dkms
 
+  pre_tasks:
+    - name: Updating cache
+      pacman:
+        update-cache: true
+      become: true
+
   tasks:
     - name: "Install {{ install_what }}"
       become: true
