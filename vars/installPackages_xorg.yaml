@@ -63,6 +63,7 @@ packages_list:
   - sdl
   - sdl2
   - xterm
+  - libxml2
   - ristretto
   - uim
   - pulseaudio
