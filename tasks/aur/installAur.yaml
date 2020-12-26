@@ -2,6 +2,7 @@
 - name: set home variable
   set_fact:
     home: "/home/{{ as_user }}/"
+
 - name: Make direcotry for aur installation
   become: true
   become_user: "{{ as_user }}"
@@ -16,7 +17,7 @@
   unarchive:
     src: https://aur.archlinux.org/cgit/aur.git/snapshot/aurutils.tar.gz
     dest: "{{ home }}aur/"
-    remote_src: yes
+    remote_src: true
 
 - name: Read PKGBUILD
   become: true
@@ -46,7 +47,7 @@
   shell:
     cmd: makepkg
     chdir: "{{ home }}aur/aurutils"
-  when: pkgstate.stat.exists == false
+  when: not pkgstate.stat.exists
 
 - name: Is aur installed?
   become: true
@@ -60,7 +61,7 @@
   pacman:
     name: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-1-any.pkg.tar.zst"
     state: present
-  when: aurstate.stat.exists == false
+  when: not aurstate.stat.exists
 
 - name: Clean package
   become: true

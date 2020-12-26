@@ -4,8 +4,8 @@
   vars_files:
     - vars/main.yaml
 
-  # roles:
-  #   - role: adduser
+  roles:
+    - role: adduser
 
   pre_tasks:
     - name: Updating cache
@@ -14,7 +14,7 @@
       become: true
 
   tasks:
-    # - import_tasks: tasks/installPackages.yaml   
+    - import_tasks: tasks/installPackages.yaml   
     - import_tasks: tasks/setupAur.yaml
-    # - import_tasks: tasks/installAndConcigureRedshift.yaml
-    # - import_tasks: tasks/setupXfce.yaml
+    - import_tasks: tasks/installAndConcigureRedshift.yaml
+    - import_tasks: tasks/setupXfce.yaml

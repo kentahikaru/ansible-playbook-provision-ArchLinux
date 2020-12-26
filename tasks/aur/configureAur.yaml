@@ -1,0 +1,50 @@
+---
+- name: Set repo_dir variable
+  set_fact:
+    cacheable: false
+    repo_dir: /opt/aur_repo
+    repo_name: aur_repo.db.tar.gz
+
+- name: Create repo directory
+  become: true
+  file:
+    path: "{{ repo_dir }}"
+    state: directory
+    owner: "{{ as_user }}"
+    group: "{{ uid_guid }}"
+    mode: 0744
+
+- name: Does repo db already exists?
+  become: true
+  become_user: "{{ as_user }}"
+  stat:
+    path: "{{ repo_dir }}/{{ repo_name }}"
+  register: repodbstate
+
+- name: Create repo db
+  become: true
+  become_user: "{{ as_user }}"
+  command: "repo-add {{ repo_dir }}/{{ repo_name }}"
+  when: not repodbstate.stat.exists
+
+- name: Read pacman.conf
+  become: true
+  slurp:
+    src: "/etc/pacman.conf"
+  register: pacmanconf
+
+- name: Get package version
+  set_fact:
+    aurrepoconf: "{{ pacmanconf['content'] | b64decode | regex_findall('aur_repo') }}"
+
+- name: Insert configuration for aur repo into pacman.conf
+  become: true
+  blockinfile:
+    path: /etc/pacman.conf
+    marker: ""
+    marker_begin: ""
+    marker_end: ""
+    block: |
+      [aur_repo]
+      SigLevel = Optional TrustAll
+      Server = file:///opt/aur_repo
