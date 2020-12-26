@@ -1,0 +1,10 @@
+StarDict's dict ifo file
+version=2.4.2
+bookname=GNU/FDL Anglicko-Český slovník
+wordcount=86872
+idxfilesize=1614657
+author=Michal Čihař
+email=michal@cihar.com
+website=http://slovnik.zcu.cz/
+sametypesequence=g
+date=2012.12.19

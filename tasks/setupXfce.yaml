@@ -1,3 +1,4 @@
+---
 - name: reset all panels
   become: true
   become_user: "{{ as_user }}"
@@ -35,3 +36,4 @@
 - import_tasks: tasks/xfce/setupXfcePanel4.yaml
 - import_tasks: tasks/xfce/setupXfcePanel5.yaml
 - import_tasks: tasks/xfce/setupXfceKeyboard.yaml
+- import_tasks: tasks/xfce/setupStardict.yaml

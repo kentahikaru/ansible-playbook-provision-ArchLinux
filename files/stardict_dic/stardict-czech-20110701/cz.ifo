@@ -1,0 +1,10 @@
+StarDict's dict ifo file
+version=2.4.2
+bookname=Slovník cizích slov
+wordcount=21620
+idxfilesize=385181
+author=Michal Čihař
+email=michal@cihar.com
+website=http://slovnik-cizich-slov.abz.cz/
+sametypesequence=g
+date=2011.07.01
