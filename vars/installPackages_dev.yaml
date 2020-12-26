@@ -1,6 +1,10 @@
 ---
 install_what: "devel"
 packages_list:
+  - base-devel
+  - signify
+  - jq
+  - pacutils
   - git
   - ansible
   - ansible-lint

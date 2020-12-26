@@ -1,0 +1,70 @@
+---
+- name: set home variable
+  set_fact:
+    home: "/home/{{ as_user }}/"
+- name: Make direcotry for aur installation
+  become: true
+  become_user: "{{ as_user }}"
+  file:
+    path: "{{ home }}aur"
+    state: directory
+    mode: 0744
+
+- name: Download and extract PKGBUILD
+  become: true
+  become_user: "{{ as_user }}"
+  unarchive:
+    src: https://aur.archlinux.org/cgit/aur.git/snapshot/aurutils.tar.gz
+    dest: "{{ home }}aur/"
+    remote_src: yes
+
+- name: Read PKGBUILD
+  become: true
+  become_user: "{{ as_user }}"
+  slurp:
+    src: "{{ home }}aur/aurutils/PKGBUILD"
+  register: pkgbuild
+
+- name: Get package version
+  set_fact:
+    pkgver: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgver=[0-9].[0-9].[0-9]') }}"
+
+- name: Get package version
+  set_fact:
+    pkgver: "{{ pkgver | regex_findall('[0-9].[0-9].[0-9]') }}"
+
+- name: Get directory content
+  become: true
+  become_user: "{{ as_user }}"
+  stat:
+    path: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-1-any.pkg.tar.zst"
+  register: pkgstate
+
+- name: Build package
+  become: true
+  become_user: "{{ as_user }}"
+  shell:
+    cmd: makepkg
+    chdir: "{{ home }}aur/aurutils"
+  when: pkgstate.stat.exists == false
+
+- name: Is aur installed?
+  become: true
+  become_user: "{{ as_user }}"
+  stat:
+    path: /usr/bin/aur
+  register: aurstate
+
+- name: Install package
+  become: true
+  pacman:
+    name: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-1-any.pkg.tar.zst"
+    state: present
+  when: aurstate.stat.exists == false
+
+- name: Clean package
+  become: true
+  become_user: "{{ as_user }}"
+  shell:
+    cmd: makepkg -f --clean
+    chdir: "{{ home }}aur/aurutils"

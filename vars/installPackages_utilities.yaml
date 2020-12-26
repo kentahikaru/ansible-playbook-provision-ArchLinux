@@ -9,5 +9,6 @@ packages_list:
   - links
   - htop
   - tree
+  - wget
   - eog
   - evince
