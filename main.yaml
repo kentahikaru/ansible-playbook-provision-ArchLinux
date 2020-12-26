@@ -9,9 +9,9 @@
 
   pre_tasks:
     - name: Updating cache
+      become: true
       pacman:
         update-cache: true
-      become: true
 
   tasks:
     - import_tasks: tasks/setupSystem.yaml

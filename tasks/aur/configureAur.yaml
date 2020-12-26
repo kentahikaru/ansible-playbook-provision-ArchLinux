@@ -55,3 +55,8 @@
       SigLevel = Optional TrustAll
       Server = file:///opt/aur_repo
   when: not aurrepoconf
+
+- name: Updating cache
+  become: true
+  pacman:
+    update-cache: true
