@@ -37,6 +37,7 @@ packages_list:
   - xorg-xfontsel
   - xorg-xlsfonts
   - xfce4
+  - xfce4-goodies
   - xfce4-cpugraph-plugin
   - xfce4-datetime-plugin
   - xfce4-diskperf-plugin
