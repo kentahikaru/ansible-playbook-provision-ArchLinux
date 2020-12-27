@@ -1,7 +1,7 @@
 ---
-- hosts: all
-  # hosts: localhost
-  # connection: local
+- hosts: localhost
+  connection: local
+  # hosts: all
 
   vars_files:
     - vars/main.yaml
@@ -21,3 +21,9 @@
     - import_tasks: tasks/setupAur.yaml
     - import_tasks: tasks/installAndConcigureRedshift.yaml
     - import_tasks: tasks/setupXfce.yaml
+
+    - name: Update cache and system
+      become: true
+      pacman:
+        update-cache: true
+        upgrade: true
