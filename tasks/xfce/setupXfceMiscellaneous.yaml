@@ -1,9 +1,9 @@
 ---
 - name: xsettings set curson theme name
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xsettings"
     property: "/Gtk/CursorThemeName"
@@ -11,10 +11,10 @@
     value: "Adwaita"
 
 - name: xsettings set curson theme size
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xsettings"
     property: "/Gtk/CursorThemeSize"
@@ -22,10 +22,10 @@
     value: "0"
 
 - name: xsettings set icon theme
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xsettings"
     property: "/Net/IconThemeName"
@@ -33,10 +33,10 @@
     value: "Adwaita"
 
 - name: xsettings set theme name
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xsettings"
     property: "/Net/ThemeName"

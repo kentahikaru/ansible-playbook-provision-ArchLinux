@@ -1,9 +1,9 @@
 ---
 - name: panel-3 set autohide-behavior
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-3/autohide-behavior"
@@ -11,10 +11,10 @@
     value: "2"
 
 - name: panel-3 set length
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-3/length"
@@ -22,10 +22,10 @@
     value: "1"
 
 - name: panel-3 set plugin-ids
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-3/plugin-ids"
@@ -33,10 +33,10 @@
     value: "7,4,56"
 
 - name: panel-3 set position
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-3/position"
@@ -44,10 +44,10 @@
     value: "p=6;x=104;y=28"
 
 - name: panel-3 set position-locked
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-3/position-locked"
@@ -55,10 +55,10 @@
     value: "TRUE"
 
 - name: panel-3 set size
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-3/size"

@@ -1,23 +1,23 @@
 ---
 - name: reset all panels
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   command: xfconf-query -c xfce4-panel -r -R -p /panels
 
 - name: reset all plugins
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   command: xfconf-query -c xfce4-panel -r -R -p /plugins
 
 - name: make 5 panels
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels"

@@ -1,9 +1,9 @@
 ---
 - name: plugin-10 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-10"
@@ -11,22 +11,22 @@
     value: "launcher"
 
 - name: plugin-10-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-10/items"
     value_type: "string"
     value: "15874141241.desktop"
     force_array: true
-    
+
 - name: plugin-17 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-17"
@@ -34,10 +34,10 @@
     value: "launcher"
 
 - name: plugin-17-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-17/items"
@@ -46,10 +46,10 @@
     force_array: true
 
 - name: plugin-18 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-18"
@@ -57,10 +57,10 @@
     value: "launcher"
 
 - name: plugin-18-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-18/items"
@@ -69,10 +69,10 @@
     force_array: true
 
 - name: plugin-23 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-23"
@@ -80,10 +80,10 @@
     value: "launcher"
 
 - name: plugin-23-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-23/items"
@@ -92,10 +92,10 @@
     force_array: true
 
 - name: plugin-38 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-38"
@@ -103,10 +103,10 @@
     value: "launcher"
 
 - name: plugin-38-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-38/items"
@@ -115,10 +115,10 @@
     force_array: true
 
 - name: plugin-39 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-39"
@@ -126,10 +126,10 @@
     value: "launcher"
 
 - name: plugin-39-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-39/items"
@@ -138,10 +138,10 @@
     force_array: true
 
 - name: plugin-40 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-40"
@@ -149,10 +149,10 @@
     value: "launcher"
 
 - name: plugin-40-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-40/items"
@@ -161,10 +161,10 @@
     force_array: true
 
 - name: plugin-41 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-41"
@@ -172,10 +172,10 @@
     value: "launcher"
 
 - name: plugin-41-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-41/items"
@@ -184,10 +184,10 @@
     force_array: true
 
 - name: plugin-44 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-44"
@@ -195,10 +195,10 @@
     value: "launcher"
 
 - name: plugin-44-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-44/items"
@@ -207,10 +207,10 @@
     force_array: true
 
 - name: plugin-45 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-45"
@@ -218,10 +218,10 @@
     value: "launcher"
 
 - name: plugin-45-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-45/items"
@@ -230,10 +230,10 @@
     force_array: true
 
 - name: plugin-46 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-46"
@@ -241,10 +241,10 @@
     value: "launcher"
 
 - name: plugin-46-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-46/items"
@@ -253,10 +253,10 @@
     force_array: true
 
 - name: plugin-47 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-47"
@@ -264,10 +264,10 @@
     value: "launcher"
 
 - name: plugin-47-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-47/items"
@@ -276,10 +276,10 @@
     force_array: true
 
 - name: plugin-49 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-49"
@@ -287,10 +287,10 @@
     value: "launcher"
 
 - name: plugin-49-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-49/items"
@@ -299,10 +299,10 @@
     force_array: true
 
 - name: plugin-50 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-50"
@@ -310,10 +310,10 @@
     value: "launcher"
 
 - name: plugin-50-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-50/items"
@@ -322,10 +322,10 @@
     force_array: true
 
 - name: plugin-51 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-51"
@@ -333,10 +333,10 @@
     value: "launcher"
 
 - name: plugin-51-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-51/items"
@@ -345,10 +345,10 @@
     force_array: true
 
 - name: plugin-53 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-53"
@@ -356,10 +356,10 @@
     value: "launcher"
 
 - name: plugin-53-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-53/items"
@@ -368,10 +368,10 @@
     force_array: true
 
 - name: plugin-54 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-54"
@@ -379,10 +379,10 @@
     value: "launcher"
 
 - name: plugin-54-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-54/items"
@@ -391,10 +391,10 @@
     force_array: true
 
 - name: plugin-55 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-55"
@@ -402,10 +402,10 @@
     value: "launcher"
 
 - name: plugin-55-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-55/items"
@@ -414,10 +414,10 @@
     force_array: true
 
 - name: plugin-56 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-56"
@@ -425,10 +425,10 @@
     value: "launcher"
 
 - name: plugin-56-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-56/items"
@@ -437,10 +437,10 @@
     force_array: true
 
 - name: plugin-57 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-57"
@@ -448,10 +448,10 @@
     value: "launcher"
 
 - name: plugin-57-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-57/items"
@@ -460,10 +460,10 @@
     force_array: true
 
 - name: plugin-58 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-58"
@@ -471,10 +471,10 @@
     value: "launcher"
 
 - name: plugin-58-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-58/items"
@@ -483,10 +483,10 @@
     force_array: true
 
 - name: plugin-59 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-59"
@@ -494,10 +494,10 @@
     value: "launcher"
 
 - name: plugin-59-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-59/items"
@@ -506,10 +506,10 @@
     force_array: true
 
 - name: plugin-62 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-62"
@@ -517,10 +517,10 @@
     value: "launcher"
 
 - name: plugin-62-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-62/items"
@@ -529,10 +529,10 @@
     force_array: true
 
 - name: plugin-7 launcher
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-7"
@@ -540,10 +540,10 @@
     value: "launcher"
 
 - name: plugin-7-items
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/plugin-7/items"

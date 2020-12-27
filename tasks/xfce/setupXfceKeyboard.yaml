@@ -1,9 +1,9 @@
 ---
 - name: Remove some custom shortcuts
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/custom/{{ item.property }}"
@@ -16,10 +16,10 @@
     - { property: "<Alt>F3", value: ""}
 
 - name: Remove some default shortcuts
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/default/{{ item.property }}"
@@ -32,10 +32,10 @@
     - { property: "<Alt>F3", value: ""}
 
 - name: Setup custom keyboard shortcuts
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/custom/{{ item.property }}"
@@ -59,10 +59,10 @@
     - { property: "HomePage", value: "chromium"}
 
 - name: Setup xfce4 keyboard shortcuts
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/xfwm4/custom/{{ item.property }}"

@@ -1,21 +1,21 @@
 ---
 - name: Copy defaults
-  become: true
-  become_user: "{{ as_user }}"
+  # become: true
+  # become_user: "{{ as_user }}"
   copy: 
     src: files/.Xdefaults
     dest: ~/
 
 - name: Copy .xinitrc
-  become: true
-  become_user: "{{ as_user }}"
+  # become: true
+  # become_user: "{{ as_user }}"
   copy: 
     src: files/.xinitrc
     dest: ~/
 
 - name: Copy .bashrc
-  become: true
-  become_user: "{{ as_user }}"
+  # become: true
+  # become_user: "{{ as_user }}"
   copy: 
     src: files/.bashrc
     dest: ~/

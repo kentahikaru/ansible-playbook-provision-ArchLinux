@@ -15,15 +15,15 @@
     mode: 0744
 
 - name: Does repo db already exists?
-  become: true
-  become_user: "{{ as_user }}"
+  # become: true
+  # become_user: "{{ as_user }}"
   stat:
     path: "{{ repo_dir }}/{{ repo_name }}"
   register: repodbstate
 
 - name: Create repo db
-  become: true
-  become_user: "{{ as_user }}"
+  # become: true
+  # become_user: "{{ as_user }}"
   command: "repo-add {{ repo_dir }}/{{ repo_name }}"
   when: not repodbstate.stat.exists
 

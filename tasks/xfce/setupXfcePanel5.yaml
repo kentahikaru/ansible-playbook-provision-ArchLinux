@@ -1,9 +1,9 @@
 ---
 - name: panel-5 set autohide-behavior
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-5/autohide-behavior"
@@ -12,10 +12,10 @@
 
 
 # - name: panel-5 set plugin-ids
-#   become: true
-#   become_user: "{{ as_user }}"
-#   environment:
-#     DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+# #   become: true
+# #   become_user: "{{ as_user }}"
+# #   environment:
+# #     DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
 #   xfconf:
 #     channel: "xfce4-panel"
 #     property: "/panels/panel-5/plugin-ids"
@@ -24,10 +24,10 @@
 #     force_array: true
 
 - name: panel-5 set position
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-5/position"
@@ -35,10 +35,10 @@
     value: "p=10;x=2948;y=1055"
 
 # - name: panel-5 set position-locked
-#   become: true
-#   become_user: "{{ as_user }}"
-#   environment:
-#     DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+# #   become: true
+# #   become_user: "{{ as_user }}"
+# #   environment:
+# #     DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
 #   xfconf:
 #     channel: "xfce4-panel"
 #     property: "/panels/panel-5/position-locked"
@@ -46,10 +46,10 @@
 #     value: "TRUE"
 
 - name: panel-5 set size
-  become: true
-  become_user: "{{ as_user }}"
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+  # become: true
+  # become_user: "{{ as_user }}"
+  # environment:
+    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-5/size"
