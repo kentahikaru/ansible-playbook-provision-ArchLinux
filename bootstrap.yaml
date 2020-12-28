@@ -9,6 +9,11 @@
       - linux
       - linux-headers
       - virtualbox-guest-dkms
+      - links
+      - git
+      - unzip
+      - vi
+      - vim
 
   pre_tasks:
     - name: Updating cache
