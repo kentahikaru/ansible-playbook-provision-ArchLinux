@@ -1,4 +1,5 @@
 as_user: sandi
+as_user_password: sandi
 config_redshift_dest_path: ~/.config/redshift
 config_redshift_dest_path_dir: ~/.config
 config_redshift_src_file: files/redshift_config
