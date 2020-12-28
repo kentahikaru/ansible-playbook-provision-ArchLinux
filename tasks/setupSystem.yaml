@@ -4,3 +4,23 @@
   copy: 
     src: files/fstab
     dest: /etc/fstab
+
+- name: Copy .bashrc
+  become: true
+  copy: 
+    src: files/.bashrc
+    dest: ~/
+
+- name: Set global PS1
+  lineinfile:
+    dest: "/etc/bash.bashrc"
+    regexp: "^PS1="
+    line: "PS1='[\\u@\\h \\w]\\$ '"
+    state: present
+
+- name: Set global ls alias
+  lineinfile:
+    dest: "/etc/bash.bashrc"
+    regexp: "alias ls="
+    line: "alias ls='ls --color=auto'"
+    state: present

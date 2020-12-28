@@ -24,8 +24,6 @@
     value_type: "int"
     value: "1,2,3,4,5"
 
-- import_tasks: tasks/xfce/setupUim.yaml
-- import_tasks: tasks/xfce/setupDefaults.yaml
 - import_tasks: tasks/xfce/setupXfceGeneral.yaml
 - import_tasks: tasks/xfce/setupXfceMiscellaneous.yaml
 - import_tasks: tasks/xfce/setupXfcePlugins2.yaml
@@ -37,4 +35,5 @@
 - import_tasks: tasks/xfce/setupXfcePanel4.yaml
 - import_tasks: tasks/xfce/setupXfcePanel5.yaml
 - import_tasks: tasks/xfce/setupXfceKeyboard.yaml
-- import_tasks: tasks/xfce/setupStardict.yaml
+- import_tasks: tasks/xfce/setupUim.yaml
+- import_tasks: tasks/xfce/setupDefaults.yaml
