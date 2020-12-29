@@ -5,6 +5,8 @@ Provision and configure freshly installed ArchLinux
     hosts: localhost
     connection: local
 in setup_system.yaml and setup_xfce.yaml and setup_aur.yaml
+1.1 if testing, coment out fstab configuration
+
 2. as root run ansible-playbook setup_system.yaml --extra-vars '{"uid_guid":"1050"}'
 
 3. change user password
