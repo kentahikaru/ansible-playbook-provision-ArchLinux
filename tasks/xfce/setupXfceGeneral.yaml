@@ -1,55 +1,13 @@
 ---
-- name: general set theme
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+- name: "{{ item.property }} - {{ item.subproperty }}"
   xfconf:
     channel: "xfwm4"
-    property: "/general/theme"
-    value_type: "string"
-    value: "Totem"
-
-- name: general set focus follow mouse
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfwm4"
-    property: "/general/click_to_focus"
-    value_type: "bool"
-    value: "FALSE"
-
-- name: general set focus delay
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfwm4"
-    property: "/general/focus_delay"
-    value_type: "int"
-    value: "5"
-
-- name: general set workspaces count
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfwm4"
-    property: "/general/workspace_count"
-    value_type: "int"
-    value: "12"
-
-- name: general set workspaces names
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfwm4"
-    property: "/general/workspace_names"
-    value_type: "string"
-    value: "Workspace 1,Workspace 2,Workspace 3,Workspace 4,Workspace 5,Workspace 6,Workspace 7,Workspace 8,Workspace 9,Workspace 10,Workspace 11,Workspace 12,"
+    property: "/general/{{ item.property }}{{ item.subproperty }}"
+    value_type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+  - { property: 'theme', subproperty: "", type: string, value: "Totem" }
+  - { property: 'click_to_focus', subproperty: "", type: bool, value: "FALSE" }
+  - { property: 'focus_delay', subproperty: "", type: int, value: "5" }
+  - { property: 'workspace_count', subproperty: "", type: int, value: "12" }
+  - { property: 'workspace_names', subproperty: "", type: string, value: "Workspace 1,Workspace 2,Workspace 3,Workspace 4,Workspace 5,Workspace 6,Workspace 7,Workspace 8,Workspace 9,Workspace 10,Workspace 11,Workspace 12" }

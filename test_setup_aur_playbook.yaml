@@ -1,0 +1,1 @@
+ansible-playbook setup_aur.yaml --extra-vars '{"uid_guid":"1050"}'

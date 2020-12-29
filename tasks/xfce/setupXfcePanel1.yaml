@@ -1,154 +1,22 @@
 ---
-- name: panel-1 set autohide-behavior
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+- name: "{{ item.property }} - {{ item.subproperty }}"
   xfconf:
     channel: "xfce4-panel"
-    property: "/panels/panel-1/autohide-behavior"
-    value_type: "int"
-    value: "2"
-
-- name: panel-1 set backgroud-style
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/background-style"
-    value_type: "int"
-    value: "0"
-
-- name: panel-1 set enter-opacity
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/enter-opacity"
-    value_type: "int"
-    value: "100"
-
-- name: panel-1 set icon-size
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/icon-size"
-    value_type: "int"
-    value: "16"
-
-- name: panel-1 set leave-opacity
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/leave-opacity"
-    value_type: "int"
-    value: "100"
-
-- name: panel-1 set length
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/length"
-    value_type: "int"
-    value: "50"
-
-- name: panel-1 set length-adjust
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/length-adjust"
-    value_type: "bool"
-    value: "FALSE"
-
-- name: panel-1 set mode
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/mode"
-    value_type: "int"
-    value: "0"
-
-- name: panel-1 set nrows
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/nrows"
-    value_type: "int"
-    value: "1"
-
-- name: panel-1 set plugin-ids
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/plugin-ids"
-    value_type: "int"
-    value: "1,2,3,5,6,11,12,13,14"
-
-- name: panel-1 set position
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/position"
-    value_type: "string"
-    value: "p=2;x=3438;y=19"
-
-- name: panel-1 set position-locked
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/position-locked"
-    value_type: "bool"
-    value: "TRUE"
-
-- name: panel-1 set size
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/size"
-    value_type: "int"
-    value: "26"
-
-- name: panel-1 set span-monitors
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-1/span-monitors"
-    value_type: "bool"
-    value: "FALSE"
+    property: "/panels/{{ item.property }}{{ item.subproperty }}"
+    value_type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+  - { property: 'plugin-1', subproperty: "/autohide-behavior", type: int, value: "2" }
+  - { property: 'plugin-1', subproperty: "/background-style", type: int, value: "0" }
+  - { property: 'plugin-1', subproperty: "/enter-opacity", type: int, value: "100" }
+  - { property: 'plugin-1', subproperty: "/icon-size", type: int, value: "16" }
+  - { property: 'plugin-1', subproperty: "/leave-opacity", type: int, value: "100" }
+  - { property: 'plugin-1', subproperty: "/length", type: int, value: "50" }
+  - { property: 'plugin-1', subproperty: "/length-adjust", type: bool, value: "FALSE" }
+  - { property: 'plugin-1', subproperty: "/mode", type: int, value: "0" }
+  - { property: 'plugin-1', subproperty: "/nrows", type: int, value: "1" }
+  - { property: 'plugin-1', subproperty: "/plugin-ids", type: int, value: "1,2,3,5,6,11,12,13,14" }
+  - { property: 'plugin-1', subproperty: "/position", type: string, value: "p=2;x=3438;y=19" }
+  - { property: 'plugin-1', subproperty: "/position-locked", type: bool, value: "TRUE" }
+  - { property: 'plugin-1', subproperty: "/size", type: int, value: "26" }
+  - { property: 'plugin-1', subproperty: "/span-monitors", type: bool, value: "FALSE" }

@@ -1,66 +1,14 @@
 ---
-- name: panel-3 set autohide-behavior
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
+- name: "{{ item.property }} - {{ item.subproperty }}"
   xfconf:
     channel: "xfce4-panel"
-    property: "/panels/panel-3/autohide-behavior"
-    value_type: "int"
-    value: "2"
-
-- name: panel-3 set length
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-3/length"
-    value_type: "int"
-    value: "1"
-
-- name: panel-3 set plugin-ids
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-3/plugin-ids"
-    value_type: "int"
-    value: "7,4,56"
-
-- name: panel-3 set position
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-3/position"
-    value_type: "string"
-    value: "p=6;x=104;y=28"
-
-- name: panel-3 set position-locked
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-3/position-locked"
-    value_type: "bool"
-    value: "TRUE"
-
-- name: panel-3 set size
-  # become: true
-  # become_user: "{{ as_user }}"
-  # environment:
-    # DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/{{uid_guid}}/bus
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels/panel-3/size"
-    value_type: "int"
-    value: "48"
+    property: "/panels/{{ item.property }}{{ item.subproperty }}"
+    value_type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+  - { property: 'plugin-3', subproperty: "/autohide-behavior", type: int, value: "2" }
+  - { property: 'plugin-3', subproperty: "/length", type: int, value: "1" }
+  - { property: 'plugin-3', subproperty: "/plugin-ids", type: string, value: "7,4,56" }
+  - { property: 'plugin-3', subproperty: "/position", type: string, value: "p=6;x=104;y=28" }
+  - { property: 'plugin-3', subproperty: "/position-locked", type: BOOL, value: "TRUE" }
+  - { property: 'plugin-3', subproperty: "/size", type: int, value: "48" }
