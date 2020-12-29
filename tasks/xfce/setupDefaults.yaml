@@ -1,21 +1,10 @@
 ---
-- name: Copy defaults
-  # become: true
-  # become_user: "{{ as_user }}"
+- name: "Copy {{ item.filename }}"
   copy: 
-    src: files/.Xdefaults
+    src: "files/{{ item.filename }}"
     dest: ~/
-
-- name: Copy .xinitrc
-  # become: true
-  # become_user: "{{ as_user }}"
-  copy: 
-    src: files/.xinitrc
-    dest: ~/
-
-- name: Copy .bashrc
-  # become: true
-  # become_user: "{{ as_user }}"
-  copy: 
-    src: files/.bashrc
-    dest: ~/
+  with_items:
+  - { filename: '.Xdefaults'}
+  - { filename: '.xinitrc'}
+  - { filename: '.bashrc'}
+  - { filename: '.gitconfig'}
