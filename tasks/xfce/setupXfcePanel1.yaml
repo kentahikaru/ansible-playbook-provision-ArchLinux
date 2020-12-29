@@ -6,17 +6,17 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-  - { property: 'plugin-1', subproperty: "/autohide-behavior", type: int, value: "2" }
-  - { property: 'plugin-1', subproperty: "/background-style", type: int, value: "0" }
-  - { property: 'plugin-1', subproperty: "/enter-opacity", type: int, value: "100" }
-  - { property: 'plugin-1', subproperty: "/icon-size", type: int, value: "16" }
-  - { property: 'plugin-1', subproperty: "/leave-opacity", type: int, value: "100" }
-  - { property: 'plugin-1', subproperty: "/length", type: int, value: "50" }
-  - { property: 'plugin-1', subproperty: "/length-adjust", type: bool, value: "FALSE" }
-  - { property: 'plugin-1', subproperty: "/mode", type: int, value: "0" }
-  - { property: 'plugin-1', subproperty: "/nrows", type: int, value: "1" }
-  - { property: 'plugin-1', subproperty: "/plugin-ids", type: int, value: "1,2,3,5,6,11,12,13,14" }
-  - { property: 'plugin-1', subproperty: "/position", type: string, value: "p=2;x=3438;y=19" }
-  - { property: 'plugin-1', subproperty: "/position-locked", type: bool, value: "TRUE" }
-  - { property: 'plugin-1', subproperty: "/size", type: int, value: "26" }
-  - { property: 'plugin-1', subproperty: "/span-monitors", type: bool, value: "FALSE" }
+  - { property: 'panel-1', subproperty: "/autohide-behavior", type: int, value: "2" }
+  - { property: 'panel-1', subproperty: "/background-style", type: int, value: "0" }
+  - { property: 'panel-1', subproperty: "/enter-opacity", type: int, value: "100" }
+  - { property: 'panel-1', subproperty: "/icon-size", type: int, value: "16" }
+  - { property: 'panel-1', subproperty: "/leave-opacity", type: int, value: "100" }
+  - { property: 'panel-1', subproperty: "/length", type: int, value: "50" }
+  - { property: 'panel-1', subproperty: "/length-adjust", type: bool, value: "FALSE" }
+  - { property: 'panel-1', subproperty: "/mode", type: int, value: "0" }
+  - { property: 'panel-1', subproperty: "/nrows", type: int, value: "1" }
+  - { property: 'panel-1', subproperty: "/plugin-ids", type: int, value: "1,2,3,5,6,11,12,13,14" }
+  - { property: 'panel-1', subproperty: "/position", type: string, value: "p=2;x=3438;y=19" }
+  - { property: 'panel-1', subproperty: "/position-locked", type: bool, value: "TRUE" }
+  - { property: 'panel-1', subproperty: "/size", type: int, value: "26" }
+  - { property: 'panel-1', subproperty: "/span-monitors", type: bool, value: "FALSE" }
