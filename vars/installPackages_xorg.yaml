@@ -82,3 +82,5 @@ packages_list:
   - stardict
   - deluge
   - gnome-calculator
+  - audacious
+  - smplayer

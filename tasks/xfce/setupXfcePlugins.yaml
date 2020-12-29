@@ -152,7 +152,7 @@
     channel: "xfce4-panel"
     property: "/plugins/plugin-15/timezone"
     value_type: "string"
-    value: "HongKong"
+    value: "Hongkong"
 
 - name: plugin-15 - clock tooltip format
   # become: true

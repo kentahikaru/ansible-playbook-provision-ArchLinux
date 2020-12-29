@@ -81,7 +81,7 @@
   - { property: 'plugin-15', subproperty: "", type: string, value: "clock" }
   - { property: 'plugin-15', subproperty: "/digital-format", type: string, value: "%k:%M" }
   - { property: 'plugin-15', subproperty: "/mode", type: int, value: "2" }
-  - { property: 'plugin-15', subproperty: "/timezone", type: string, value: "HongKong" }
+  - { property: 'plugin-15', subproperty: "/timezone", type: string, value: "Hongkong" }
   - { property: 'plugin-15', subproperty: "/tooltip-format", type: string, value: "HK %A %d %B %Y" }
   - { property: 'plugin-20', subproperty: "", type: string, value: "clock" }
   - { property: 'plugin-20', subproperty: "/digital-format", type: string, value: "%k:%M" }
