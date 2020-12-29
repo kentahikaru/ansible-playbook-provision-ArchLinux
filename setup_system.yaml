@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  
+
   vars_files:
     - vars/main.yaml
 
@@ -15,8 +15,8 @@
         update-cache: true
 
   tasks:
-    - import_tasks: tasks/setupSystem.yaml
     - import_tasks: tasks/installPackages.yaml
+    - import_tasks: tasks/setupSystem.yaml
     - import_tasks: tasks/setupStardict.yaml
     # - import_tasks: tasks/setupAur.yaml
     # - import_tasks: tasks/installAndConcigureRedshift.yaml
