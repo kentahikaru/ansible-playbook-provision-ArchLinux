@@ -35,23 +35,17 @@
     pkgver: "{{ pkgver | regex_findall('[0-9].[0-9].[0-9]') }}"
 
 - name: Get directory content
-  # become: true
-  # become_user: "{{ as_user }}"
   stat:
     path: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-1-any.pkg.tar.zst"
   register: pkgstate
 
 - name: Build package
-  # become: true
-  # become_user: "{{ as_user }}"
   shell:
     cmd: makepkg
     chdir: "{{ home }}aur/aurutils"
   when: not pkgstate.stat.exists
 
 - name: Is aur installed?
-  # become: true
-  # become_user: "{{ as_user }}"
   stat:
     path: /usr/bin/aur
   register: aurstate
@@ -64,8 +58,6 @@
   when: not aurstate.stat.exists
 
 - name: Clean package
-  # become: true
-  # become_user: "{{ as_user }}"
   shell:
     cmd: makepkg -f --clean
     chdir: "{{ home }}aur/aurutils"

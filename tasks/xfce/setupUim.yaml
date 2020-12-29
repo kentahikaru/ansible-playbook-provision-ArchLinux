@@ -1,7 +1,5 @@
 ---
 - name: Copy Uim config directory
-  # become: true
-  # become_user: "{{ as_user }}"
   copy: 
     src: files/.uim.d
     dest: ~/
