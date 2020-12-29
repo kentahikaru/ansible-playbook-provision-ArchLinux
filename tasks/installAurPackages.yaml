@@ -1,0 +1,11 @@
+---
+- name: Sync packages
+  command: "aur sync --noview {{ item }}"
+  with_items: "{{ aur_packages_list }}"
+
+- name: Install packages
+  become: true
+  pacman:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ aur_packages_list }}"  

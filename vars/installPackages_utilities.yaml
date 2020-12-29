@@ -16,3 +16,5 @@ packages_list:
   - blueman
   - bluez
   - deluge
+  - gsmartcontrol
+  - gnome-packagekit
