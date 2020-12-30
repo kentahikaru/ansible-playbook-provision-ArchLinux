@@ -1,27 +1,17 @@
 ---
-# - name: set home variable
-#   set_fact:
-#     home: "/home/{{ as_user }}/"
-
 - name: Make direcotry for aur installation
-  # become: true
-  # become_user: "{{ as_user }}"
   file:
     path: "{{ home }}aur"
     state: directory
     mode: 0744
 
 - name: Download and extract PKGBUILD
-  # become: true
-  # become_user: "{{ as_user }}"
   unarchive:
     src: https://aur.archlinux.org/cgit/aur.git/snapshot/aurutils.tar.gz
     dest: "{{ home }}aur/"
     remote_src: true
 
 - name: Read PKGBUILD
-  # become: true
-  # become_user: "{{ as_user }}"
   slurp:
     src: "{{ home }}aur/aurutils/PKGBUILD"
   register: pkgbuild

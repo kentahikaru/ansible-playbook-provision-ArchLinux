@@ -1,2 +1,0 @@
-ansible-playbook setup_system.yaml --extra-vars '{"uid_guid":"1050"}'
-#ansible-playbook -c local -i localhost, ini.yaml
