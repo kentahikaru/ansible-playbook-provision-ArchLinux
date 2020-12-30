@@ -1,0 +1,12 @@
+---
+- name: "{{ item.property }} - {{ item.subproperty }}"
+  xfconf:
+    channel: "xfce4-screensaver"
+    property: "/saver/{{ item.property }}{{ item.subproperty }}"
+    value_type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    force_array: "{{ item.forcearray }}"
+  with_items:
+  - { property: 'idle-activation', subproperty: "/delay", forcearray: false, type: int, value: "20" }
+  - { property: 'mode', subproperty: "", forcearray: false, type: int, value: "2" }
+  - { property: 'themes', subproperty: "/list", forcearray: true, type: string, value: "screensavers-xfce-popsquares" }

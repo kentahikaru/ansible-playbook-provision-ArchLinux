@@ -17,6 +17,7 @@
 - import_tasks: tasks/xfce/setupXfcePlugins2.yaml
 - import_tasks: tasks/xfce/setupXfceLaunchers.yaml
 - import_tasks: tasks/xfce/copyDotConfigDir.yaml
+- import_tasks: tasks/xfce/setupXfceScreensaver.yaml
 - import_tasks: tasks/xfce/setupXfcePanel1.yaml
 - import_tasks: tasks/xfce/setupXfcePanel2.yaml
 - import_tasks: tasks/xfce/setupXfcePanel3.yaml
