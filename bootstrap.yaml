@@ -25,7 +25,7 @@
     - name: Uninstall Virtualbox guest utils nox
       pacman:
         name: virtualbox-guest-utils-nox
-      state: absent
+        state: absent
 
   tasks:
     - name: "Install {{ install_what }}"
