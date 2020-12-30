@@ -6,4 +6,11 @@
     - vars/installAurPackages.yaml
 
   tasks:
-    - import_tasks: tasks/installAurPackages.yaml
+    - include_tasks: tasks/installAurPackages.yaml
+      vars:
+        package: "{{ item }}"
+      with_items: "{{ aur_packages_list }}"
+      
+    - name: extensions to vs code
+      command: "code --install-extension {{ item }}"
+      with_items: "{{ vscode_extentions }}"

@@ -15,6 +15,7 @@
       - vi
       - vim
       - virtualbox-guest-utils
+      - arch-install-scripts
 
   pre_tasks:
     - name: Updating cache

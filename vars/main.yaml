@@ -3,19 +3,3 @@ as_user_password: sandi
 config_redshift_dest_path: ~/.config/redshift
 config_redshift_dest_path_dir: ~/.config
 config_redshift_src_file: files/redshift_config
-
-vscode_extentions:
-- bbenoist.vagrant
-- kreativ-software.csharpextensions
-- mhutchie.git-graph
-- ms-azuretools.vscode-azureappservice
-- ms-azuretools.vscode-azurefunctions
-- ms-azuretools.vscode-docker
-- ms-dotnettools.csharp
-- ms-vscode-deploy-azure.azure-deploy
-- ms-vscode.azure-account
-- redhat.vscode-yaml
-- schneiderpat.aspnet-helper
-- shd101wyy.markdown-preview-enhanced
-- vscoss.vscode-ansible
-- yzhang.markdown-all-in-one

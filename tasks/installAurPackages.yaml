@@ -1,11 +1,21 @@
 ---
-- name: Sync packages
-  command: "aur sync --noview {{ item }}"
-  with_items: "{{ aur_packages_list }}"
+- name: "Get {{ package }} depedencies"
+  command: "aur depends -a {{ package }}"
+  register: aur_packages_depedencies
 
-- name: Install packages
+- debug:
+    var: aur_packages_depedencies.stdout_lines[0:-1]
+
+- name: Install depedencies except last one, which is AUR package itself
   become: true
   pacman:
-    name: "{{ item }}"
+    name: "{{ aur_packages_depedencies.stdout_lines[0:-1] }}"
+
+- name: "Sync package {{ package }}"
+  command: "aur sync --noview {{ package }}"
+
+- name: "Install package {{ package }}"
+  become: true
+  pacman:
+    name: "{{ package }}"
     state: present
-  with_items: "{{ aur_packages_list }}"  
