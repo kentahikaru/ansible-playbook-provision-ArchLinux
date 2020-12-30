@@ -14,12 +14,18 @@
       - unzip
       - vi
       - vim
+      - virtualbox-guest-utils
 
   pre_tasks:
     - name: Updating cache
       pacman:
         update-cache: true
       become: true
+
+    - name: Uninstall Virtualbox guest utils nox
+      pacman:
+        name: virtualbox-guest-utils-nox
+      state: absent
 
   tasks:
     - name: "Install {{ install_what }}"
@@ -29,7 +35,4 @@
         state: present
       loop: "{{ packages_list }}"
 
-# - name: Uninstall Virtualbox guest utils nox
-#   pacman:
-#     name: virtualbox-guest-utils-nox
-#     state: absent
+
