@@ -8,6 +8,6 @@
   with_items:
   - { property: 'panel-5', subproperty: "/autohide-behavior", type: int, value: "2" }
   - { property: 'panel-5', subproperty: "/background-style", type: int, value: "0" }
-  - { property: 'panel-5', subproperty: "/mode", type: int, value: "1" }
-  - { property: 'panel-5', subproperty: "/position", type: string, value: "p=10;x=2948;y=1055" }
+  - { property: 'panel-5', subproperty: "/mode", type: int, value: "0" }
+  - { property: 'panel-5', subproperty: "/position", type: string, value: "p=12;x=2948;y=1055" }
   - { property: 'panel-5', subproperty: "/size", type: int, value: "48" }

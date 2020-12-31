@@ -2,5 +2,10 @@
 - name: Load list of variables
   include_vars:
     file: vars/setupAur.yaml
+
+- name: Load list of variables
+  include_vars:
+    file: vars/main.yaml
+
 - import_tasks: tasks/aur/installAur.yaml
 - import_tasks: tasks/aur/configureAur.yaml

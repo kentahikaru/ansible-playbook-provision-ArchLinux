@@ -1,21 +1,72 @@
 ---
-- name: "Get {{ package }} depedencies"
-  command: "aur depends -a {{ package }}"
+- debug:
+    var: package
+
+- name: "Get {{ package.name }} depedencies"
+  command: "aur depends -a {{ package.name }}"
   register: aur_packages_depedencies
 
 - debug:
     var: aur_packages_depedencies.stdout_lines[0:-1]
 
-- name: Install depedencies except last one, which is AUR package itself
+- name: Install depedencies except last one, which is AUR package.name itself
   become: true
   pacman:
     name: "{{ aur_packages_depedencies.stdout_lines[0:-1] }}"
 
-- name: "Sync package {{ package }}"
-  command: "aur sync --noview {{ package }}"
+- name: "Sync package {{ package.name }}"
+  command: "aur sync --noview {{ package.name }}"
 
-- name: "Install package {{ package }}"
+- name: "Install package {{ package.name }}"
   become: true
   pacman:
-    name: "{{ package }}"
+    name: "{{ package.name }}"
     state: present
+
+## Create launcher in panel
+- name: Make direcotry for launcher
+  file:
+    path: "{{ home }}.config/xfce4/panel/launcher-{{ launcher_plugin_id }}"
+    state: directory
+    mode: 0700
+  when: package.makeLauncher and package.hasLauncher
+
+- name: Copy launcher for {{ package.name }} to my .config dir
+  copy:
+    src: "/usr/share/applications/{{ package.launcherName }}.desktop"
+    dest: "{{ home }}.config/xfce4/panel/launcher-{{ launcher_plugin_id }}/{{ package.launcherName }}.desktop"
+  when: package.makeLauncher and package.hasLauncher
+
+- name: "Add launcher as plugin-{{ launcher_plugin_id }} to xfce4-panel settings"
+  when: package.makeLauncher and package.hasLauncher
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/plugins/{{ pluginItem.property }}{{ pluginItem.subproperty }}"
+    value_type: "{{ pluginItem.type }}"
+    value: "{{ pluginItem.value }}"
+    force_array: "{{ pluginItem.forcearray }}"
+  loop:
+  - { property: 'plugin-{{ launcher_plugin_id }}', subproperty: "", forcearray: false, type: string, value: "launcher" }
+  - { property: 'plugin-{{ launcher_plugin_id }}', subproperty: "/items", forcearray: true, type: string, value: "{{ package.launcherName }}.desktop" }
+  loop_control:
+    loop_var: pluginItem
+
+- set_fact:
+    plugin_ids_array: "{{ plugin_ids_array + [ launcher_plugin_id ] }}"
+  when: package.makeLauncher and package.hasLauncher
+
+- debug:
+    var: plugin_ids_array
+
+- name: "Add new launcher to panel"
+  xfconf:
+    channel: "xfce4-panel"
+    property: "/panels/{{ launcher_panel_property }}/plugin-ids"
+    value_type: int
+    value: "{{ plugin_ids_array }}"
+  register: panelValues
+
+- name: increment launcher_plugin_id
+  set_fact:
+    launcher_plugin_id: "{{ launcher_plugin_id | int + 1 }}"
+  when: package.makeLauncher and package.hasLauncher

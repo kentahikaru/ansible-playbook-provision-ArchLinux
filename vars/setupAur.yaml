@@ -1,4 +1,3 @@
 ---
-home: "/home/{{ as_user }}/"
 repo_dir: /opt/aur_repo
 repo_name: aur_repo.db.tar.gz
