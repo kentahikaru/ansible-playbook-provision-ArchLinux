@@ -4,6 +4,7 @@ aur_packages_list:
   - skypeforlinux-stable-bin
   - teams
   - simple-mtpfs
+  - rpi-imager
 
 vscode_extentions:
   - bbenoist.vagrant
