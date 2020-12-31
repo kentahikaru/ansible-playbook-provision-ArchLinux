@@ -1,4 +1,10 @@
 ---
+- name: Setup timezone
+  command: ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
+
+- name: Setup hostname
+  command: "Echo IO > /etc/hostname"
+  
 - name: Copy fstab
   become: true
   copy: 
