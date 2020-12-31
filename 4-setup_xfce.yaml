@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - vars/main.yaml
+    - vars/setupXfceLaunchers2.yaml
+
+  tasks:
+    # - import_tasks: tasks/setupAur.yaml
+    - import_tasks: tasks/installAndConcigureRedshift.yaml
+    - import_tasks: tasks/setupXfce.yaml
+    - include_tasks: tasks/xfce/setupXfceLaunchers2.yaml
+      vars:
+        package: "{{ item }}"
+      with_items: "{{ aur_packages_list }}"

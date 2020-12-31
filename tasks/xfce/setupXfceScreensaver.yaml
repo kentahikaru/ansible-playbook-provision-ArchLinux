@@ -1,5 +1,5 @@
 ---
-- name: "{{ item.property }} - {{ item.subproperty }}"
+- name: "Setup xfce screensaver"
   xfconf:
     channel: "xfce4-screensaver"
     property: "/saver/{{ item.property }}{{ item.subproperty }}"

@@ -1,12 +1,9 @@
 ---
-launcher_plugin_id: 100
-launcher_panel_property: panel-5
-plugin_ids_array: []
 aur_packages_list:
-  - { name: visual-studio-code-bin, makeLauncher: true, hasLauncher: true, launcherName: "visual-studio-code"  }
-  - { name: skypeforlinux-stable-bin, makeLauncher: true, hasLauncher: true, launcherName: "skypeforlinux"  }
-  - { name: teams, makeLauncher: true, hasLauncher: true, launcherName: "teams"  }
-  - { name: simple-mtpfs, makeLauncher: false, hasLauncher: false, launcherName: "" }
+  - visual-studio-code-bin
+  - skypeforlinux-stable-bin
+  - teams
+  - simple-mtpfs
 
 vscode_extentions:
   - bbenoist.vagrant

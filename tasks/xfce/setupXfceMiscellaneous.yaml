@@ -1,5 +1,5 @@
 ---
-- name: "{{ item.property }} - {{ item.subproperty }}"
+- name: "Setup xsettings"
   xfconf:
     channel: "xsettings"
     property: "/Gtk/{{ item.property }}{{ item.subproperty }}"
@@ -9,7 +9,7 @@
   - { property: 'CursorThemeName', subproperty: "", type: string, value: "Adwaita" }
   - { property: 'CursorThemeSize', subproperty: "", type: int, value: "0" }
 
-- name: "{{ item.property }} - {{ item.subproperty }}"
+- name: "Setup theme and icon theme"
   xfconf:
     channel: "xsettings"
     property: "/Net/{{ item.property }}{{ item.subproperty }}"

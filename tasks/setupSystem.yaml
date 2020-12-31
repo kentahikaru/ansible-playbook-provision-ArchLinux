@@ -3,8 +3,8 @@
   command: ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
 
 - name: Setup hostname
-  command: "Echo IO > /etc/hostname"
-  
+  command: "echo IO > /etc/hostname"
+
 - name: Copy fstab
   become: true
   copy: 

@@ -1,5 +1,5 @@
 ---
-- name: "{{ item.property }} - {{ item.subproperty }} => {{ item.value }}"
+- name: "Setup Plugins"
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/{{ item.property }}{{ item.subproperty }}"

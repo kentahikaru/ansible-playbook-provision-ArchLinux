@@ -1,0 +1,8 @@
+---
+launcher_plugin_id: 100
+launcher_panel_property: panel-5
+plugin_ids_array: []
+aur_packages_list:
+  - { name: visual-studio-code-bin, launcherName: "visual-studio-code"  }
+  - { name: skypeforlinux-stable-bin, launcherName: "skypeforlinux"  }
+  - { name: teams, launcherName: "teams"  }

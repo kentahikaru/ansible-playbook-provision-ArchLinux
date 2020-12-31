@@ -1,5 +1,5 @@
 ---
-- name: "{{ item.property }} - {{ item.subproperty }}"
+- name: "Setting up Panel-3"
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/{{ item.property }}{{ item.subproperty }}"

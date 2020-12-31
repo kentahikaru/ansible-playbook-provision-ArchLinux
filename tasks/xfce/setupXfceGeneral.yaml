@@ -1,5 +1,5 @@
 ---
-- name: "{{ item.property }} - {{ item.subproperty }}"
+- name: "Setup xfwm4 general settings"
   xfconf:
     channel: "xfwm4"
     property: "/general/{{ item.property }}{{ item.subproperty }}"

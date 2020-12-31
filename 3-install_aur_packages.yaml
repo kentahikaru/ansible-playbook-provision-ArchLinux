@@ -4,7 +4,6 @@
 
   vars_files:
     - vars/installAurPackages.yaml
-    - vars/main.yaml
 
   tasks:
     - include_tasks: tasks/installAurPackages.yaml
