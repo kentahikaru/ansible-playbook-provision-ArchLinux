@@ -14,3 +14,7 @@ Provision and configure freshly installed ArchLinux
 7. as user, start ansible-playbook 3-install_aur_packages.yaml -K --extra-vars '{"uid_guid":"1050"}'
 8. as user, start ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}'
     * enter user password for sudo
+
+
+Note:
+* Alternative for foo2zjs   http://foo2zjs.rkkda.com/

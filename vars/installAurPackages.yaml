@@ -5,6 +5,7 @@ aur_packages_list:
   - teams
   - simple-mtpfs
   - rpi-imager
+  - foo2zjs-minimal-nightly
 
 vscode_extentions:
   - bbenoist.vagrant
