@@ -2,7 +2,7 @@
 - hosts: localhost
   connection: local
   gather_facts: false
-  
+
   vars_files:
     - vars/installAurPackages.yaml
     - vars/main.yaml
@@ -12,7 +12,7 @@
       vars:
         package: "{{ item }}"
       with_items: "{{ aur_packages_list }}"
-      
+
     - name: extensions to vs code
       command: "code --install-extension {{ item }}"
       with_items: "{{ vscode_extentions }}"

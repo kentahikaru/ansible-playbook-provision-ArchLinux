@@ -69,4 +69,3 @@
     - { property: "<Alt>c", value: "close_window_key"}
     - { property: "<Alt>v", value: "maximize_window_key"}
     - { property: "<Alt>x", value: "stick_window_key"}
-

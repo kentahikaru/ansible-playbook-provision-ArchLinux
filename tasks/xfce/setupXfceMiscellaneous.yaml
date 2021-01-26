@@ -6,8 +6,8 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-  - { property: 'CursorThemeName', subproperty: "", type: string, value: "Adwaita" }
-  - { property: 'CursorThemeSize', subproperty: "", type: int, value: "0" }
+    - { property: 'CursorThemeName', subproperty: "", type: string, value: "Adwaita" }
+    - { property: 'CursorThemeSize', subproperty: "", type: int, value: "0" }
 
 - name: "Setup theme and icon theme"
   xfconf:
@@ -16,5 +16,5 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-  - { property: 'IconThemeName', subproperty: "", type: string, value: "Adwaita" }
-  - { property: 'ThemeName', subproperty: "", type: string, value: "Adwaita-dark" }
+    - { property: 'IconThemeName', subproperty: "", type: string, value: "Adwaita" }
+    - { property: 'ThemeName', subproperty: "", type: string, value: "Adwaita-dark" }

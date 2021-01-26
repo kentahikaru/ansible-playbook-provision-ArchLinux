@@ -1,5 +1,5 @@
 ---
 - name: Copy Uim config directory
-  copy: 
+  copy:
     src: files/.uim.d
     dest: ~/

@@ -35,5 +35,3 @@
         name: "{{ item }}"
         state: present
       loop: "{{ packages_list }}"
-
-

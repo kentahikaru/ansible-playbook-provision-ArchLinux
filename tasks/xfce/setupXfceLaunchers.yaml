@@ -7,8 +7,7 @@
     value: "{{ item.value }}"
     force_array: "{{ item.forcearray }}"
   with_items:
-  - { property: 'plugin-7', subproperty: "", forcearray: false, type: string, value: "launcher" }
-  - { property: 'plugin-7', subproperty: "/items", forcearray: true, type: string, value: "15817800231.desktop" }
-  - { property: 'plugin-56', subproperty: "", forcearray: false, type: string, value: "launcher" }
-  - { property: 'plugin-56', subproperty: "/items", forcearray: true, type: string, value: "15986816841.desktop" }
-
+    - { property: 'plugin-7', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-7', subproperty: "/items", forcearray: true, type: string, value: "15817800231.desktop" }
+    - { property: 'plugin-56', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-56', subproperty: "/items", forcearray: true, type: string, value: "15986816841.desktop" }

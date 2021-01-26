@@ -6,14 +6,14 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-  - { property: 'panel-4', subproperty: "/autohide-behavior", type: int, value: "2" }
-  - { property: 'panel-4', subproperty: "/length", type: int, value: "10" }
-  - { property: 'panel-4', subproperty: "/mode", type: int, value: "1" }
-  - { property: 'panel-4', subproperty: "/nrows", type: int, value: "2" }
-  - { property: 'panel-4', subproperty: "/position", type: string, value: "p=7;x=26;y=728" }
-  - { property: 'panel-4', subproperty: "/position-locked", type: bool, value: "TRUE" }
-  - { property: 'panel-4', subproperty: "/size", type: int, value: "48" }
-  - { property: 'panel-4', subproperty: "/span-monitors", type: bool, value: "FALSE" }
+    - { property: 'panel-4', subproperty: "/autohide-behavior", type: int, value: "2" }
+    - { property: 'panel-4', subproperty: "/length", type: int, value: "10" }
+    - { property: 'panel-4', subproperty: "/mode", type: int, value: "1" }
+    - { property: 'panel-4', subproperty: "/nrows", type: int, value: "2" }
+    - { property: 'panel-4', subproperty: "/position", type: string, value: "p=7;x=26;y=728" }
+    - { property: 'panel-4', subproperty: "/position-locked", type: bool, value: "TRUE" }
+    - { property: 'panel-4', subproperty: "/size", type: int, value: "48" }
+    - { property: 'panel-4', subproperty: "/span-monitors", type: bool, value: "FALSE" }
 
 - name: panel-4 set plugin-ids
   xfconf:

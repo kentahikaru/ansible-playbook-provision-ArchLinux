@@ -1,10 +1,10 @@
 ---
 - name: "Copy {{ item.filename }}"
-  copy: 
+  copy:
     src: "files/{{ item.filename }}"
     dest: ~/
   with_items:
-  - { filename: '.Xdefaults'}
-  - { filename: '.xinitrc'}
-  - { filename: '.bashrc'}
-  - { filename: '.gitconfig'}
+    - { filename: '.Xdefaults'}
+    - { filename: '.xinitrc'}
+    - { filename: '.bashrc'}
+    - { filename: '.gitconfig'}

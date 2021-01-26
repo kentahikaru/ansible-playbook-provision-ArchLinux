@@ -6,8 +6,8 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-  - { property: 'theme', subproperty: "", type: string, value: "Totem" }
-  - { property: 'click_to_focus', subproperty: "", type: bool, value: "FALSE" }
-  - { property: 'focus_delay', subproperty: "", type: int, value: "5" }
-  - { property: 'workspace_count', subproperty: "", type: int, value: "12" }
-  - { property: 'workspace_names', subproperty: "", type: string, value: "Workspace 1,Workspace 2,Workspace 3,Workspace 4,Workspace 5,Workspace 6,Workspace 7,Workspace 8,Workspace 9,Workspace 10,Workspace 11,Workspace 12" }
+    - { property: 'theme', subproperty: "", type: string, value: "Totem" }
+    - { property: 'click_to_focus', subproperty: "", type: bool, value: "FALSE" }
+    - { property: 'focus_delay', subproperty: "", type: int, value: "5" }
+    - { property: 'workspace_count', subproperty: "", type: int, value: "12" }
+    - { property: 'workspace_names', subproperty: "", type: string, value: "Workspace 1,Workspace 2,Workspace 3,Workspace 4,Workspace 5,Workspace 6,Workspace 7,Workspace 8,Workspace 9,Workspace 10,Workspace 11,Workspace 12" }

@@ -19,8 +19,8 @@
     value: "{{ pluginItem.value }}"
     force_array: "{{ pluginItem.forcearray }}"
   loop:
-  - { property: 'plugin-{{ launcher_plugin_id }}', subproperty: "", forcearray: false, type: string, value: "launcher" }
-  - { property: 'plugin-{{ launcher_plugin_id }}', subproperty: "/items", forcearray: true, type: string, value: "{{ package.launcherName }}.desktop" }
+    - { property: 'plugin-{{ launcher_plugin_id }}', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-{{ launcher_plugin_id }}', subproperty: "/items", forcearray: true, type: string, value: "{{ package.launcherName }}.desktop" }
   loop_control:
     loop_var: pluginItem
 

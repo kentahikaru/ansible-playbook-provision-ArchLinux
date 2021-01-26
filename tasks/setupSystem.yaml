@@ -7,13 +7,13 @@
 
 - name: Copy fstab
   become: true
-  copy: 
+  copy:
     src: files/fstab
     dest: /etc/fstab
 
 - name: Copy .bashrc
   become: true
-  copy: 
+  copy:
     src: files/.bashrc
     dest: ~/
 

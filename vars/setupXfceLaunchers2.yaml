@@ -3,9 +3,9 @@ launcher_plugin_id: 100
 launcher_panel_property: panel-5
 plugin_ids_array: []
 launcher_packages_list:
-  - { name: visual-studio-code-bin, launcherName: "visual-studio-code"  }
-  - { name: rpi-imager, launcherName: "rpi-imager"  }
-  - { name: virtualbox, launcherName: "virtualbox"  }
-  - { name: keepassxc, launcherName: "org.keepassxc.KeePassXC"  }
-  - { name: skypeforlinux-stable-bin, launcherName: "skypeforlinux"  }
-  - { name: teams, launcherName: "teams"  }
+  - { name: visual-studio-code-bin, launcherName: "visual-studio-code" }
+  - { name: rpi-imager, launcherName: "rpi-imager" }
+  - { name: virtualbox, launcherName: "virtualbox" }
+  - { name: keepassxc, launcherName: "org.keepassxc.KeePassXC" }
+  - { name: skypeforlinux-stable-bin, launcherName: "skypeforlinux" }
+  - { name: teams, launcherName: "teams" }

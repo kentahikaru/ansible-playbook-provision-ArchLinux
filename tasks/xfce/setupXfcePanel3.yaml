@@ -6,9 +6,9 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-  - { property: 'panel-3', subproperty: "/autohide-behavior", type: int, value: "2" }
-  - { property: 'panel-3', subproperty: "/length", type: int, value: "1" }
-  - { property: 'panel-3', subproperty: "/plugin-ids", type: int, value: "7,4,56" }
-  - { property: 'panel-3', subproperty: "/position", type: string, value: "p=6;x=104;y=28" }
-  - { property: 'panel-3', subproperty: "/position-locked", type: bool, value: "TRUE" }
-  - { property: 'panel-3', subproperty: "/size", type: int, value: "48" }
+    - { property: 'panel-3', subproperty: "/autohide-behavior", type: int, value: "2" }
+    - { property: 'panel-3', subproperty: "/length", type: int, value: "1" }
+    - { property: 'panel-3', subproperty: "/plugin-ids", type: int, value: "7,4,56" }
+    - { property: 'panel-3', subproperty: "/position", type: string, value: "p=6;x=104;y=28" }
+    - { property: 'panel-3', subproperty: "/position-locked", type: bool, value: "TRUE" }
+    - { property: 'panel-3', subproperty: "/size", type: int, value: "48" }
