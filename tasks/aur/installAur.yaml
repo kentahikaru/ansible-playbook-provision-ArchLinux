@@ -24,9 +24,17 @@
   set_fact:
     pkgver: "{{ pkgver | regex_findall('[0-9].[0-9].[0-9]') }}"
 
+- name: Get release number
+  set_fact:
+    pkgrel: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgrel=[0-9]') }}"
+
+- name: Get release number
+  set_fact:
+    pkgrel: "{{ pkgrel | regex_findall('[0-9]') }}"
+
 - name: Get directory content
   stat:
-    path: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-1-any.pkg.tar.zst"
+    path: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
   register: pkgstate
 
 - name: Build package
@@ -43,7 +51,7 @@
 - name: Install package
   become: true
   pacman:
-    name: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-1-any.pkg.tar.zst"
+    name: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
     state: present
   when: not aurstate.stat.exists
 
