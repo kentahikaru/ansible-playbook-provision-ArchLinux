@@ -1,7 +1,5 @@
 ---
-- hosts: localhost
-  connection: local
-  gather_facts: false
+- hosts: all
 
   vars_files:
     - vars/installAurPackages.yaml
