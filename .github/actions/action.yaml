@@ -32,7 +32,10 @@ runs:
         ${{inputs.run}}
         EOF
 
-        sed -i -e 's/config.vm.synced_folder.*/config.vm.synced_folder "${GITHUB_WORKSPACE}", "\/home\/vagrant\/${GITHUB_REPOSITORY}", type: "rsync"/g' Vagrantfile
+        run echo ${GITHUB_WORKSPACE}
+
+        export NEWCONFIG="config.vm.synced_folder \"${GITHUB_WORKSPACE}\", \"\/home\/vagrant\/${GITHUB_REPOSITORY}\", type: \"rsync\""
+        sed -i -e "s|config.vm.synced_folder.*|$NEWCONFIG|g" Vagrantfile
 
         run cat Vagrantfile
         run cat shell.sh
