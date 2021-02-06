@@ -56,5 +56,8 @@ jobs:
       - name: Get roles
         run: ansible-galaxy install -r requirements.yaml
 
+      - name: Add key fingerprint to known_hosts but don't login
+        run: ssh -o "StrictHostKeyChecking no" -o "BatchMode yes" vagrant@172.16.3.22
+
       - name: Run 1. playbook
         run: ansible-playbook 1-setup_system.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim"
