@@ -15,9 +15,9 @@ Vagrant.configure("2") do |config|
   config.vm.box = "archlinux/archlinux"
   config.vm.box_version = "20201215.11392"
   config.ssh.insert_key = false
-  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provision "shell", path: "shell.sh"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "bootstrap.yaml"
