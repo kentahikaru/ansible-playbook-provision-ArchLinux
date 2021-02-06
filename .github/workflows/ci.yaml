@@ -52,3 +52,6 @@ jobs:
         with:
           run: |
             echo "Hello from action"
+
+      - name: Run 1. playbook
+        run: ansible-playbook 1-setup_system.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim"
