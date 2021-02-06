@@ -41,7 +41,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install test dependencies.
-        run: pip3 install ansible
+        run: pip3 install ansible passlib
 
       - name: Check out the codebase.
         uses: actions/checkout@v2
