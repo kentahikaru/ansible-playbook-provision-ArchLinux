@@ -16,13 +16,6 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "20201215.11392"
   config.ssh.insert_key = false
 
-  config.vm.provision "shell", path: "shell.sh"
-  config.vm.synced_folder ".", "/vagrant", disabled: true
-
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "bootstrap.yaml"
-  end
-
   config.vm.provider :virtualbox do |v|
     v.cpus = 1
     v.memory = 2048
@@ -43,6 +36,13 @@ Vagrant.configure("2") do |config|
   config.vm.define "iosim" do |io|
     io.vm.hostname = "iosim.test"
     io.vm.network :private_network, ip:"172.16.3.22"
+  end
+
+  config.vm.provision "shell", path: "shell.sh"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "bootstrap.yaml"
   end
 
   # Disable automatic box update checking. If you disable this, then
