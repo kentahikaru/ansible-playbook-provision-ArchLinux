@@ -39,7 +39,8 @@ jobs:
         uses: actions/checkout@v2
 
       # - uses: leleliu008/github-actions-vagrant@v1
-      - uses: ./.github/actions/action
+      - name: Run github action - vagrant
+        uses: ./.github/actions/action.yaml
         with:
           run: |
             echo "Hello from action"
