@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: "{{ variable_host | default('local') }}"
 
   vars_files:
     - vars/installAurPackages.yaml

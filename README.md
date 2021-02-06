@@ -18,3 +18,4 @@ Provision and configure freshly installed ArchLinux
 
 Note:
 * Alternative for foo2zjs   http://foo2zjs.rkkda.com/
+* [Virtualbox configuration](https://www.virtualbox.org/manual/ch08.html)
