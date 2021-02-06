@@ -44,4 +44,4 @@ jobs:
         run: pwd
 
       - name: Run vagrant
-        run: vagrant up
+        run: sudo vagrant up
