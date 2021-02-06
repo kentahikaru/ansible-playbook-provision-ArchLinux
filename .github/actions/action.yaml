@@ -21,7 +21,6 @@ runs:
 
         run cd "$WORK_DIR"
 
-        run vagrant init ${{inputs.box}}
         echo 'set -e' >> shell.sh
         export -p | grep 'GITHUB_' >> shell.sh
         echo "cd /home/vagrant/${GITHUB_REPOSITORY}" >> shell.sh
