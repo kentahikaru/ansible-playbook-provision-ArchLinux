@@ -37,9 +37,8 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
-      - uses: leleliu008/github-actions-vagrant@v1
+      # - uses: leleliu008/github-actions-vagrant@v1
+      - uses: ./.github/actions/action
         with:
-          mem: 2048
-          box: archlinux/archlinux
           run: |
-            ansible-playbook 1-setup_system.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim"
+            echo "Hello from action"
