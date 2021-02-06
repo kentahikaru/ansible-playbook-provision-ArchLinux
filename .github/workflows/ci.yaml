@@ -35,6 +35,14 @@ jobs:
     name: Vagrant
     runs-on: macos-latest
     steps:
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install ansible
+
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
