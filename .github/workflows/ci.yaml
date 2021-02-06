@@ -38,6 +38,9 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
+      - name: ls
+        run: ls .github/actions
+
       # - uses: leleliu008/github-actions-vagrant@v1
       - name: Run github action - vagrant
         uses: ./.github/actions/action.yaml
