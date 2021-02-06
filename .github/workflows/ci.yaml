@@ -42,5 +42,7 @@ jobs:
       # - name: Run github action - vagrant
       #   uses: ./.github/actions
         with:
+          box: archlinux/archlinux
+          mem: 2048
           run: |
             echo "Hello from action"
