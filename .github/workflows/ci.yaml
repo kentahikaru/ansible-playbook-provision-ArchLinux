@@ -43,7 +43,7 @@ jobs:
 
       # - uses: leleliu008/github-actions-vagrant@v1
       - name: Run github action - vagrant
-        uses: ./.github/actions/action.yaml
+        uses: ./.github/actions
         with:
           run: |
             echo "Hello from action"
