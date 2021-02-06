@@ -32,7 +32,7 @@ jobs:
 
   vagrant:
     name: Vagrant
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v2
