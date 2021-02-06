@@ -17,9 +17,6 @@ runs:
           printf "\033[0;35m==>\033[0m \033[0;32m%b\n\033[0m" "$*"
           $@
         }
-        WORK_DIR=$(mktemp -d)
-
-        run cd "$WORK_DIR"
 
         run pwd
         run ls
