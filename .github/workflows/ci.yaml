@@ -61,3 +61,18 @@ jobs:
 
       - name: Run 1. playbook
         run: ansible-playbook 1-setup_system.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim"
+
+      - name: create .ssh dir
+        run: ansible -i inventory iosim -a "sudo mkdir -p /home/sandi/.ssh"
+
+      - name: Copy authorized_keys to user
+        run: ansible -i inventory iosim -a "sudo cp /home/vagrant/.ssh/authorized_keys /home/sandi/.ssh/"
+
+      - name: Change owner of authorized keys
+        run: ansible -i inventory iosim -a "sudo chown sandi:sandi /home/sandi/.ssh/authorized_keys"
+
+      - name: Run 2nd test
+        run: ansible-playbook 2-setup_aur.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+
+      - name: Run 3rd test
+        run: ansible-playbook 3-install_aur_packages.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"

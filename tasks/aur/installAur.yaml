@@ -1,19 +1,19 @@
 ---
 - name: Make direcotry for aur installation
   file:
-    path: "{{ home }}aur"
+    path: "{{ ansible_user_dir }}/aur"
     state: directory
     mode: 0744
 
 - name: Download and extract PKGBUILD
   unarchive:
     src: https://aur.archlinux.org/cgit/aur.git/snapshot/aurutils.tar.gz
-    dest: "{{ home }}aur/"
+    dest: "{{ ansible_user_dir }}/aur/"
     remote_src: true
 
 - name: Read PKGBUILD
   slurp:
-    src: "{{ home }}aur/aurutils/PKGBUILD"
+    src: "{{ ansible_user_dir }}/aur/aurutils/PKGBUILD"
   register: pkgbuild
 
 - name: Get package version
@@ -34,13 +34,13 @@
 
 - name: Get directory content
   stat:
-    path: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
+    path: "{{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
   register: pkgstate
 
 - name: Build package
   shell:
     cmd: makepkg
-    chdir: "{{ home }}aur/aurutils"
+    chdir: "{{ ansible_user_dir }}/aur/aurutils"
   when: not pkgstate.stat.exists
 
 - name: Is aur installed?
@@ -51,11 +51,11 @@
 - name: Install package
   become: true
   pacman:
-    name: "{{ home }}aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
+    name: "{{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
     state: present
   when: not aurstate.stat.exists
 
 - name: Clean package
   shell:
     cmd: makepkg -f --clean
-    chdir: "{{ home }}aur/aurutils"
+    chdir: "{{ ansible_user_dir }}/aur/aurutils"

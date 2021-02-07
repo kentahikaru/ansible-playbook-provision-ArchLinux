@@ -6,7 +6,7 @@
     state: directory
     owner: "{{ as_user }}"
     group: "{{ uid_guid }}"
-    mode: 0744
+    mode: 0755
 
 - name: Does repo db already exists?
   stat:
