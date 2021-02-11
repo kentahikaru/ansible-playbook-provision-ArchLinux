@@ -59,8 +59,14 @@ jobs:
       - name: Add key fingerprint to known_hosts but don't login
         run: ssh-keyscan -H 172.16.3.22 >> ~/.ssh/known_hosts
 
+      - name: backup fstab
+        run: ansible -i inventory iosim -a "sudo cp /etc/fstab /etc/fstab.bkp"
+
       - name: Run 1. playbook
         run: ansible-playbook 1-setup_system.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "as_user_add_to_sudoers_no_password=true"
+
+      - name: restore fstab
+        run: ansible -i inventory iosim -a "sudo cp /etc/fstab.bkp /etc/fstab"
 
       - name: create .ssh dir
         run: ansible -i inventory iosim -a "sudo mkdir -p /home/sandi/.ssh"
@@ -76,3 +82,15 @@ jobs:
 
       - name: Run 3rd test
         run: ansible-playbook 3-install_aur_packages.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+
+      - name: Setup autologin to xorg
+        run: ansible-playbook testing/setup_autologin_to_xorg.yaml --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+
+      - name: Reboot
+        run: ansible-playbook testing/reboot.yaml
+
+      - name: Run 4rd test
+        run: ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+
+      - name: Reboot
+        run: ansible-playbook testing/reboot.yaml
