@@ -48,7 +48,8 @@ jobs:
 
       # - uses: leleliu008/github-actions-vagrant@v1
       - name: Run github action - vagrant
-        uses: ./.github/actions
+        # uses: ./.github/actions
+        uses: kentahikaru/github-action-vagrant--vagrantfile-from-repository@v1
         with:
           run: |
             echo "Hello from action"
