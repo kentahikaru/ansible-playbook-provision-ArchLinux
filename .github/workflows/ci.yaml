@@ -91,7 +91,7 @@ jobs:
         run: ansible-playbook testing/reboot.yaml
 
       - name: Get running box UUID
-        run: UUID=$(VBoxManage list runningvms | awk '//{print $2}' |  sed 's/{//g' -  |  sed 's/}//g' -)
+        run: UUID=$(VBoxManage list runningvms | awk '//{print $2}' |  sed --expression='s/{//g' |  sed --expression='s/}//g')
 
       - name: Make screenshot
         run: VBoxManage controlvm $UUID screenshotpng screenshot.png
