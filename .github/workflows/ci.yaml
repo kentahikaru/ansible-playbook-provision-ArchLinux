@@ -43,6 +43,9 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install ansible passlib
 
+      - name: Install test dependencies.
+        run: gem install vagrant-screenshot
+
       - name: Check out the codebase.
         uses: actions/checkout@v2
 
@@ -89,6 +92,9 @@ jobs:
 
       - name: Reboot
         run: ansible-playbook testing/reboot.yaml
+
+      - name: Take a screenshot
+        run: vagrant screenshot
 
       - name: Run 4rd test
         run: ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
