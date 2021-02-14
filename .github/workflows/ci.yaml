@@ -34,6 +34,7 @@ jobs:
   vagrant:
     name: Vagrant
     runs-on: macos-latest
+    continue-on-error: true
     steps:
       - name: Set up Python 3.
         uses: actions/setup-python@v2
