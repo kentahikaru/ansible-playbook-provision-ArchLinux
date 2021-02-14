@@ -41,6 +41,12 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: test 1
+        run: export foo=5
+
+      - name: test 2
+        run: echo $foo
+
       - name: Install homebrew?
         run:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
