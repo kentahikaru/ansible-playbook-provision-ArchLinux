@@ -40,6 +40,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install gawk and gsed
+        run: sudo pkg install -y gawk gsed
+
       - name: Install test dependencies.
         run: pip3 install ansible passlib
 
