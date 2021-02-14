@@ -41,6 +41,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: test 0
+        run: echo "ahoj"
+
       - name: test 1
         run: export foo=5
 
