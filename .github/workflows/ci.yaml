@@ -41,7 +41,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install homebrew?
-        run: sudo mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+        run: sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+      - name: Update PATH
+        run: export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
       - name: Install test dependencies.
         run: pip3 install ansible passlib
