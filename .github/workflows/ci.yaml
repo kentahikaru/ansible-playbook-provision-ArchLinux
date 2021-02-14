@@ -60,12 +60,11 @@ jobs:
         run: |
           UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
           echo "::set-output name=UUID::$UUID"
-          echo "::set-env name=UUID::${UUID}"
+          echo ${UUID}
+          VBoxManage controlvm ${UUID} screenshotpng screenshot.png
 
       - name: test 5
         run: echo "${{ env.UUID }}"
-
-        #VBoxManage controlvm $UUID screenshotpng screenshot.png
 
       # - name: Install test dependencies.
       #   run: pip3 install ansible passlib
