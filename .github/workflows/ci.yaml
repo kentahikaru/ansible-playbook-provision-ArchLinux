@@ -41,7 +41,6 @@ jobs:
           python-version: '3.x'
 
       - name: Install homebrew?
-        #run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         run:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
       - name: Update PATH
@@ -100,14 +99,14 @@ jobs:
       - name: Show uuid
         run: VBoxManage list runningvms
 
-      - name: Reboot
-        run: ansible-playbook testing/reboot.yaml
-
       - name: Get running box UUID
         run: UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
 
       - name: Captured UUID
         run: echo $UUID
+
+      - name: Reboot
+        run: ansible-playbook testing/reboot.yaml
 
       - name: Make screenshot
         run: VBoxManage controlvm $UUID screenshotpng screenshot.png
