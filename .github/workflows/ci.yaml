@@ -40,8 +40,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install gawk and gsed
-        run: sudo brew install coreutils
+      - name: Install homebrew?
+        run: sudo mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 
       - name: Install test dependencies.
         run: pip3 install ansible passlib
