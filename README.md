@@ -1,3 +1,5 @@
+![CI](https://github.com/kentahikaru/ansible-playbook-provision-ArchLinux/workflows/CI/badge.svg)
+
 # ansible-playbook-provision-ArchLinux
 Provision and configure freshly installed ArchLinux
 

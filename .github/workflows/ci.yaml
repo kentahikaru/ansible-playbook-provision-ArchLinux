@@ -106,6 +106,9 @@ jobs:
       - name: Get running box UUID
         run: UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
 
+      - name: Captured UUID
+        run: echo $UUID
+
       - name: Make screenshot
         run: VBoxManage controlvm $UUID screenshotpng screenshot.png
 
