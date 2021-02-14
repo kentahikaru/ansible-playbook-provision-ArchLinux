@@ -87,6 +87,9 @@ jobs:
       - name: Setup autologin to xorg
         run: ansible-playbook testing/setup_autologin_to_xorg.yaml --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
+      - name: Show uuid
+        run: VBoxManage list runningvms
+
       - name: Reboot
         run: ansible-playbook testing/reboot.yaml
 
