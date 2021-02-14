@@ -41,15 +41,6 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: test 0
-        run: echo "ahoj"
-
-      - name: test 1
-        run: export foo=5
-
-      - name: test 2
-        run: echo $foo
-
       - name: Install homebrew?
         run:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -112,17 +103,11 @@ jobs:
       - name: Get running box UUID
         run: export UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
 
-      - name: env
-        run: env
-
-      - name: Captured UUID
-        run: echo $UUID
-
       - name: Reboot
         run: ansible-playbook testing/reboot.yaml
 
       - name: Make screenshot
-        run: VBoxManage controlvm $UUID screenshotpng screenshot.png
+        run: export UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -) && VBoxManage controlvm $UUID screenshotpng screenshot.png
 
       - uses: actions/upload-artifact@v2
         with:
