@@ -41,7 +41,8 @@ jobs:
           python-version: '3.x'
 
       - name: Install homebrew?
-        run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        #run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        run:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
       - name: Update PATH
         run: export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
