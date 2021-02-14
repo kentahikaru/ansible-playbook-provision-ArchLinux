@@ -41,6 +41,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: test 4
+        run: export UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -) && VBoxManage controlvm $UUID screenshotpng screenshot.png
+
       - name: Install homebrew?
         run:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
