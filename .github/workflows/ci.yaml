@@ -101,7 +101,7 @@ jobs:
         run: VBoxManage list runningvms
 
       - name: Get running box UUID
-        run: UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
+        run: export UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
 
       - name: Captured UUID
         run: echo $UUID
