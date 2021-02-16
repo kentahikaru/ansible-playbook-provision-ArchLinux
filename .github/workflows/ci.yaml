@@ -77,7 +77,7 @@ jobs:
           UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
           echo "::set-output name=uuid::${UUID}"
           echo ${UUID}
-          VBoxManage controlvm ${UUID} screenshotpng screenshot.png
+          VBoxManage controlvm $(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -) screenshotpng screenshot.png
 
       - name: test 5
         run: echo "${{steps.test42.outputs.uuid}}"
