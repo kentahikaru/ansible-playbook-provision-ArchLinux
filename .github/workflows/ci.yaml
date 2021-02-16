@@ -61,7 +61,7 @@ jobs:
       - name: test 4
         run: |
             echo "UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)" >> GITHUB_ENV
-            echo $UUID
+            echo ${{ env.UUID }}
 
       - name: test 4 env
         run: env
