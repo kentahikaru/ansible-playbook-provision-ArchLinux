@@ -80,7 +80,6 @@ jobs:
           echo ${UUID}
           UUID=nejakeuuid
           echo "$(UUID)"
-          echo "${{UUID}}"
 
       - name: test 4 2
         id: test42
