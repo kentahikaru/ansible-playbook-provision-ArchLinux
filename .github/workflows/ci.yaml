@@ -51,7 +51,10 @@ jobs:
         run: brew install gawk gsed
 
       - name: test 2
-        run: $(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
+        run: |
+          VBoxManage list runningvms
+          VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -
+          $(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
 
       - name: test 3
         run: |
