@@ -160,10 +160,10 @@ jobs:
       # - name: Make screenshot
       #   run: export UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -) && VBoxManage controlvm $UUID screenshotpng screenshot.png
 
-      # - uses: actions/upload-artifact@v2
-      #   with:
-      #     name: screenshot.png
-      #     path: screenshot.png
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshot.png
+          path: screenshot.png
 
       # - name: Run 4rd test
       #   run: ansible-playbook 4-setup_xfce.yaml --extra-      vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
