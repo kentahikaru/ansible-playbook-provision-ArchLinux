@@ -50,6 +50,20 @@ jobs:
       - name: Brew install gawk and gsed
         run: brew install gawk gsed
 
+      - name: Install test dependencies.
+        run: pip3 install ansible passlib
+
+      - name: Check out the codebase.
+        uses: actions/checkout@v2
+
+      # - uses: leleliu008/github-actions-vagrant@v1
+      - name: Run github action - vagrant
+        # uses: ./.github/actions
+        uses: kentahikaru/github-action-vagrant--vagrantfile-from-repository@v1
+        with:
+          run: |
+            echo "Hello from action"
+
       - name: test 1
         run: VBoxManage list runningvms
 
@@ -97,19 +111,7 @@ jobs:
       - name: test 5
         run: echo "${{steps.test42.outputs.uuid}}"
 
-      # - name: Install test dependencies.
-      #   run: pip3 install ansible passlib
 
-      # - name: Check out the codebase.
-      #   uses: actions/checkout@v2
-
-      # # - uses: leleliu008/github-actions-vagrant@v1
-      # - name: Run github action - vagrant
-      #   # uses: ./.github/actions
-      #   uses: kentahikaru/github-action-vagrant--vagrantfile-from-repository@v1
-      #   with:
-      #     run: |
-      #       echo "Hello from action"
 
       # - name: Get roles
       #   run: ansible-galaxy install -r requirements.yaml
