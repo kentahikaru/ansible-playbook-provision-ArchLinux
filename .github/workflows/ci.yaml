@@ -50,6 +50,9 @@ jobs:
       - name: Brew install gawk and gsed
         run: brew install gawk gsed
 
+      - name: test 1
+        run: VBoxManage list runningvms
+
       - name: test 2
         run: |
           VBoxManage list runningvms
