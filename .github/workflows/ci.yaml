@@ -94,27 +94,27 @@ jobs:
       - name: Run 3rd test
         run: ansible-playbook 3-install_aur_packages.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-      - name: Setup autologin to xorg
-        run: ansible-playbook testing/setup_autologin_to_xorg.yaml --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+      # - name: Setup autologin to xorg
+      #   run: ansible-playbook testing/setup_autologin_to_xorg.yaml --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-      - name: Show uuid
-        run: VBoxManage list runningvms
+      # - name: Show uuid
+      #   run: VBoxManage list runningvms
 
-      - name: Reboot
-        run: ansible-playbook testing/reboot.yaml
+      # - name: Reboot
+      #   run: ansible-playbook testing/reboot.yaml
 
-      - name: Make screenshot
-        run: |
-          UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
-          VBoxManage controlvm $UUID screenshotpng screenshot.png
+      # - name: Make screenshot
+      #   run: |
+      #     UUID=$(VBoxManage list runningvms | gawk '//{print $2}' |  gsed 's/{//g' -  |  gsed 's/}//g' -)
+      #     VBoxManage controlvm $UUID screenshotpng screenshot.png
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: screenshot.png
-          path: screenshot.png
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: screenshot.png
+      #     path: screenshot.png
 
       - name: Run 4rd test
         run: ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-      - name: Reboot
-        run: ansible-playbook testing/reboot.yaml
+      # - name: Reboot
+      #   run: ansible-playbook testing/reboot.yaml
