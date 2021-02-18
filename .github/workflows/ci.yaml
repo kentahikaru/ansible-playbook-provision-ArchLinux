@@ -6,31 +6,10 @@ name: CI
     branches:
       - main
       - ghactions
-  # schedule:
-  #   - cron: "0 0 * * 5"
+# schedule:
+#   - cron: "0 0 * * 5"
 
 jobs:
-
-  # lint:
-  #   name: Lint
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Check out the codebase.
-  #       uses: actions/checkout@v2
-
-  #     - name: Set up Python 3.
-  #       uses: actions/setup-python@v2
-  #       with:
-  #         python-version: '3.x'
-
-  #     - name: Install test dependencies.
-  #       run: pip3 install yamllint ansible-lint
-
-  #     - name: Lint code.
-  #       run: |
-  #         yamllint .
-  #         ansible-lint
-
   vagrant:
     name: Vagrant
     runs-on: macos-latest
@@ -42,7 +21,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install homebrew?
-        run:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
       - name: Update PATH
         run: export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
@@ -116,5 +95,5 @@ jobs:
       - name: Run 4rd test
         run: ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-      # - name: Reboot
-      #   run: ansible-playbook testing/reboot.yaml
+# - name: Reboot
+#   run: ansible-playbook testing/reboot.yaml

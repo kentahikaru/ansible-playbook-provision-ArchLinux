@@ -14,8 +14,7 @@ rules:
   commas: enable
   comments:
     level: warning
-  comments-indentation:
-    level: warning
+  comments-indentation: disable
   document-end: disable
   document-start:
     level: warning
@@ -25,8 +24,7 @@ rules:
   indentation: enable
   key-duplicates: enable
   key-ordering: disable
-  line-length:
-    max: 160
+  line-length: disable
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values: disable
