@@ -6,11 +6,29 @@
     - vars/main.yaml
 
   tasks:
+    - name: Get number of aur installed packages
+      shell: aur repo -l | wc -l
+      register: installed_aur_packages_number
+      changed_when: false
+
+    - debug:
+        var: installed_aur_packages_number
+
     - include_tasks: tasks/installAurPackages.yaml
       vars:
         package: "{{ item }}"
       with_items: "{{ aur_packages_list }}"
+      when: installed_aur_packages_number.stdout_lines[0] <= '3'
+
+    - name: Cound VS Code extensions already installed
+      shell: code --list-extensions | wc -l
+      register: vs_code_extension_number
+      changed_when: false
+
+    - debug:
+        var: vs_code_extension_number
 
     - name: extensions to vs code
       command: "code --install-extension {{ item }}"
       with_items: "{{ vscode_extentions }}"
+      when: vs_code_extension_number.stdout_lines[0] <= '5'
