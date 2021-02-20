@@ -38,8 +38,8 @@
   register: pkgstate
 
 - name: Build package
-  shell:
-    cmd: makepkg
+  command: makepkg
+  args:
     chdir: "{{ ansible_user_dir }}/aur/aurutils"
   when: not pkgstate.stat.exists
 
@@ -56,6 +56,7 @@
   when: not aurstate.stat.exists
 
 - name: Clean package
-  shell:
-    cmd: makepkg -f --clean
+  command: makepkg -f --clean
+  args:
     chdir: "{{ ansible_user_dir }}/aur/aurutils"
+  when: not aurstate.stat.exists
