@@ -32,32 +32,41 @@ jobs:
 
       - name: List some stuff 1
         run: ls ~/.ansible/roles
+        continue-on-error: true
 
       - name: List some stuff 2
         run: ls /usr/share/ansible/roles
+        continue-on-error: true
 
       - name: List some stuff 3
         run: ls /etc/ansible/roles
+        continue-on-error: true
 
       - name: List some stuff 4
         run: ls roles
+        continue-on-error: true
 
       - name: Lint code.
         run: |
           yamllint .
           ansible-lint .
+        continue-on-error: true
 
       - name: List some stuff
         run: pwd
 
       - name: List some stuff 1
         run: ls ~/.ansible/roles
+        continue-on-error: true
 
       - name: List some stuff 2
         run: ls /usr/share/ansible/roles
+        continue-on-error: true
 
       - name: List some stuff 3
         run: ls /etc/ansible/roles
+        continue-on-error: true
 
       - name: List some stuff 4
         run: ls roles
+        continue-on-error: true
