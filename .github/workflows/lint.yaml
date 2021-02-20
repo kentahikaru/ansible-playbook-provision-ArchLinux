@@ -30,3 +30,8 @@ jobs:
         run: |
           yamllint .
           ansible-lint .
+          pwd
+          ls ~/.ansible/roles
+          ls /usr/share/ansible/roles
+          ls /etc/ansible/roles
+          ls roles
