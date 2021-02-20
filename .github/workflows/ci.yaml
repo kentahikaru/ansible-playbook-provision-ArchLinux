@@ -13,7 +13,7 @@ jobs:
   vagrant:
     name: Vagrant
     runs-on: macos-latest
-    continue-on-error: true
+    # continue-on-error: true
     steps:
       - name: Set up Python 3.
         uses: actions/setup-python@v2
@@ -95,5 +95,5 @@ jobs:
       - name: Run 4rd test
         run: ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-# - name: Reboot
-#   run: ansible-playbook testing/reboot.yaml
+      # - name: Reboot
+      #   run: ansible-playbook testing/reboot.yaml
