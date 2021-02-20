@@ -27,6 +27,21 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install yamllint ansible ansible-lint
 
+      - name: List some stuff
+        run: pwd
+
+      - name: List some stuff 1
+        run: ls ~/.ansible/roles
+
+      - name: List some stuff 2
+        run: ls /usr/share/ansible/roles
+
+      - name: List some stuff 3
+        run: ls /etc/ansible/roles
+
+      - name: List some stuff 4
+        run: ls roles
+
       - name: Lint code.
         run: |
           yamllint .
