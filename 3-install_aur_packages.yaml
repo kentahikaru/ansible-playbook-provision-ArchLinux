@@ -7,12 +7,13 @@
 
   tasks:
     - name: Get number of aur installed packages
-      shell: aur repo -l | wc -l
+      shell: |
+        set -o pipefail
+        aur repo -l | wc -l
+      args:
+        executable: /bin/bash
       register: installed_aur_packages_number
       changed_when: false
-
-    - debug:
-        var: installed_aur_packages_number
 
     - include_tasks: tasks/installAurPackages.yaml
       vars:
@@ -21,12 +22,13 @@
       when: installed_aur_packages_number.stdout_lines[0] <= '3'
 
     - name: Cound VS Code extensions already installed
-      shell: code --list-extensions | wc -l
+      shell: |
+        set -o pipefail
+        code --list-extensions | wc -l
+      args:
+        executable: /bin/bash
       register: vs_code_extension_number
       changed_when: false
-
-    - debug:
-        var: vs_code_extension_number
 
     - name: extensions to vs code
       command: "code --install-extension {{ item }}"
