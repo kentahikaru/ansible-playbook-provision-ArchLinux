@@ -1,3 +1,4 @@
+[![LINT](https://github.com/kentahikaru/ansible-playbook-provision-ArchLinux/actions/workflows/lint.yaml/badge.svg?branch=main)](https://github.com/kentahikaru/ansible-playbook-provision-ArchLinux/actions/workflows/lint.yaml)
 ![CI](https://github.com/kentahikaru/ansible-playbook-provision-ArchLinux/workflows/CI/badge.svg)
 
 # ansible-playbook-provision-ArchLinux
