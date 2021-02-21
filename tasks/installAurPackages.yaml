@@ -5,6 +5,7 @@
 - name: "Get {{ package }} depedencies"
   command: "aur depends -a {{ package }}"
   register: aur_packages_depedencies
+  changed_when: false
 
 - debug:
     var: aur_packages_depedencies.stdout_lines[0:-1]
@@ -16,6 +17,7 @@
 
 - name: "Sync package {{ package }}"
   command: "aur sync --noview {{ package }}"
+  changed_when: true
 
 - name: "Install package {{ package }}"
   become: true

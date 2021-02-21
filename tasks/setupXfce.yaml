@@ -1,9 +1,11 @@
 ---
 - name: reset all panels
   command: xfconf-query -c xfce4-panel -r -R -p /panels
+  changed_when: true
 
 - name: reset all plugins
   command: xfconf-query -c xfce4-panel -r -R -p /plugins
+  changed_when: true
 
 - name: make 5 panels
   xfconf:

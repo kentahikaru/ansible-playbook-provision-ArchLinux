@@ -7,6 +7,7 @@
     shell: "sleep 5 && reboot"
     async: 1
     poll: 0
+    changed_when: false
 
   - name: Wait for the reboot to complete.
     wait_for_connection:

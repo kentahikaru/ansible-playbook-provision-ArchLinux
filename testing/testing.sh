@@ -24,14 +24,14 @@ ansible-playbook 2-setup_aur.yaml --extra-vars '{"uid_guid":"1050"}' --extra-var
 # Run 3rd test
 ansible-playbook 3-install_aur_packages.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-# # Setup autologin to xorg
-# ansible-playbook testing/setup_autologin_to_xorg.yaml --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+# Setup autologin to xorg
+ansible-playbook testing/setup_autologin_to_xorg.yaml --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-# # Reboot
-# ansible-playbook testing/reboot.yaml
+# Reboot
+ansible-playbook testing/reboot.yaml
 
-# # Run 4rd test
-# ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
+# Run 4rd test
+ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}' --extra-vars "variable_host=iosim" --extra-vars "ansible_ssh_user=sandi" --extra-vars "ansible_become_pass=sandi"
 
-# # Reboot
-# ansible-playbook testing/reboot.yaml
+# Reboot
+ansible-playbook testing/reboot.yaml
