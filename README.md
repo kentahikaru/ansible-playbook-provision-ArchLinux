@@ -3,6 +3,7 @@
 
 # ansible-playbook-provision-ArchLinux
 Provision and configure freshly installed ArchLinux
+* Local Testing:
 
 0. ansible-galaxy install -r requirements.yaml
 1. if testing, coment out fstab configuration
@@ -18,6 +19,9 @@ Provision and configure freshly installed ArchLinux
 8. [testing] as user, start ansible-playbook 4-setup_xfce.yaml --extra-vars '{"uid_guid":"1050"}'
     * enter user password for sudo
 
+* Remote testing:
+1. Run vagrant up
+2. run testing/testing.sh
 
 Note:
 * Alternative for foo2zjs   http://foo2zjs.rkkda.com/
