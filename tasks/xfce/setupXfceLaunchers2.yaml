@@ -10,6 +10,7 @@
   copy:
     src: "/usr/share/applications/{{ package.launcherName }}.desktop"
     dest: "{{ home }}.config/xfce4/panel/launcher-{{ launcher_plugin_id }}/{{ package.launcherName }}.desktop"
+    remote_src: yes
 
 - name: "Add launcher as plugin-{{ launcher_plugin_id }} to xfce4-panel settings"
   xfconf:
