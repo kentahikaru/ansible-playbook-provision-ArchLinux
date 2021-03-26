@@ -25,10 +25,12 @@
   loop_control:
     loop_var: pluginItem
 
-- set_fact:
+- name: Set facts
+  set_fact:
     plugin_ids_array: "{{ plugin_ids_array + [ launcher_plugin_id ] }}"
 
-- debug:
+- name: Debug
+  debug:
     var: plugin_ids_array
 
 - name: "Add new launcher to panel"

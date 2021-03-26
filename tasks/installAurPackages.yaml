@@ -1,5 +1,6 @@
 ---
-- debug:
+- name: Debug
+  debug:
     var: package
 
 - name: "Get {{ package }} depedencies"
@@ -7,7 +8,8 @@
   register: aur_packages_depedencies
   changed_when: false
 
-- debug:
+- name: Debug
+  debug:
     var: aur_packages_depedencies.stdout_lines[0:-1]
 
 - name: Install depedencies except last one, which is AUR package itself

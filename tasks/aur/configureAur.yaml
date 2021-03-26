@@ -27,10 +27,12 @@
   set_fact:
     aurrepoconf: "{{ pacmanconf['content'] | b64decode | regex_findall('aur_repo') }}"
 
-- debug:
+- name: Debug
+  debug:
     var: aurrepoconf
 
-- debug:
+- name: Debug
+  debug:
     var: not aurrepoconf
 
 - name: Insert configuration for aur repo into pacman.conf
