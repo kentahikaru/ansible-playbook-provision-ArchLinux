@@ -6,6 +6,8 @@ aur_packages_list:
   - simple-mtpfs
   - rpi-imager
   - foo2zjs-minimal-nightly
+  - google-chrome
+  # - joplin-desktop
 
 vscode_extentions:
   - bbenoist.vagrant

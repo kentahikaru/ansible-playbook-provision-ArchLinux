@@ -32,7 +32,7 @@
   with_items:
     - { property: "<Alt>a", value: "ssh-agent xterm"}
     - { property: "<Alt>d", value: "thunar"}
-    - { property: "<Alt>e", value: "chromium"}
+    - { property: "<Alt>e", value: "google-chrome-stable"}
     - { property: "<Alt>n", value: "deluge"}
     - { property: "<Alt>q", value: "audacious"}
     - { property: "<Alt>r", value: "xfrun4"}

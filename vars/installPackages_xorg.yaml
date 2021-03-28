@@ -78,7 +78,7 @@ packages_list:
   - pulsemixer
   - pavucontrol
   - gnome-bluetooth
-  - chromium
+  # - chromium
   - firefox
   - libreoffice
   - stardict
