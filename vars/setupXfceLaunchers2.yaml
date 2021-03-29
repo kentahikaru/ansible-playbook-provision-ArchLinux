@@ -9,4 +9,4 @@ launcher_packages_list:
   - { name: keepassxc, launcherName: "org.keepassxc.KeePassXC" }
   - { name: skypeforlinux-stable-bin, launcherName: "skypeforlinux" }
   - { name: teams, launcherName: "teams" }
-  # - { name: joplin-desktop, launcherName: "joplin" }
+  - { name: joplin-desktop, launcherName: "joplin" }

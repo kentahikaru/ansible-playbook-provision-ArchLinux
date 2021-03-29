@@ -86,3 +86,4 @@ packages_list:
   - gnome-calculator
   - audacious
   - smplayer
+  - libgsf

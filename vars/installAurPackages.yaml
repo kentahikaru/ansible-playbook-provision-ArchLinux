@@ -7,7 +7,7 @@ aur_packages_list:
   - rpi-imager
   - foo2zjs-minimal-nightly
   - google-chrome
-  # - joplin-desktop
+  - joplin
 
 vscode_extentions:
   - bbenoist.vagrant
