@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
     # v.customize ["modifyvm", :id, "--audioout", "on"]
     # v.customize ["modifyvm", :id, "--audiocontroller", "hda"]
     # v.customize ["modifyvm", :id, "--accelerate3d", "on"]
-    # v.customize ["modifyvm", :id, "--clipboard-mode", "bidirectional"]
+    v.customize ["modifyvm", :id, "--clipboard-mode", "bidirectional"]
     # v.customize ['storageattach', :id,  "--storagectl", "IDE Controller", "--port", 1, "--device", 0, "--type", "dvddrive", "--medium", "host:/dev/sr0"]
   end
 

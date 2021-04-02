@@ -5,7 +5,8 @@ aur_packages_list:
   - teams
   - simple-mtpfs
   - rpi-imager
-  - foo2zjs-minimal-nightly
+  # - foo2zjs-minimal-nightly
+  - hplip-plugin
   - google-chrome
   - joplin
 

@@ -26,3 +26,10 @@ Provision and configure freshly installed ArchLinux
 Note:
 * Alternative for foo2zjs   http://foo2zjs.rkkda.com/
 * [Virtualbox configuration](https://www.virtualbox.org/manual/ch08.html)
+
+
+Printer:
+* Install cups
+* Install hplip [pacman] and hplip-plugin [aur]
+* start/enable hplip (check status: systemctl status cups)
+* at localhost:631 add printer via wizzard

@@ -4,6 +4,7 @@ packages_list:
   - cups
   - cups-filters
   - cups-pdf
+  - hplip
   - keepassxc
   - screen
   - links

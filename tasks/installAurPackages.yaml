@@ -26,11 +26,3 @@
   pacman:
     name: "{{ package }}"
     state: present
-
-# add user to group, don't forget to restart cups by "systemctl restart cups"
-- name: Add user to lp group
-  become: true
-  user:
-    name: "{{ as_user }}"
-    groups: lp
-    append: true
