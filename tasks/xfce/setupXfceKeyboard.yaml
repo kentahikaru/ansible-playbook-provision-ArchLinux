@@ -41,6 +41,8 @@
     - { property: "<Alt>u", value: "xterm -geometry 159x40"}
     - { property: "<Alt>y", value: "xterm -geometry 159x25"}
     - { property: "<Alt>t", value: "evince"}
+    - { property: "<Alt>f", value: "code"}
+    - { property: "<Alt>z", value: "skypeforlinux"}
     - { property: "AudioLowerVolume", value: "pamixer -d 2"}
     - { property: "AudioMute", value: "pamixer -t"}
     - { property: "AudioRaiseVolume", value: "pamixer -i 2"}
