@@ -1,0 +1,62 @@
+---
+- name: Converge
+  hosts: all
+
+  vars_files:
+    - ../../vars/main.yaml
+
+  vars:
+    git_repo: "https://github.com/kentahikaru/ansible-playbook-provision-ArchLinux.git"
+    git_repo_dest: "~/ansible-playbook-provision-ArchLinux"
+    root_passwd: "root"
+    packages_list:
+      - ansible
+      - git
+
+  pre_tasks:
+    - name: Updating cache
+      become: true
+      pacman:
+        update-cache: true
+        upgrade: true
+        force: true
+
+    - name: "Prepare stuff"
+      pacman:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages_list }}"
+      become: true
+
+  tasks:
+# - name: Read-write git checkout from github
+#   git:
+#     repo: "{{ git_repo }}"
+#     dest: "{{ git_repo_dest }}"
+
+# - name: List
+#   command: ls -lah
+#   args:
+#     chdir: "{{ git_repo_dest }}"
+#   register: list
+
+# - name: update root password
+#   user:
+#       name: root
+#       update_password: always
+#       password: "{{ root_passwd | password_hash('sha512') }}"
+
+# - debug:
+#     var: list
+
+# - name: Make tests executable
+#   command: chmod 755 test*
+#   args:
+#     chdir: "{{ git_repo_dest }}"
+
+# - name: Execute first playbook
+#   command: ./test_1-setup_system_playbook
+#   args:
+#     chdir: "{{ git_repo_dest }}"
+
+- import_playbook: ../../1-setup_system.yaml

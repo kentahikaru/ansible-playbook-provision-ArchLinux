@@ -1,0 +1,51 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  # provider:
+    # Can be any supported provider (VBox, Parallels, libvirt, etc)
+    # name: libvirt
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+platforms:
+  - name: instance
+    instance_raw_config_args:
+    interfaces:
+      - auto_config: true
+        network_name: private_network
+        type: dhcp
+    # config_options:
+    #   synced_folder: True
+    config_options:
+      ssh.keep_alive: true
+      ssh.remote_user: "'vagrant'"
+    box: archlinux/archlinux
+    box_version: 20201215.11392
+    box_url:
+    memory: 1024
+    cpus: 1
+    provider_options:
+      gui: true
+    provider_raw_config_args:
+      - "customize ['modifyvm', :id, '--cpuexecutioncap', '50']"
+      - "customize ['modifyvm', :id, '--vram', '128']"
+      - "customize ['modifyvm', :id, '--audio', 'pulse']"
+      - "customize ['modifyvm', :id, '--audioin', 'on']"
+      - "customize ['modifyvm', :id, '--audioout', 'on']"
+      - "customize ['modifyvm', :id, '--audiocontroller', 'hda']"
+      - "customize ['modifyvm', :id, '--accelerate3d', 'on']"
+      - "customize ['modifyvm', :id, '--clipboard-mode', 'bidirectional']"
+    provider_override_args:
+      - "vm.synced_folder './', '/vagrant', disabled: true, type: 'nfs'"
+    provision: true
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      instance:
+        ansible_user: root
+verifier:
+  name: ansible
