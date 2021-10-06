@@ -69,7 +69,7 @@ packages_list:
   - libxml2
   - anthy
   - ristretto
-  - uim
+  # - uim
   - pulseaudio
   - pulseaudio-alsa
   - pulseaudio-bluetooth

@@ -9,6 +9,7 @@ aur_packages_list:
   - hplip-plugin
   - google-chrome
   - joplin
+  - uim
 
 vscode_extentions:
   - bbenoist.vagrant
@@ -23,5 +24,4 @@ vscode_extentions:
   - redhat.vscode-yaml
   - schneiderpat.aspnet-helper
   - shd101wyy.markdown-preview-enhanced
-  - vscoss.vscode-ansible
   - yzhang.markdown-all-in-one

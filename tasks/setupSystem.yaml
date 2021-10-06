@@ -11,11 +11,11 @@
   command: "echo IO > /etc/hostname"
   changed_when: true
 
-- name: Copy fstab
-  become: true
-  copy:
-    src: files/fstab
-    dest: /etc/fstab
+# - name: Copy fstab
+#   become: true
+#   copy:
+#     src: files/fstab
+#     dest: /etc/fstab
 
 - name: Copy .bashrc
   become: true
@@ -37,12 +37,12 @@
     line: "alias ls='ls --color=auto'"
     state: present
 
-- name: Setup audio sink
-  become: true
-  blockinfile:
-    path: /etc/pulse/default.pa
-    marker: ""
-    marker_begin: ""
-    marker_end: ""
-    block: |
-      set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo
+# - name: Setup audio sink
+#   become: true
+#   blockinfile:
+#     path: /etc/pulse/default.pa
+#     marker: ""
+#     marker_begin: ""
+#     marker_end: ""
+#     block: |
+#       set-default-sink alsa_output.pci-0000_00_1b.0.analog-stereo
