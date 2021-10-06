@@ -8,7 +8,6 @@
       - ansible
       - linux
       - linux-headers
-      - virtualbox-guest-dkms
       - links
       - git
       - unzip
