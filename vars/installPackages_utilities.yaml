@@ -20,3 +20,4 @@ packages_list:
   - gsmartcontrol
   - gnome-packagekit
   - usbutils
+  - doublecmd-gtk2

@@ -6,7 +6,7 @@ aur_packages_list:
   - simple-mtpfs
   - rpi-imager
   # - foo2zjs-minimal-nightly
-  - hplip-plugin
+  # - hplip-plugin # don't know why it's failing in automation, do it manually
   - google-chrome
   - joplin
   - uim

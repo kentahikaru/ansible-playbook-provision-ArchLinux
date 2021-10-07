@@ -10,3 +10,4 @@ launcher_packages_list:
   - { name: skypeforlinux-stable-bin, launcherName: "skypeforlinux" }
   - { name: teams, launcherName: "teams" }
   - { name: joplin-desktop, launcherName: "joplin" }
+  - { name: double-commander, launcherName: "doublecmd" }
