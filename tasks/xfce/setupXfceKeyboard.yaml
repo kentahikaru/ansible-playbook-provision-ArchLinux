@@ -43,11 +43,19 @@
     - { property: "<Alt>t", value: "evince"}
     - { property: "<Alt>f", value: "code"}
     - { property: "<Alt>z", value: "skypeforlinux"}
+    - { property: "<Super>l", value: "xflock4"}
+    - { property: "<Super>p", value: "xfce4-display-settings --minimal"}
+    - { property: "<Control><Alt>Delete", value: "xflock4"}
+    - { property: "<Primary>Escape", value: "xfdesktop --menu"}
+    - { property: "Print", value: "xfce4-screenshooter"}
+    - { property: "<Alt>Print", value: "xfce4-screenshooter -w"}
+    - { property: "<Shift>Print", value: "xfce4-screenshooter -r"}
     - { property: "AudioLowerVolume", value: "pamixer -d 2"}
     - { property: "AudioMute", value: "pamixer -t"}
     - { property: "AudioRaiseVolume", value: "pamixer -i 2"}
     - { property: "Calculator", value: "gnome-calculator"}
-    - { property: "HomePage", value: "chromium"}
+    - { property: "Search", value: "xfce4-settings-manager"}
+    - { property: "HomePage", value: "google-chrome-stable"}
 
 - name: Setup xfce4 keyboard shortcuts
   xfconf:
@@ -71,3 +79,20 @@
     - { property: "<Alt>c", value: "close_window_key"}
     - { property: "<Alt>v", value: "maximize_window_key"}
     - { property: "<Alt>x", value: "stick_window_key"}
+    - { property: "<Alt>Tab", value: "cycle_windows_key"}
+    - { property: "<Alt><Shift>Tab", value: "cycle_reverse_windows_key"}
+    - { property: "<Super>Tab", value: "switch_window_key"}
+    - { property: "<Primary><Alt>d", value: "show_desktop_key"}
+    - { property: "<Primary><Alt>Up", value: "up_workspace_key"}
+    - { property: "<Primary><Alt>Down", value: "down_workspace_key"}
+    - { property: "<Primary><Alt>Home", value: "move_window_prev_workspace_key"}
+    - { property: "<Primary><Alt>End", value: "move_window_next_workspace_key"}
+    - { property: "<Primary><Alt>Page_Up", value: "raise_window_key"}
+    - { property: "<Primary><Alt>Page_Down", value: "lower_window_key"}
+    - { property: "Up", value: "up_key"}
+    - { property: "Down", value: "down_key"}
+    - { property: "Left", value: "left_key"}
+    - { property: "Right", value: "right_key"}
+    - { property: "Escape", value: "cancel_key"}
+
+

@@ -10,6 +10,7 @@ aur_packages_list:
   - google-chrome
   - joplin
   - uim
+  - ventoy-bin
 
 vscode_extentions:
   - bbenoist.vagrant

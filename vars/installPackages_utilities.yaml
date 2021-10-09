@@ -21,3 +21,7 @@ packages_list:
   - gnome-packagekit
   - usbutils
   - doublecmd-gtk2
+  - yubikey-manager-qt
+  - yubikey-personalization-gui
+  - yubikey-touch-detector
+  - yubioath-desktop
