@@ -94,5 +94,3 @@
     - { property: "Left", value: "left_key"}
     - { property: "Right", value: "right_key"}
     - { property: "Escape", value: "cancel_key"}
-
-
