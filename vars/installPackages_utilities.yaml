@@ -16,6 +16,8 @@ packages_list:
   - mc
   - blueman
   - bluez
+  - bluez-utils
+  - bluez-hid2hci
   - deluge
   - gsmartcontrol
   - gnome-packagekit
