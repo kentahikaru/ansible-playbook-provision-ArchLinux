@@ -27,3 +27,5 @@ packages_list:
   - yubikey-personalization-gui
   - yubikey-touch-detector
   - yubioath-desktop
+  - netctl
+  - openresolv
