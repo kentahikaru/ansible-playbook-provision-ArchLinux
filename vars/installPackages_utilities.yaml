@@ -29,3 +29,4 @@ packages_list:
   - yubioath-desktop
   - netctl
   - openresolv
+  - ntp
