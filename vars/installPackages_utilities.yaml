@@ -25,3 +25,4 @@ packages_list:
   - yubikey-personalization-gui
   - yubikey-touch-detector
   - yubioath-desktop
+  - ntfs-3g
