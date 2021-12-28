@@ -16,6 +16,8 @@ packages_list:
   - mc
   - blueman
   - bluez
+  - bluez-utils
+  - bluez-hid2hci
   - deluge
   - gsmartcontrol
   - gnome-packagekit
@@ -26,3 +28,6 @@ packages_list:
   - yubikey-touch-detector
   - yubioath-desktop
   - ntfs-3g
+  - netctl
+  - openresolv
+  - ntp

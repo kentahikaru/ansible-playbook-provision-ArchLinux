@@ -33,3 +33,16 @@ Printer:
 * Install hplip [pacman] and hplip-plugin [aur]
 * start/enable hplip (check status: systemctl status cups)
 * at localhost:631 add printer via wizzard
+
+NTP
+* systemctl enable systemd-timesyncd.service
+* systemctl start systemd-timesyncd.service
+
+/etc/ntp.conf
+```
+server 0.cz.pool.ntp.org
+server 1.cz.pool.ntp.org
+server 2.cz.pool.ntp.org
+server 3.cz.pool.ntp.org
+```
+
