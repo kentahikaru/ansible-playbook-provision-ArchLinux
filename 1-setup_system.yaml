@@ -12,6 +12,7 @@
       become: true
       pacman:
         update-cache: true
+        upgrade: true
 
   tasks:
     - import_tasks: tasks/installPackages.yaml

@@ -20,6 +20,7 @@
     - name: Updating cache
       pacman:
         update-cache: true
+        # upgrade: true
       become: true
 
     - name: Uninstall Virtualbox guest utils nox
@@ -34,3 +35,4 @@
         name: "{{ item }}"
         state: present
       loop: "{{ packages_list }}"
+ 
