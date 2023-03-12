@@ -2,7 +2,7 @@
 aur_packages_list:
   - visual-studio-code-bin
   - skypeforlinux-stable-bin
-  - teams
+  # - teams
   - simple-mtpfs
   - rpi-imager
   # - foo2zjs-minimal-nightly
@@ -20,7 +20,6 @@ vscode_extentions:
   - ms-azuretools.vscode-azurefunctions
   - ms-azuretools.vscode-docker
   - ms-dotnettools.csharp
-  - ms-vscode-deploy-azure.azure-deploy
   - ms-vscode.azure-account
   - redhat.vscode-yaml
   - schneiderpat.aspnet-helper

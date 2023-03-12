@@ -2,7 +2,6 @@
 install_what: "devel"
 packages_list:
   - base-devel
-  - python2
   - python3
   - signify
   - jq

@@ -31,3 +31,4 @@ packages_list:
   - netctl
   - openresolv
   - ntp
+  - fakeroot

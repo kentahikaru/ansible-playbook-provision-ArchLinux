@@ -8,14 +8,26 @@
   register: aur_packages_depedencies
   changed_when: false
 
+- name: Debug dependencies
+  debug:
+    var: aur_packages_depedencies.stdout_lines
+
 - name: Debug
   debug:
-    var: aur_packages_depedencies.stdout_lines[0:-1]
+    msg: "{{ item_debug | split(\"\t\") | last }}"
+  loop: "{{ aur_packages_depedencies.stdout_lines }}"
+  loop_control:
+    loop_var: item_debug
+  when: "package.find(\"{{ item_debug | split(\"\t\") | last }}\") == -1"
 
 - name: Install depedencies except last one, which is AUR package itself
   become: true
   pacman:
-    name: "{{ aur_packages_depedencies.stdout_lines[0:-1] }}"
+    name: "{{ item_aur | split(\"\t\") | last }}"
+  loop: "{{ aur_packages_depedencies.stdout_lines }}"
+  loop_control:
+    loop_var: item_aur
+  when: "package.find(\"{{ item_aur | split(\"\t\") | last }}\") == -1"
 
 - name: "Sync package {{ package }}"
   command: "aur sync --noview {{ package }}"

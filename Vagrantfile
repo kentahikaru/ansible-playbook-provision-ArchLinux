@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "archlinux/archlinux"
-  # config.vm.box_version = ">= 0"
+  config.vm.box_version = ">= 0"
   # config.vm.box_version = "20201215.11392"
   config.ssh.insert_key = false
 
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
   #iosim
   config.vm.define "iosim" do |io|
     io.vm.hostname = "iosim.test"
-    io.vm.network :private_network, ip:"172.16.3.22"
+    io.vm.network :private_network, ip:"192.168.56.22"
   end
 
   config.vm.provision "shell", path: "shell.sh"

@@ -5,7 +5,11 @@
   vars:
     install_what: "bootstrap software"
     packages_list:
+      - archlinux-keyring
+      - virtualbox-guest-utils
+      - arch-install-scripts
       - ansible
+      - python
       - linux
       - linux-headers
       - links
@@ -13,13 +17,12 @@
       - unzip
       - vi
       - vim
-      - virtualbox-guest-utils
-      - arch-install-scripts
+
 
   pre_tasks:
     - name: Updating cache
       pacman:
-        update-cache: true
+        update_cache: true
         # upgrade: true
       become: true
 
@@ -27,6 +30,11 @@
       pacman:
         name: virtualbox-guest-utils-nox
         state: absent
+
+    - name: Install archlinux-keyring
+      pacman:
+        name: archlinux-keyring
+        state: latest
 
   tasks:
     - name: "Install {{ install_what }}"

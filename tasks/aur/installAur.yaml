@@ -18,11 +18,15 @@
 
 - name: Get package version
   set_fact:
-    pkgver: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgver=[0-9].[0-9].[0-9]') }}"
+    pkgver: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgver=[0-9][0-9].[0-9]') }}"
 
 - name: Get package version
   set_fact:
-    pkgver: "{{ pkgver | regex_findall('[0-9].[0-9].[0-9]') }}"
+    pkgver: "{{ pkgver | regex_findall('[0-9][0-9].[0-9]') }}"
+
+- name: Debug
+  debug:
+    var: pkgver
 
 - name: Get release number
   set_fact:
@@ -31,6 +35,33 @@
 - name: Get release number
   set_fact:
     pkgrel: "{{ pkgrel | regex_findall('[0-9]') }}"
+
+- name: Debug
+  debug:
+    var: pkgrel
+
+- name: Get depedencies
+  set_fact:
+    deps: "{{ pkgbuild['content'] | b64decode | regex_findall('\\ndepends=(.*?)\\)') }}"
+
+- name: Debug
+  debug:
+    var: deps
+
+- name: Get depedencies
+  set_fact:
+    deps: "{{ deps | regex_findall('\\w+') }}"
+
+- name: Debug
+  debug:
+    var: deps
+
+- name: "Install depedencies"
+  become: true
+  pacman:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ deps }}"  
 
 - name: Get directory content
   stat:
@@ -52,6 +83,7 @@
   become: true
   pacman:
     name: "{{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
+    # extra_args: "-U"
     state: present
   when: not aurstate.stat.exists
 

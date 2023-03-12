@@ -1,0 +1,40 @@
+---
+- hosts: "{{ variable_host | default('local') }}"
+
+  tasks:
+  - name: Read PKGBUILD
+    slurp:
+      src: "{{ ansible_user_dir }}/aur/aurutils/PKGBUILD"
+    register: pkgbuild
+
+  - name: Debug
+    debug:
+      var: pkgbuild
+
+  - name: Get depedencies
+    set_fact:
+      deps: "{{ pkgbuild['content'] | b64decode | regex_findall('\\ndepends=(.*?)\\)') }}"
+
+  - name: test
+    set_fact:
+      test: "{{ pkgbuild['content'] | b64decode }}"
+
+  - name: Debug
+    debug:
+      var: deps
+
+  - name: Get depedencies
+    set_fact:
+      deps: "{{ deps | regex_findall('\\w+') }}"
+
+  - name: Debug
+    debug:
+      var: deps
+
+  - name: "Install depedencies"
+    become: true
+    pacman:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ deps }}"  
+

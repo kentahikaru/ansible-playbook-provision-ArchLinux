@@ -51,4 +51,4 @@
 - name: Updating cache
   become: true
   pacman:
-    update-cache: true
+    update_cache: true
