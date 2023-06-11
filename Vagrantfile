@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "archlinux/archlinux"
   config.vm.box_version = ">= 0"
-  # config.vm.box_version = "20201215.11392"
+  # config.vm.box_version = "20230515.150700"
   config.ssh.insert_key = false
 
   config.vm.provider :virtualbox do |v|
