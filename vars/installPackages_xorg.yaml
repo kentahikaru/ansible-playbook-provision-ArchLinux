@@ -9,7 +9,7 @@ packages_list:
   - adobe-source-sans-pro-fonts
   - awesome-terminal-fonts
   - cantarell-fonts
-  - dina-font
+  # - dina-font
   - fontconfig
   - gnu-free-fonts
   - gsfonts

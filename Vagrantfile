@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.ssh.insert_key = false
 
   config.vm.provider :virtualbox do |v|
-    v.cpus = 1
+    v.cpus = 2
     v.memory = 2048
     v.gui = true
     v.linked_clone = true
