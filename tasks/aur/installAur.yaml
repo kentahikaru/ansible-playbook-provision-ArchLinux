@@ -50,7 +50,7 @@
 
 - name: Get depedencies
   set_fact:
-    deps: "{{ deps | regex_findall('\\w+') }}"
+    deps: "{{ deps | regex_findall('[\\w-]+') }}"
 
 - name: Debug
   debug:

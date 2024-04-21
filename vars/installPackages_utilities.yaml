@@ -29,6 +29,6 @@ packages_list:
   - yubioath-desktop
   - ntfs-3g
   - netctl
-  - openresolv
+# - openresolv
   - ntp
   - fakeroot
