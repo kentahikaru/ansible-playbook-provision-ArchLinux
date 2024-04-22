@@ -36,5 +36,4 @@
     pacman:
       name: "{{ item }}"
       state: present
-    loop: "{{ deps }}"  
-
+    loop: "{{ deps }}"

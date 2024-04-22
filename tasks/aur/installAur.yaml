@@ -61,7 +61,7 @@
   pacman:
     name: "{{ item }}"
     state: present
-  loop: "{{ deps }}"  
+  loop: "{{ deps }}"
 
 - name: Get directory content
   stat:
