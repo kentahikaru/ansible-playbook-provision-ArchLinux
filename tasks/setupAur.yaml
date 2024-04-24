@@ -8,4 +8,4 @@
     file: vars/main.yaml
 
 - import_tasks: tasks/aur/installAur.yaml
-- import_tasks: tasks/aur/configureAur.yaml
+# - import_tasks: tasks/aur/configureAur.yaml
