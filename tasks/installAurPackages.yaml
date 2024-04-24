@@ -12,22 +12,29 @@
   debug:
     var: aur_packages_depedencies.stdout_lines
 
-- name: Debug
+- name: Filter out depedencies
+  set_fact:
+    filtered_depedencies: "{{ aur_packages_depedencies.stdout_lines | map('split', '\t' ) | map('last') | list }}"
+
+- name: Debug filtered depedencies
   debug:
-    msg: "{{ item_debug | split(\"\t\") | last }}"
-  loop: "{{ aur_packages_depedencies.stdout_lines }}"
-  loop_control:
-    loop_var: item_debug
-  when: "package.find(\"{{ item_debug | split(\"\t\") | last }}\") == -1"
+    var: filtered_depedencies
+
+- name: Reject package from list of depedencies
+  set_fact:
+    filtered_rejected_dependencies: "{{ filtered_depedencies | reject('equalto', package) | list  }}"
+
+- name: Debug filtered and rejected depedencies
+  debug:
+    var: filtered_rejected_dependencies
 
 - name: Install depedencies except last one, which is AUR package itself
   become: true
   pacman:
     name: "{{ item_aur | split(\"\t\") | last }}"
-  loop: "{{ aur_packages_depedencies.stdout_lines }}"
+  loop: "{{ filtered_rejected_dependencies }}"
   loop_control:
     loop_var: item_aur
-  when: "package.find(\"{{ item_aur | split(\"\t\") | last }}\") == -1"
 
 - name: "Sync package {{ package }}"
   command: "aur sync --noview {{ package }}"
