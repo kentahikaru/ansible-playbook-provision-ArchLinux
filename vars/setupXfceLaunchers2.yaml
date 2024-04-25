@@ -4,7 +4,7 @@ launcher_panel_property: panel-5
 plugin_ids_array: []
 launcher_packages_list:
   - { name: code, launcherName: "code" }
-  - { name: rpi-imager, launcherName: "rpi-imager" }
+  - { name: rpi-imager, launcherName: "org.raspberrypi.rpi-imager" }
   - { name: ventoy, launcherName: "ventoy" }
   - { name: virtualbox, launcherName: "virtualbox" }
   - { name: keepassxc, launcherName: "org.keepassxc.KeePassXC" }
