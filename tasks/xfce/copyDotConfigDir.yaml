@@ -3,3 +3,4 @@
   copy:
     src: files/.config
     dest: "/home/{{ as_user }}"
+    mode: 0755

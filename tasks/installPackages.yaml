@@ -8,8 +8,8 @@
   include_role:
     name: installpackages
   vars:
-    packages_list: "{{ installPackagesVars.packages_list }}"
-    install_what: "{{ installPackagesVars.install_what }}"
+    installpackages_packages_list: "{{ installPackagesVars.packages_list }}"
+    installpackages_install_what: "{{ installPackagesVars.install_what }}"
 
 - name: Load list of utilities packages into variable
   include_vars:
@@ -20,8 +20,8 @@
   include_role:
     name: installpackages
   vars:
-    packages_list: "{{ installPackagesVars.packages_list }}"
-    install_what: "{{ installPackagesVars.install_what }}"
+    installpackages_packages_list: "{{ installPackagesVars.packages_list }}"
+    installpackages_install_what: "{{ installPackagesVars.install_what }}"
 
 - name: Load list of dev packages into variable
   include_vars:
@@ -32,5 +32,5 @@
   include_role:
     name: installpackages
   vars:
-    packages_list: "{{ installPackagesVars.packages_list }}"
-    install_what: "{{ installPackagesVars.install_what }}"
+    installpackages_packages_list: "{{ installPackagesVars.packages_list }}"
+    installpackages_install_what: "{{ installPackagesVars.install_what }}"

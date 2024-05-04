@@ -1,5 +1,6 @@
 ---
-- hosts: iosim
+- name: Reboot
+  hosts: iosim
 
   tasks:
     - name: Reboot immediately.

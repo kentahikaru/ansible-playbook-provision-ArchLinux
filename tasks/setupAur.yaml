@@ -7,5 +7,5 @@
   include_vars:
     file: vars/main.yaml
 
-- import_tasks: tasks/aur/installAur.yaml
-# - import_tasks: tasks/aur/configureAur.yaml
+- name: Import installAur
+  ansible.builtin.import_tasks: tasks/aur/installAur.yaml

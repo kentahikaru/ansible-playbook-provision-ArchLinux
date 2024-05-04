@@ -1,11 +1,13 @@
 ---
-- hosts: "{{ variable_host | default('local') }}"
+- name: Setup aur
+  hosts: "{{ variable_host | default('local') }}"
 
   vars_files:
     - vars/main.yaml
 
   tasks:
-    - import_tasks: tasks/setupAur.yaml
+    - name: Import setupAur
+      import_tasks: tasks/setupAur.yaml
 
     - name: Update cache and system
       become: true

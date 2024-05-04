@@ -1,5 +1,6 @@
 ---
-- hosts: iosim
+- name: Setup autologin to xorg
+  hosts: iosim
 
   vars_files:
     - ../vars/main.yaml
@@ -10,12 +11,14 @@
       file:
         path: "/etc/systemd/system/getty@tty1.service.d"
         state: directory
+        mode: 0755
 
     - name: Copy autologin config
       become: true
       template:
         src: skip-prompt.conf.j2
         dest: "/etc/systemd/system/getty@tty1.service.d/skip-prompt.conf"
+        mode: 0755
 
     - name: Autostart xorg after login
       # become: true

@@ -15,7 +15,7 @@
     - { property: 'panel-4', subproperty: "/size", type: int, value: "48" }
     - { property: 'panel-4', subproperty: "/span-monitors", type: bool, value: "FALSE" }
 
-- name: panel-4 set plugin-ids
+- name: Panel-4 set plugin-ids
   xfconf:
     channel: "xfce4-panel"
     property: "/panels/panel-4/plugin-ids"

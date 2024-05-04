@@ -1,5 +1,6 @@
 ---
-- hosts: "{{ variable_host | default('local') }}"
+- name: Install aur packages
+  hosts: "{{ variable_host | default('local') }}"
 
   vars_files:
     - vars/installAurPackages.yaml
@@ -15,7 +16,8 @@
       register: installed_aur_packages_number
       changed_when: false
 
-    - include_tasks: tasks/installAurPackages.yaml
+    - name: Include installAurPackages
+      include_tasks: tasks/installAurPackages.yaml
       vars:
         package: "{{ item }}"
       with_items: "{{ aur_packages_list }}"
@@ -38,7 +40,8 @@
       register: vs_code_extension_number
       changed_when: false
 
-    - name: extensions to vs code
+    - name: Extensions to vs code
       command: "code --install-extension {{ item }}"
       with_items: "{{ vscode_extentions }}"
       when: vs_code_extension_number.stdout_lines[0] <= '5'
+      changed_when: false

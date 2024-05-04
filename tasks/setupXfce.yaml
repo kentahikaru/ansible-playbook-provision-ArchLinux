@@ -1,30 +1,57 @@
 ---
-- name: reset all panels
+- name: Reset all panels
   command: xfconf-query -c xfce4-panel -r -R -p /panels
   changed_when: true
 
-- name: reset all plugins
+- name: Reset all plugins
   command: xfconf-query -c xfce4-panel -r -R -p /plugins
   changed_when: true
 
-- name: make 5 panels
+- name: Make 5 panels
   xfconf:
     channel: "xfce4-panel"
     property: "/panels"
     value_type: "int"
     value: "1,2,3,4,5"
 
-- import_tasks: tasks/xfce/setupXfceGeneral.yaml
-- import_tasks: tasks/xfce/setupXfceMiscellaneous.yaml
-- import_tasks: tasks/xfce/setupXfcePlugins2.yaml
-- import_tasks: tasks/xfce/setupXfceLaunchers.yaml
-- import_tasks: tasks/xfce/copyDotConfigDir.yaml
-- import_tasks: tasks/xfce/setupXfceScreensaver.yaml
-- import_tasks: tasks/xfce/setupXfcePanel1.yaml
-- import_tasks: tasks/xfce/setupXfcePanel2.yaml
-- import_tasks: tasks/xfce/setupXfcePanel3.yaml
-- import_tasks: tasks/xfce/setupXfcePanel4.yaml
-- import_tasks: tasks/xfce/setupXfcePanel5.yaml
-- import_tasks: tasks/xfce/setupXfceKeyboard.yaml
-- import_tasks: tasks/xfce/setupUim.yaml
-- import_tasks: tasks/xfce/setupDefaults.yaml
+- name: Import setupXfceGeneral
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceGeneral.yaml
+
+- name: Import setupXfceMiscellaneous
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceMiscellaneous.yaml
+
+- name: Import setupXfcePlugins2
+  ansible.builtin.import_tasks: tasks/xfce/setupXfcePlugins2.yaml
+
+- name: Import setupXfceLaunchers
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceLaunchers.yaml
+
+- name: Import copyDotConfigDir
+  ansible.builtin.import_tasks: tasks/xfce/copyDotConfigDir.yaml
+
+- name: Import setupXfceScreensaver
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceScreensaver.yaml
+
+- name: Import setupXfcePanel1
+  ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel1.yaml
+
+- name: Import setupXfcePanel2
+  ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel2.yaml
+
+- name: Import setupXfcePanel3
+  ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel3.yaml
+
+- name: Import setupXfcePanel4
+  ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel4.yaml
+
+- name: Import setupXfcePanel5
+  ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel5.yaml
+
+- name: Import setupXfceKeyboard
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceKeyboard.yaml
+
+- name: Import setupUim
+  ansible.builtin.import_tasks: tasks/xfce/setupUim.yaml
+
+- name: Import setupDefaults
+  ansible.builtin.import_tasks: tasks/xfce/setupDefaults.yaml

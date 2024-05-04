@@ -3,6 +3,7 @@
   copy:
     src: "files/{{ item.filename }}"
     dest: ~/
+    mode: 0755
   with_items:
     - { filename: '.Xdefaults'}
     - { filename: '.xinitrc'}

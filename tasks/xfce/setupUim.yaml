@@ -3,3 +3,4 @@
   copy:
     src: files/.uim.d
     dest: ~/
+    mode: 0755

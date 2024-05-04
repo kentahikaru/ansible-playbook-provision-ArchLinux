@@ -3,7 +3,7 @@
   debug:
     var: package
 
-- name: "Get {{ package }} depedencies"
+- name: "Get depedencies for {{ package }}"
   command: "aur depends -a {{ package }}"
   register: aur_packages_depedencies
   changed_when: false
@@ -13,16 +13,16 @@
     var: aur_packages_depedencies.stdout_lines
 
 - name: Filter out depedencies
-  set_fact:
-    filtered_depedencies: "{{ aur_packages_depedencies.stdout_lines | map('split', '\t' ) | map('last') | list }}"
+  ansible.builtin.set_fact:
+    filtered_depedencies: "{{ aur_packages_depedencies.stdout_lines | map('split', '\t') | map('last') | list }}"
 
 - name: Debug filtered depedencies
   debug:
     var: filtered_depedencies
 
 - name: Reject package from list of depedencies
-  set_fact:
-    filtered_rejected_dependencies: "{{ filtered_depedencies | reject('equalto', package) | list  }}"
+  ansible.builtin.set_fact:
+    filtered_rejected_dependencies: "{{ filtered_depedencies | reject('equalto', package) | list }}"
 
 - name: Debug filtered and rejected depedencies
   debug:

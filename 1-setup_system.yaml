@@ -1,5 +1,6 @@
 ---
-- hosts: "{{ variable_host | default('local') }}"
+- name: Setup system
+  hosts: "{{ variable_host | default('local') }}"
 
   vars_files:
     - vars/main.yaml
@@ -15,13 +16,13 @@
         upgrade: true
 
   tasks:
-    - import_tasks: tasks/installPackages.yaml
-    - import_tasks: tasks/setupSystem.yaml
+    - name: Import installPackages
+      ansible.builtin.import_tasks: tasks/installPackages.yaml
+    - name: Import setupSystem
+      ansible.builtin.import_tasks: tasks/setupSystem.yaml
       become: true
-    - import_tasks: tasks/setupStardict.yaml
-    # - import_tasks: tasks/setupAur.yaml
-    # - import_tasks: tasks/installAndConcigureRedshift.yaml
-    # - import_tasks: tasks/setupXfce.yaml
+    - name: Import setupStardict
+      ansible.builtin.import_tasks: tasks/setupStardict.yaml
 
     - name: Update cache and system
       become: true

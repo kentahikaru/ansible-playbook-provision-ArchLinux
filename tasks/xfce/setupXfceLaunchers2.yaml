@@ -6,13 +6,14 @@
     state: directory
     mode: 0700
 
-- name: Copy launcher for {{ package.name }} to my .config dir
+- name: To my .config dir copy launcher for {{ package.name }}
   copy:
     src: "/usr/share/applications/{{ package.launcherName }}.desktop"
     dest: "{{ home }}.config/xfce4/panel/launcher-{{ launcher_plugin_id }}/{{ package.launcherName }}.desktop"
     remote_src: true
+    mode: 0755
 
-- name: "Add launcher as plugin-{{ launcher_plugin_id }} to xfce4-panel settings"
+- name: "To xfce4-panel settings add launcher as plugin-{{ launcher_plugin_id }}"
   xfconf:
     channel: "xfce4-panel"
     property: "/plugins/{{ pluginItem.property }}{{ pluginItem.subproperty }}"
@@ -27,7 +28,7 @@
 
 - name: Set facts
   set_fact:
-    plugin_ids_array: "{{ plugin_ids_array + [ launcher_plugin_id ] }}"
+    plugin_ids_array: "{{ plugin_ids_array + [launcher_plugin_id] }}"
 
 - name: Debug
   debug:
@@ -39,8 +40,8 @@
     property: "/panels/{{ launcher_panel_property }}/plugin-ids"
     value_type: int
     value: "{{ plugin_ids_array }}"
-  register: panelValues
+  register: panel_values
 
-- name: increment launcher_plugin_id
+- name: Increment launcher_plugin_id
   set_fact:
     launcher_plugin_id: "{{ launcher_plugin_id | int + 1 }}"

@@ -22,6 +22,7 @@
   copy:
     src: files/.bashrc
     dest: ~/
+    mode: 0755
 
 - name: Set global PS1
   lineinfile:

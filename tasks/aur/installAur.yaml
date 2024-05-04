@@ -73,6 +73,7 @@
   args:
     chdir: "{{ ansible_user_dir }}/aur/aurutils"
   when: not pkgstate.stat.exists
+  changed_when: false
 
 - name: Is aur installed?
   stat:
@@ -92,6 +93,7 @@
   args:
     chdir: "{{ ansible_user_dir }}/aur/aurutils"
   when: not aurstate.stat.exists
+  changed_when: false
 
 - name: Create repo directory
   become: true
@@ -110,6 +112,8 @@
 - name: Create repo db
   command: "repo-add -n {{ repo_dir }}/{{ repo_name }} {{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
   when: not repodbstate.stat.exists
+  register: repo_add_output
+  changed_when: repo_add_output.stdout.find('No changes made to package database.') != -1
 
 - name: Read pacman.conf
   become: true

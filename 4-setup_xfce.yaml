@@ -1,14 +1,18 @@
 ---
-- hosts: "{{ variable_host | default('local') }}"
+- name: Setup XFCE
+  hosts: "{{ variable_host | default('local') }}"
 
   vars_files:
     - vars/main.yaml
     - vars/setupXfceLaunchers2.yaml
 
   tasks:
-    - import_tasks: tasks/installAndConcigureRedshift.yaml
-    - import_tasks: tasks/setupXfce.yaml
-    - include_tasks: tasks/xfce/setupXfceLaunchers2.yaml
+    - name: Import installAndConcigureRedshift
+      ansible.builtin.import_tasks: tasks/installAndConcigureRedshift.yaml
+    - name: Import setupXfce
+      ansible.builtin.import_tasks: tasks/setupXfce.yaml
+    - name: Include setupXfceLaunchers2
+      ansible.builtin.include_tasks: tasks/xfce/setupXfceLaunchers2.yaml
       vars:
         package: "{{ item }}"
       with_items: "{{ launcher_packages_list }}"
