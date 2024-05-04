@@ -34,7 +34,7 @@
 
     - name: "Install depedencies"
       become: true
-      pacman:
+      community.general.pacman:
         name: "{{ item }}"
         state: present
       loop: "{{ deps }}"

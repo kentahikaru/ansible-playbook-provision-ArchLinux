@@ -1,6 +1,6 @@
 ---
 - name: "Setup xsettings"
-  xfconf:
+  community.general.xfconf:
     channel: "xsettings"
     property: "/Gtk/{{ item.property }}{{ item.subproperty }}"
     value_type: "{{ item.type }}"
@@ -10,7 +10,7 @@
     - { property: 'CursorThemeSize', subproperty: "", type: int, value: "0" }
 
 - name: "Setup theme and icon theme"
-  xfconf:
+  community.general.xfconf:
     channel: "xsettings"
     property: "/Net/{{ item.property }}{{ item.subproperty }}"
     value_type: "{{ item.type }}"

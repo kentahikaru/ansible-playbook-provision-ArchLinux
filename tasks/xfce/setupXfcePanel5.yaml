@@ -1,6 +1,6 @@
 ---
 - name: "Setting up Panel5"
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-panel"
     property: "/panels/{{ item.property }}{{ item.subproperty }}"
     value_type: "{{ item.type }}"

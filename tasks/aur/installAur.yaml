@@ -58,7 +58,7 @@
 
 - name: "Install depedencies"
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ item }}"
     state: present
   loop: "{{ deps }}"
@@ -82,7 +82,7 @@
 
 - name: Install package
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
     # extra_args: "-U"
     state: present
@@ -148,5 +148,5 @@
 
 - name: Updating cache
   become: true
-  pacman:
+  community.general.pacman:
     update_cache: true

@@ -14,7 +14,7 @@
     mode: 0755
 
 - name: "To xfce4-panel settings add launcher as plugin-{{ launcher_plugin_id }}"
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-panel"
     property: "/plugins/{{ pluginItem.property }}{{ pluginItem.subproperty }}"
     value_type: "{{ pluginItem.type }}"
@@ -35,7 +35,7 @@
     var: plugin_ids_array
 
 - name: "Add new launcher to panel"
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-panel"
     property: "/panels/{{ launcher_panel_property }}/plugin-ids"
     value_type: int

@@ -30,7 +30,7 @@
 
 - name: Install depedencies except last one, which is AUR package itself
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ item_aur | split(\"\t\") | last }}"
   loop: "{{ filtered_rejected_dependencies }}"
   loop_control:
@@ -42,6 +42,6 @@
 
 - name: "Install package {{ package }}"
   become: true
-  pacman:
+  community.general.pacman:
     name: "{{ package }}"
     state: present

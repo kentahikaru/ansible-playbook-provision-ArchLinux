@@ -11,7 +11,7 @@
   pre_tasks:
     - name: Updating cache
       become: true
-      pacman:
+      community.general.pacman:
         update_cache: true
         upgrade: true
 
@@ -26,6 +26,6 @@
 
     - name: Update cache and system
       become: true
-      pacman:
+      community.general.pacman:
         update_cache: true
         upgrade: true

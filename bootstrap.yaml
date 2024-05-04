@@ -21,25 +21,25 @@
 
   pre_tasks:
     - name: Updating cache
-      pacman:
+      community.general.pacman:
         update_cache: true
         # upgrade: true
       become: true
 
     - name: Uninstall Virtualbox guest utils nox
-      pacman:
+      community.general.pacman:
         name: virtualbox-guest-utils-nox
         state: absent
 
     - name: Install archlinux-keyring
-      pacman:
+      community.general.pacman:
         name: archlinux-keyring
         state: present
 
   tasks:
     - name: "Install {{ install_what }}"
       become: true
-      pacman:
+      community.general.pacman:
         name: "{{ item }}"
         state: present
       loop: "{{ packages_list }}"

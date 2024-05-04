@@ -1,6 +1,6 @@
 ---
 - name: "Setup xfwm4 general settings"
-  xfconf:
+  community.general.xfconf:
     channel: "xfwm4"
     property: "/general/{{ item.property }}{{ item.subproperty }}"
     value_type: "{{ item.type }}"

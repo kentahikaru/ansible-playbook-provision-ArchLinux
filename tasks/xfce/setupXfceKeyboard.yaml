@@ -1,6 +1,6 @@
 ---
 - name: Remove some custom shortcuts
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/custom/{{ item.property }}"
     value_type: "string"
@@ -12,7 +12,7 @@
     - { property: "<Alt>F3", value: ""}
 
 - name: Remove some default shortcuts
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/default/{{ item.property }}"
     value_type: "string"
@@ -24,7 +24,7 @@
     - { property: "<Alt>F3", value: ""}
 
 - name: Setup custom keyboard shortcuts
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/custom/{{ item.property }}"
     value_type: "string"
@@ -59,7 +59,7 @@
     - { property: "HomePage", value: "google-chrome-stable"}
 
 - name: Setup xfce4 keyboard shortcuts
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/xfwm4/custom/{{ item.property }}"
     value_type: "string"

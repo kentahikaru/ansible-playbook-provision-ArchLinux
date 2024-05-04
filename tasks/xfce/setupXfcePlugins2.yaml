@@ -1,6 +1,6 @@
 ---
 - name: "Setup Plugins"
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-panel"
     property: "/plugins/{{ item.property }}{{ item.subproperty }}"
     value_type: "{{ item.type }}"

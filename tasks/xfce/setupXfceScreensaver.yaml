@@ -1,6 +1,6 @@
 ---
 - name: "Setup xfce screensaver"
-  xfconf:
+  community.general.xfconf:
     channel: "xfce4-screensaver"
     property: "/saver/{{ item.property }}{{ item.subproperty }}"
     value_type: "{{ item.type }}"
