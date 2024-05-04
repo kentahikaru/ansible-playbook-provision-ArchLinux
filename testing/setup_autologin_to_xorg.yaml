@@ -8,14 +8,14 @@
   tasks:
     - name: Create getty@tty1.service.d directory
       become: true
-      file:
+      ansible.builtin.file:
         path: "/etc/systemd/system/getty@tty1.service.d"
         state: directory
         mode: 0755
 
     - name: Copy autologin config
       become: true
-      template:
+      ansible.builtin.template:
         src: skip-prompt.conf.j2
         dest: "/etc/systemd/system/getty@tty1.service.d/skip-prompt.conf"
         mode: 0755
@@ -23,7 +23,7 @@
     - name: Autostart xorg after login
       # become: true
       # become_user: "{{ as_user }}"
-      blockinfile:
+      ansible.builtin.blockinfile:
         path: "/home/{{ as_user }}/.bash_profile"
         # marker: ""
         # marker_begin: ""

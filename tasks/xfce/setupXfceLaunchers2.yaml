@@ -1,13 +1,13 @@
 ---
 ## Create launcher in panel
 - name: Make direcotry for launcher
-  file:
+  ansible.builtin.file:
     path: "{{ home }}.config/xfce4/panel/launcher-{{ launcher_plugin_id }}"
     state: directory
     mode: 0700
 
 - name: To my .config dir copy launcher for {{ package.name }}
-  copy:
+  ansible.builtin.copy:
     src: "/usr/share/applications/{{ package.launcherName }}.desktop"
     dest: "{{ home }}.config/xfce4/panel/launcher-{{ launcher_plugin_id }}/{{ package.launcherName }}.desktop"
     remote_src: true
@@ -27,11 +27,11 @@
     loop_var: pluginItem
 
 - name: Set facts
-  set_fact:
+  ansible.builtin.set_fact:
     plugin_ids_array: "{{ plugin_ids_array + [launcher_plugin_id] }}"
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: plugin_ids_array
 
 - name: "Add new launcher to panel"
@@ -43,5 +43,5 @@
   register: panel_values
 
 - name: Increment launcher_plugin_id
-  set_fact:
+  ansible.builtin.set_fact:
     launcher_plugin_id: "{{ launcher_plugin_id | int + 1 }}"

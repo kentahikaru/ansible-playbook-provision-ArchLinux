@@ -1,15 +1,15 @@
 ---
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: package
 
 - name: "Get depedencies for {{ package }}"
-  command: "aur depends -a {{ package }}"
+  ansible.builtin.command: "aur depends -a {{ package }}"
   register: aur_packages_depedencies
   changed_when: false
 
 - name: Debug dependencies
-  debug:
+  ansible.builtin.debug:
     var: aur_packages_depedencies.stdout_lines
 
 - name: Filter out depedencies
@@ -17,7 +17,7 @@
     filtered_depedencies: "{{ aur_packages_depedencies.stdout_lines | map('split', '\t') | map('last') | list }}"
 
 - name: Debug filtered depedencies
-  debug:
+  ansible.builtin.debug:
     var: filtered_depedencies
 
 - name: Reject package from list of depedencies
@@ -25,7 +25,7 @@
     filtered_rejected_dependencies: "{{ filtered_depedencies | reject('equalto', package) | list }}"
 
 - name: Debug filtered and rejected depedencies
-  debug:
+  ansible.builtin.debug:
     var: filtered_rejected_dependencies
 
 - name: Install depedencies except last one, which is AUR package itself
@@ -37,7 +37,7 @@
     loop_var: item_aur
 
 - name: "Sync package {{ package }}"
-  command: "aur sync --noview {{ package }}"
+  ansible.builtin.command: "aur sync --noview {{ package }}"
   changed_when: true
 
 - name: "Install package {{ package }}"

@@ -1,35 +1,35 @@
 ---
 - name: Load list of xorg packages into variable
-  include_vars:
+  ansible.builtin.include_vars:
     file: vars/installPackages_xorg.yaml
     name: installPackagesVars
 
 - name: Install xorg
-  include_role:
+  ansible.builtin.include_role:
     name: installpackages
   vars:
     installpackages_packages_list: "{{ installPackagesVars.packages_list }}"
     installpackages_install_what: "{{ installPackagesVars.install_what }}"
 
 - name: Load list of utilities packages into variable
-  include_vars:
+  ansible.builtin.include_vars:
     file: vars/installPackages_utilities.yaml
     name: installPackagesVars
 
 - name: Install utilities
-  include_role:
+  ansible.builtin.include_role:
     name: installpackages
   vars:
     installpackages_packages_list: "{{ installPackagesVars.packages_list }}"
     installpackages_install_what: "{{ installPackagesVars.install_what }}"
 
 - name: Load list of dev packages into variable
-  include_vars:
+  ansible.builtin.include_vars:
     file: vars/installPackages_dev.yaml
     name: installPackagesVars
 
 - name: Install dev
-  include_role:
+  ansible.builtin.include_role:
     name: installpackages
   vars:
     installpackages_packages_list: "{{ installPackagesVars.packages_list }}"

@@ -7,7 +7,7 @@
 
   tasks:
     - name: Import setupAur
-      import_tasks: tasks/setupAur.yaml
+      ansible.builtin.import_tasks: tasks/setupAur.yaml
 
     - name: Update cache and system
       become: true

@@ -1,6 +1,6 @@
 ---
 - name: "Copy {{ item.filename }}"
-  copy:
+  ansible.builtin.copy:
     src: "files/{{ item.filename }}"
     dest: ~/
     mode: 0755

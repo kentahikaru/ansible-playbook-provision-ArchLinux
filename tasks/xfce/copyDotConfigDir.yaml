@@ -1,6 +1,6 @@
 ---
 - name: Copy Xfce .config directory to user's home directory
-  copy:
+  ansible.builtin.copy:
     src: files/.config
     dest: "/home/{{ as_user }}"
     mode: 0755

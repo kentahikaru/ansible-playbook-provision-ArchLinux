@@ -1,14 +1,14 @@
 ---
 - name: Setup timezone
   # command: ln -sf /usr/share/zoneinfo/Europe/Prague /etc/localtime
-  file:
+  ansible.builtin.file:
     src: /usr/share/zoneinfo/Europe/Prague
     dest: /etc/localtime
     state: link
 
 - name: Setup hostname
   become: true
-  command: "echo IO > /etc/hostname"
+  ansible.builtin.command: "echo IO > /etc/hostname"
   changed_when: true
 
 # - name: Copy fstab
@@ -19,20 +19,20 @@
 
 - name: Copy .bashrc
   become: true
-  copy:
+  ansible.builtin.copy:
     src: files/.bashrc
     dest: ~/
     mode: 0755
 
 - name: Set global PS1
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: "/etc/bash.bashrc"
     regexp: "^PS1="
     line: "PS1='[\\u@\\h \\w]\\$ '"
     state: present
 
 - name: Set global ls alias
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: "/etc/bash.bashrc"
     regexp: "alias ls="
     line: "alias ls='ls --color=auto'"

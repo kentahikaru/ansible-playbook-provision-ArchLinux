@@ -1,59 +1,59 @@
 ---
 - name: Make direcotry for aur installation
-  file:
+  ansible.builtin.file:
     path: "{{ ansible_user_dir }}/aur"
     state: directory
     mode: 0744
 
 - name: Download and extract PKGBUILD
-  unarchive:
+  ansible.builtin.unarchive:
     src: https://aur.archlinux.org/cgit/aur.git/snapshot/aurutils.tar.gz
     dest: "{{ ansible_user_dir }}/aur/"
     remote_src: true
 
 - name: Read PKGBUILD
-  slurp:
+  ansible.builtin.slurp:
     src: "{{ ansible_user_dir }}/aur/aurutils/PKGBUILD"
   register: pkgbuild
 
 - name: Get package version
-  set_fact:
+  ansible.builtin.set_fact:
     pkgver: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgver=[0-9][0-9].[0-9]') }}"
 
 - name: Get package version
-  set_fact:
+  ansible.builtin.set_fact:
     pkgver: "{{ pkgver | regex_findall('[0-9][0-9].[0-9]') }}"
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: pkgver
 
 - name: Get release number
-  set_fact:
+  ansible.builtin.set_fact:
     pkgrel: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgrel=[0-9]') }}"
 
 - name: Get release number
-  set_fact:
+  ansible.builtin.set_fact:
     pkgrel: "{{ pkgrel | regex_findall('[0-9]') }}"
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: pkgrel
 
 - name: Get depedencies
-  set_fact:
+  ansible.builtin.set_fact:
     deps: "{{ pkgbuild['content'] | b64decode | regex_findall('\\ndepends=(.*?)\\)') }}"
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: deps
 
 - name: Get depedencies
-  set_fact:
+  ansible.builtin.set_fact:
     deps: "{{ deps | regex_findall('[\\w-]+') }}"
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: deps
 
 - name: "Install depedencies"
@@ -64,19 +64,19 @@
   loop: "{{ deps }}"
 
 - name: Get directory content
-  stat:
+  ansible.builtin.stat:
     path: "{{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
   register: pkgstate
 
 - name: Build package
-  command: makepkg
+  ansible.builtin.command: makepkg
   args:
     chdir: "{{ ansible_user_dir }}/aur/aurutils"
   when: not pkgstate.stat.exists
   changed_when: false
 
 - name: Is aur installed?
-  stat:
+  ansible.builtin.stat:
     path: /usr/bin/aur
   register: aurstate
 
@@ -89,7 +89,7 @@
   when: not aurstate.stat.exists
 
 - name: Clean package
-  command: makepkg -f --clean
+  ansible.builtin.command: makepkg -f --clean
   args:
     chdir: "{{ ansible_user_dir }}/aur/aurutils"
   when: not aurstate.stat.exists
@@ -97,7 +97,7 @@
 
 - name: Create repo directory
   become: true
-  file:
+  ansible.builtin.file:
     path: "{{ repo_dir }}"
     state: directory
     owner: "{{ as_user }}"
@@ -105,37 +105,37 @@
     mode: 0755
 
 - name: Does repo db already exists?
-  stat:
+  ansible.builtin.stat:
     path: "{{ repo_dir }}/{{ repo_name }}"
   register: repodbstate
 
 - name: Create repo db
-  command: "repo-add -n {{ repo_dir }}/{{ repo_name }} {{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
+  ansible.builtin.command: "repo-add -n {{ repo_dir }}/{{ repo_name }} {{ ansible_user_dir }}/aur/aurutils/aurutils-{{ pkgver[0] }}-{{ pkgrel[0] }}-any.pkg.tar.zst"
   when: not repodbstate.stat.exists
   register: repo_add_output
   changed_when: repo_add_output.stdout.find('No changes made to package database.') != -1
 
 - name: Read pacman.conf
   become: true
-  slurp:
+  ansible.builtin.slurp:
     src: "/etc/pacman.conf"
   register: pacmanconf
 
 - name: Is pacman.conf configured?
-  set_fact:
+  ansible.builtin.set_fact:
     aurrepoconf: "{{ pacmanconf['content'] | b64decode | regex_findall('aur_repo') }}"
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: aurrepoconf
 
 - name: Debug
-  debug:
+  ansible.builtin.debug:
     var: not aurrepoconf
 
 - name: Insert configuration for aur repo into pacman.conf
   become: true
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: /etc/pacman.conf
     marker: ""
     marker_begin: ""

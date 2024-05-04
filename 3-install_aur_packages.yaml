@@ -8,7 +8,7 @@
 
   tasks:
     - name: Get number of aur installed packages
-      shell: |
+      ansible.builtin.shell: |
         set -o pipefail
         aur repo -l | wc -l
       args:
@@ -17,7 +17,7 @@
       changed_when: false
 
     - name: Include installAurPackages
-      include_tasks: tasks/installAurPackages.yaml
+      ansible.builtin.include_tasks: tasks/installAurPackages.yaml
       vars:
         package: "{{ item }}"
       with_items: "{{ aur_packages_list }}"
@@ -26,13 +26,13 @@
     # add user to group, don't forget to restart cups by "systemctl restart cups"
     - name: Add user to lp group
       become: true
-      user:
+      ansible.builtin.user:
         name: "{{ as_user }}"
         groups: lp
         append: true
 
     - name: Cound VS Code extensions already installed
-      shell: |
+      ansible.builtin.shell: |
         set -o pipefail
         code --list-extensions | wc -l
       args:
@@ -41,7 +41,7 @@
       changed_when: false
 
     - name: Extensions to vs code
-      command: "code --install-extension {{ item }}"
+      ansible.builtin.command: "code --install-extension {{ item }}"
       with_items: "{{ vscode_extentions }}"
       when: vs_code_extension_number.stdout_lines[0] <= '5'
       changed_when: false

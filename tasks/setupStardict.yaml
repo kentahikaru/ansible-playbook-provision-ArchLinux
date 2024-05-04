@@ -1,7 +1,7 @@
 ---
 - name: Copy dictionaries to Stardic
   become: true
-  copy:
+  ansible.builtin.copy:
     src: files/stardict_dic/
     dest: /usr/share/stardict/dic
     mode: 0755

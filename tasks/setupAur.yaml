@@ -1,10 +1,10 @@
 ---
 - name: Load list of variables
-  include_vars:
+  ansible.builtin.include_vars:
     file: vars/setupAur.yaml
 
 - name: Load list of variables
-  include_vars:
+  ansible.builtin.include_vars:
     file: vars/main.yaml
 
 - name: Import installAur

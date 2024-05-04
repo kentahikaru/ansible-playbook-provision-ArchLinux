@@ -1,10 +1,10 @@
 ---
 - name: Reset all panels
-  command: xfconf-query -c xfce4-panel -r -R -p /panels
+  ansible.builtin.command: xfconf-query -c xfce4-panel -r -R -p /panels
   changed_when: true
 
 - name: Reset all plugins
-  command: xfconf-query -c xfce4-panel -r -R -p /plugins
+  ansible.builtin.command: xfconf-query -c xfce4-panel -r -R -p /plugins
   changed_when: true
 
 - name: Make 5 panels

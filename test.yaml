@@ -4,32 +4,32 @@
 
   tasks:
     - name: Read PKGBUILD
-      slurp:
+      ansible.builtin.slurp:
         src: "{{ ansible_user_dir }}/aur/aurutils/PKGBUILD"
       register: pkgbuild
 
     - name: Debug
-      debug:
+      ansible.builtin.debug:
         var: pkgbuild
 
     - name: Get depedencies
-      set_fact:
+      ansible.builtin.set_fact:
         deps: "{{ pkgbuild['content'] | b64decode | regex_findall('\\ndepends=(.*?)\\)') }}"
 
     - name: Test
-      set_fact:
+      ansible.builtin.set_fact:
         test: "{{ pkgbuild['content'] | b64decode }}"
 
     - name: Debug
-      debug:
+      ansible.builtin.debug:
         var: deps
 
     - name: Get depedencies
-      set_fact:
+      ansible.builtin.set_fact:
         deps: "{{ deps | regex_findall('\\w+') }}"
 
     - name: Debug
-      debug:
+      ansible.builtin.debug:
         var: deps
 
     - name: "Install depedencies"
