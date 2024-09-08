@@ -18,11 +18,11 @@
 
 - name: Get package version
   ansible.builtin.set_fact:
-    pkgver: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgver=[0-9][0-9].[0-9]') }}"
+    pkgver: "{{ pkgbuild['content'] | b64decode | regex_findall('pkgver=[\\d\\.]+') }}"
 
 - name: Get package version
   ansible.builtin.set_fact:
-    pkgver: "{{ pkgver | regex_findall('[0-9][0-9].[0-9]') }}"
+    pkgver: "{{ pkgver | regex_findall('[\\d\\.]+') }}"
 
 - name: Debug
   ansible.builtin.debug:

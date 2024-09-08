@@ -8,8 +8,8 @@ aur_packages_list:
   # - foo2zjs-minimal-nightly
   # - hplip-plugin # don't know why it's failing in automation, do it manually
   - google-chrome
-  # - joplin # something is wrong
-  - uim
+  - joplin
+  # - uim https://aur.archlinux.org/packages/uim
   - ventoy-bin
 
 vscode_extentions:

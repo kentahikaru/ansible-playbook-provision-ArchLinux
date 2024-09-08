@@ -18,6 +18,7 @@
       - unzip
       - vi
       - vim
+      - python-passlib
 
   pre_tasks:
     - name: Updating cache

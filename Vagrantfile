@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 2
-    v.memory = 2048
+    v.memory = 8192
     v.gui = true
     v.linked_clone = true
     # v.check_guest_additions = true
