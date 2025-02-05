@@ -46,3 +46,19 @@ server 2.cz.pool.ntp.org
 server 3.cz.pool.ntp.org
 ```
 
+# VBoxManage commands
+https://www.virtualbox.org/manual/ch08.html
+
+# Setup linux console resolution
+https://superuser.com/questions/301464/fixing-a-guest-screen-resolution-in-virtualbox
+
+```
+vboxmanage getextradata $YOUR_VM_NAME enumerate
+and changed
+Key: GUI/LastGuestSizeHint, Value: 800,600
+to
+Key: GUI/LastGuestSizeHint, Value: 1920,1080
+with
+vboxmanage setextradata $YOUR_VM_NAME GUI/LastGuestSizeHint 1920,1080
+```
+

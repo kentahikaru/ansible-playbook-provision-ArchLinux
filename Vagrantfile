@@ -31,13 +31,16 @@ Vagrant.configure("2") do |config|
     # v.customize ["modifyvm", :id, "--accelerate3d", "on"]
     v.customize ["modifyvm", :id, "--clipboard-mode", "bidirectional"]
     # v.customize ['storageattach', :id,  "--storagectl", "IDE Controller", "--port", 1, "--device", 0, "--type", "dvddrive", "--medium", "host:/dev/sr0"]
+    v.customize ["setextradata", :id, "GUI/LastGuestSizeHint", "1920,1080"]
+    # v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    # v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
   #iosim
-  config.vm.define "iosim" do |io|
-    io.vm.hostname = "iosim.test"
-    io.vm.network :private_network, ip:"192.168.56.22"
-  end
+  # config.vm.define "iosim" do |io|
+  #   io.vm.hostname = "iosim.test"
+  #   io.vm.network :private_network, ip:"192.168.56.22", type: "dhcp"
+  # end
 
   config.vm.provision "shell", path: "shell.sh"
   config.vm.synced_folder ".", "/vagrant", disabled: true

@@ -73,7 +73,7 @@ packages_list:
   - pulseaudio
   - pulseaudio-alsa
   - pulseaudio-bluetooth
-  - pulseaudio-equalizer
+  - pulseaudio-equalizer-ladspa
   - pulseaudio-zeroconf
   - pulsemixer
   - pavucontrol
