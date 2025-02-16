@@ -22,7 +22,7 @@ packages_list:
   - gsmartcontrol
   - gnome-packagekit
   - usbutils
-  - doublecmd-gtk2
+  - doublecmd
   - yubikey-manager-qt
   - yubikey-personalization-gui
   - yubikey-touch-detector

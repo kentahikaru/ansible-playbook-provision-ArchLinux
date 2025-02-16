@@ -36,11 +36,12 @@ Vagrant.configure("2") do |config|
     # v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
-  #iosim
-  # config.vm.define "iosim" do |io|
-  #   io.vm.hostname = "iosim.test"
-  #   io.vm.network :private_network, ip:"192.168.56.22", type: "dhcp"
-  # end
+  # iosim
+  config.vm.define "iosim" do |io|
+    io.vm.hostname = "iosim.test"
+    io.vm.network :private_network, ip:"192.168.56.22" #, type: "dhcp"
+    io.vm.network "public_network", bridge: "enp4s0"
+  end
 
   config.vm.provision "shell", path: "shell.sh"
   config.vm.synced_folder ".", "/vagrant", disabled: true
