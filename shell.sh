@@ -1,1 +1,1 @@
-pacman -S --noprogressbar --noconfirm python
+pacman -Sy --noprogressbar --noconfirm python
