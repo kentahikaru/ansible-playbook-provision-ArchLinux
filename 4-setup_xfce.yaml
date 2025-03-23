@@ -11,8 +11,8 @@
       ansible.builtin.import_tasks: tasks/installAndConcigureRedshift.yaml
     - name: Import setupXfce
       ansible.builtin.import_tasks: tasks/setupXfce.yaml
-    - name: Include setupXfceLaunchers2
-      ansible.builtin.include_tasks: tasks/xfce/setupXfceLaunchers2.yaml
-      vars:
-        package: "{{ item }}"
-      with_items: "{{ launcher_packages_list }}"
+    # - name: Include setupXfceLaunchers2
+    #   ansible.builtin.include_tasks: tasks/xfce/setupXfceLaunchers2.yaml
+    #   vars:
+    #     package: "{{ item }}"
+    #   with_items: "{{ launcher_packages_list }}"

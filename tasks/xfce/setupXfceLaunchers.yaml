@@ -1,4 +1,10 @@
 ---
+- name: Create desktop files
+  ansible.builtin.include_tasks: tasks/xfce/create-desktop-file.yaml
+  with_items:
+    - { plugin_id: '300', filename: "com.github.blueman-project.Blueman", name: "Bluetooth Manager", description: "Blueman Bluetooth Manager", executable_path: "/usr/bin/blueman-manager", icon: blueman }
+    - { plugin_id: '302', filename: "com.github.pulseaudio-equalizer-ladspa.Equalizer", name: PulseAudio Equalizer, description: "PulseAudio LADSPA interface using MBEQ Multiband EQ plugin", executable_path: "/usr/bin/pulseaudio-equalizer-gtk", icon: multimedia-volume-control }
+
 - name: "Setup Launchers"
   community.general.xfconf:
     channel: "xfce4-panel"
@@ -7,7 +13,7 @@
     value: "{{ item.value }}"
     force_array: "{{ item.forcearray }}"
   with_items:
-    - { property: 'plugin-7', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-7', subproperty: "/items", forcearray: true, type: string, value: "15817800231.desktop" }
-    - { property: 'plugin-56', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-56', subproperty: "/items", forcearray: true, type: string, value: "15986816841.desktop" }
+    - { property: 'plugin-300', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-300', subproperty: "/items", forcearray: true, type: string, value: "com.github.blueman-project.Blueman.desktop" }
+    - { property: 'plugin-302', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-302', subproperty: "/items", forcearray: true, type: string, value: "com.github.pulseaudio-equalizer-ladspa.Equalizer.desktop" }

@@ -20,17 +20,26 @@
 - name: Import setupXfceMiscellaneous
   ansible.builtin.import_tasks: tasks/xfce/setupXfceMiscellaneous.yaml
 
+# - name: Import copyDotConfigDir
+#   ansible.builtin.import_tasks: tasks/xfce/copyDotConfigDir.yaml
+
+- name: Import setupXfceScreensaver
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceScreensaver.yaml
+
+- name: Import setupXfceKeyboard
+  ansible.builtin.import_tasks: tasks/xfce/setupXfceKeyboard.yaml
+
+- name: Import setupUim
+  ansible.builtin.import_tasks: tasks/xfce/setupUim.yaml
+
+- name: Import setupDefaults
+  ansible.builtin.import_tasks: tasks/xfce/setupDefaults.yaml
+
 - name: Import setupXfcePlugins2
   ansible.builtin.import_tasks: tasks/xfce/setupXfcePlugins2.yaml
 
 - name: Import setupXfceLaunchers
   ansible.builtin.import_tasks: tasks/xfce/setupXfceLaunchers.yaml
-
-- name: Import copyDotConfigDir
-  ansible.builtin.import_tasks: tasks/xfce/copyDotConfigDir.yaml
-
-- name: Import setupXfceScreensaver
-  ansible.builtin.import_tasks: tasks/xfce/setupXfceScreensaver.yaml
 
 - name: Import setupXfcePanel1
   ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel1.yaml
@@ -46,12 +55,3 @@
 
 - name: Import setupXfcePanel5
   ansible.builtin.import_tasks: tasks/xfce/setupXfcePanel5.yaml
-
-- name: Import setupXfceKeyboard
-  ansible.builtin.import_tasks: tasks/xfce/setupXfceKeyboard.yaml
-
-- name: Import setupUim
-  ansible.builtin.import_tasks: tasks/xfce/setupUim.yaml
-
-- name: Import setupDefaults
-  ansible.builtin.import_tasks: tasks/xfce/setupDefaults.yaml

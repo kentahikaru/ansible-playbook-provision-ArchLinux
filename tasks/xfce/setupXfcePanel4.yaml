@@ -1,5 +1,5 @@
 ---
-- name: "Setting up Panel-4"
+- name: "Setting up Panel-4 Left"
   community.general.xfconf:
     channel: "xfce4-panel"
     property: "/panels/{{ item.property }}{{ item.subproperty }}"
@@ -20,5 +20,5 @@
     channel: "xfce4-panel"
     property: "/panels/panel-4/plugin-ids"
     value_type: "int"
-    value: "19"
+    value: "400"
     force_array: true
