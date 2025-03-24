@@ -47,7 +47,7 @@
     - { property: "plugin-203", subproperty: "", type: string, value: "separator" }
     - { property: "plugin-204", subproperty: "", type: string, value: "netload" }
     - { property: "plugin-205", subproperty: "", type: string, value: "cpugraph" }
-    - { property: "plugin-206", subproperty: "", type: string, value: "xfce4-sensor-plugin" }
+    - { property: "plugin-206", subproperty: "", type: string, value: "xfce4-sensors-plugin" }
     - { property: "plugin-207", subproperty: "", type: string, value: "systemload" }
     - { property: "plugin-208", subproperty: "", type: string, value: "separator" }
     - { property: "plugin-209", subproperty: "", type: string, value: "diskperf" }
