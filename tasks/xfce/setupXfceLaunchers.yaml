@@ -84,6 +84,6 @@
     - { property: 'plugin-521', subproperty: "", forcearray: false, type: string, value: "launcher" }
     - { property: 'plugin-521', subproperty: "/items", forcearray: true, type: string, value: "net.thunderbird.Thunderbird.desktop" }
     - { property: 'plugin-522', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-522', subproperty: "/items", forcearray: true, type: string, value: "com.github/whoozle/AndroidFileTransfer.desktop" }
+    - { property: 'plugin-522', subproperty: "/items", forcearray: true, type: string, value: "com.github.whoozle.AndroidFileTransfer.desktop" }
 
 
