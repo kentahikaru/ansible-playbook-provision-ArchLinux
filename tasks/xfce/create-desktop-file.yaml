@@ -5,7 +5,7 @@
     state: directory
     mode: '0755'
 
-- name: "Save template file to {{ item.filename }}.desktop"
+- name: "Save template file to {{ item.filename }}"
   ansible.builtin.template:
     src: "../../files/templates/desktop.desktop.j2"
     dest: "~/.config/xfce4/panel/launcher-{{ item.plugin_id }}/{{ item.filename }}.desktop"
