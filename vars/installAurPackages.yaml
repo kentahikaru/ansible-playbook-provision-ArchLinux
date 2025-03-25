@@ -1,16 +1,21 @@
 ---
 aur_packages_list:
-  - visual-studio-code-bin
-  - skypeforlinux-bin
-  # - teams
-  - simple-mtpfs
-  - rpi-imager-bin
+  - brave-bin
   # - foo2zjs-minimal-nightly
-  # - hplip-plugin # don't know why it's failing in automation, do it manually
+  - eagle
+  - gerbv
   - google-chrome
   # - joplin
+  # - joplin-desktop
+  - rpi-imager-bin
+  - simple-mtpfs
+  - teams
   # - uim https://aur.archlinux.org/packages/uim
   - ventoy-bin
+  - visual-studio-code-bin
+  # - hplip-plugin # don't know why it's failing in automation, do it manually
+  - yay
+  - zoom  
 
 vscode_extentions:
   - bbenoist.vagrant

@@ -26,9 +26,10 @@ packages_list:
   - yubikey-manager-qt
   - yubikey-personalization-gui
   - yubikey-touch-detector
-  - yubioath-desktop
   - ntfs-3g
   - netctl
 # - openresolv
   - ntp
   - fakeroot
+  - meld
+  - doublecmd

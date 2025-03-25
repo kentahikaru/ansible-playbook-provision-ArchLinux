@@ -43,7 +43,8 @@
     - { property: "<Alt>y", value: "xterm -geometry 159x25"}
     - { property: "<Alt>t", value: "evince"}
     - { property: "<Alt>f", value: "code"}
-    - { property: "<Alt>z", value: "skypeforlinux"}
+    - { property: "<Alt>g", value: "/opt/Rider/bin/rider.sh"}
+    - { property: "<Alt>z", value: "teams"}
     - { property: "<Super>l", value: "xflock4"}
     - { property: "<Super>p", value: "xfce4-display-settings --minimal"}
     - { property: "<Control><Alt>Delete", value: "xflock4"}

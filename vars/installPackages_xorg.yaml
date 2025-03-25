@@ -9,7 +9,6 @@ packages_list:
   - adobe-source-sans-pro-fonts
   - awesome-terminal-fonts
   - cantarell-fonts
-  # - dina-font
   - fontconfig
   - gnu-free-fonts
   - gsfonts
@@ -24,7 +23,6 @@ packages_list:
   - terminus-font
   - ttf-ubuntu-font-family
   - xorg-font-util
-  # - xorg-font-utils
   - xorg-fonts-100dpi
   - xorg-fonts-75dpi
   - xorg-fonts-alias-100dpi
@@ -79,7 +77,6 @@ packages_list:
   - pavucontrol
   - pamixer
   - gnome-bluetooth
-  # - chromium
   - firefox
   - libreoffice
   - stardict
@@ -88,3 +85,11 @@ packages_list:
   - audacious
   - smplayer
   - libgsf
+  - thunderbird
+  - prusa-slicer
+  - freecad
+  - tor
+  - torbrowser-launcher
+  - foliate
+  - android-file-transfer
+  - android-udev

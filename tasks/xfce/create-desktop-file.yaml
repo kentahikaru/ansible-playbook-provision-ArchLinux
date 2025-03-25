@@ -1,11 +1,11 @@
 ---
-- name: Create directory 
+- name: "Create directory for id {{ item.plugin_id }}"
   ansible.builtin.file:
     path: "~/.config/xfce4/panel/launcher-{{ item.plugin_id }}"
     state: directory
     mode: '0755'
 
-- name: Save template file
+- name: "Save template file to {{ item.filename }}.desktop"
   ansible.builtin.template:
     src: "../../files/templates/desktop.desktop.j2"
     dest: "~/.config/xfce4/panel/launcher-{{ item.plugin_id }}/{{ item.filename }}.desktop"
