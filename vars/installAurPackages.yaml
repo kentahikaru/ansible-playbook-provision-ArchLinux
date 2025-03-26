@@ -1,7 +1,7 @@
 ---
 aur_packages_list:
   - brave-bin
-  # - foo2zjs-minimal-nightly
+  - foo2zjs-minimal-nightly
   - eagle
   - gerbv
   - google-chrome
