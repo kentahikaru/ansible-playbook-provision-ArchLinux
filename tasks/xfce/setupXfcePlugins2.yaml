@@ -69,9 +69,9 @@
     dest: "~/.config/xfce4/panel/fsguard-{{ item }}.rc"
     mode: '0755'
   with_items:
-  - 214
-  - 215
-  - 216
+    - 214
+    - 215
+    - 216
 
 
 - name: "Setup Plugins for Panel-3 Top Right"
