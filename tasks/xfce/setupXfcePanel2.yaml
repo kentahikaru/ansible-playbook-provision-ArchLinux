@@ -8,7 +8,7 @@
   with_items:
     - { property: 'panel-2', subproperty: "/autohide-behavior", type: int, value: "2" }
     - { property: 'panel-2', subproperty: "/mode", type: int, value: "2" }
-    - { property: 'panel-2', subproperty: "/plugin-ids", type: int, value: "200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222" }
+    - { property: 'panel-2', subproperty: "/plugin-ids", type: int, value: "200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,219,220,221,222" }
     - { property: 'panel-2', subproperty: "/position", type: string, value: "p=1;x=3807;y=554" }
     - { property: 'panel-2', subproperty: "/position-locked", type: bool, value: "TRUE" }
     - { property: 'panel-2', subproperty: "/size", type: int, value: "64" }

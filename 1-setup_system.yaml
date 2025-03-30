@@ -9,6 +9,12 @@
     - role: adduser
 
   pre_tasks:
+    - name: Install archlinux-keyring
+      community.general.pacman:
+        name: archlinux-keyring
+        state: latest
+        update_cache: true
+
     - name: Updating cache
       become: true
       community.general.pacman:

@@ -6,7 +6,6 @@
   vars:
     install_what: "bootstrap software"
     packages_list:
-      - archlinux-keyring
       - virtualbox-guest-utils
       - arch-install-scripts
       - ansible
@@ -31,11 +30,6 @@
       community.general.pacman:
         name: virtualbox-guest-utils-nox
         state: absent
-
-    - name: Install archlinux-keyring
-      community.general.pacman:
-        name: archlinux-keyring
-        state: present
 
   tasks:
     - name: "Install {{ install_what }}"

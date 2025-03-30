@@ -58,12 +58,21 @@
     - { property: "plugin-214", subproperty: "", type: string, value: "fsguard" }
     - { property: "plugin-215", subproperty: "", type: string, value: "fsguard" }
     - { property: "plugin-216", subproperty: "", type: string, value: "fsguard" }
-    - { property: "plugin-217", subproperty: "", type: string, value: "fsguard" }
-    - { property: "plugin-218", subproperty: "", type: string, value: "fsguard" }
     - { property: "plugin-219", subproperty: "", type: string, value: "separator" }
     - { property: "plugin-220", subproperty: "", type: string, value: "xkb" }
     - { property: "plugin-221", subproperty: "", type: string, value: "screenshooter" }
     - { property: "plugin-222", subproperty: "", type: string, value: "xfce4-notes-plugin" }
+
+- name: "Settings for fsguard"
+  ansible.builtin.template:
+    src: "../../files/templates/fsguard.rc.template"
+    dest: "~/.config/xfce4/panel/fsguard-{{ item }}.rc"
+    mode: '0755'
+  with_items:
+  - 214
+  - 215
+  - 216
+
 
 - name: "Setup Plugins for Panel-3 Top Right"
   community.general.xfconf:
