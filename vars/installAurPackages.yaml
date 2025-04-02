@@ -10,6 +10,7 @@ aur_packages_list:
   - rpi-imager-bin
   - simple-mtpfs
   - teams
+  - teams-for-linux
   # - uim https://aur.archlinux.org/packages/uim
   - ventoy-bin
   - visual-studio-code-bin

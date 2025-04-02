@@ -12,22 +12,23 @@
     - { plugin_id: '505', filename: "org.virtualbox.Virtualbox", name: "Oracle VM VirtualBox", description: "Run several virtual systems on a single host computer", executable_path: "VirtualBox %U", icon: virtualbox }
     # Separator
     - { plugin_id: '507', filename: "us.zoom.Zoom", name: "Zoom", description: "Zoom Video Conference", executable_path: "/usr/bin/zoom %U", icon: Zoom }
-    - { plugin_id: '508', filename: "com.microsoft.en-us.microsoft-teams.Teams", name: "Microsoft Teams", description: "Microsoft Teams for Linux", executable_path: "teams %U", icon: teams }
+    - { plugin_id: '508', filename: "com.microsoft.en-us.microsoft-teams.Teams", name: "Microsoft Teams", description: "Microsoft Teams for Office365", executable_path: "teams %U", icon: teams }
+    - { plugin_id: '509', filename: "com.microsoft.en-us.microsoft-teams.TeamsForLinux", name: "Microsoft Teams for Linux", description: "Unofficial Microsoft Teams client for Linux.", executable_path: "teams-for-linux %U", icon: teams-for-linux }
     # Separator
-    - { plugin_id: '510', filename: "org.keepassxc.KeePassXC", name: "KeePassXC", description: "Community-driven port of the Windows application 'KeePass Password Safe'", executable_path: "keepassxc %f", icon: keepassxc }
-    - { plugin_id: '511', filename: "org.joplinapp.Joplin", name: "Joplin", description: "Joplin - a note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS.", executable_path: "/usr/bin/joplin-desktop", icon: /usr/share/joplin-desktop/resources/build/icons/128x128.png }
-    - { plugin_id: '512', filename: "org.meldmerge.Meld", name: "Meld", description: "Compare and merge your files", executable_path: "meld %f", icon: org.gnome.Meld }
-    - { plugin_id: '513', filename: "io.sourceforge.doublecmd.DoubleCmd", name: "Double Commander", description: "Double Commander is a cross platform open source file manager with two panels side by side.", executable_path: "doublecmd %F", icon: doublecmd }
-    - { plugin_id: '514', filename: "org.torproject.TorBrowser", name: "Tor Browser", description: "Launch Tor Browser", executable_path: "torbrowser-launcher %u", icon: torbrowser }
-    - { plugin_id: '515', filename: "io.github.johnfactotum.Foliate", name: "Foliate", description: "View eBooks", executable_path: "foliate %U", icon: com.github.johnfactotum.Foliate }
-    - { plugin_id: '516', filename: "com.autodesk.eagle.Eagle", name: "Autodesk EAGLE", description: "Autodesk Eagle", executable_path: "eagle %U", icon: eagle }
-    - { plugin_id: '517', filename: "io.github.gerbv.Gerbv", name: "Gerbv Gerber File Viewer", description: "Gerber file viewer for PCB design", executable_path: "gerbv %F", icon: gerbv }
-    - { plugin_id: '518', filename: "org.freecad.FreeCAD", name: "FreeCAD", description: "Feature based Parametric Modeler", executable_path: "FreeCAD - --single-instance %F", icon: org.freecad.FreeCAD }
-    - { plugin_id: '519', filename: "com.prusa3d.PrusaSlicer", name: "PrusaSlicer", description: "", executable_path: "prusa-slicer %F", icon: PrusaSlicer }
-    - { plugin_id: '519', filename: "com.prusa3d.PrusaGCodeViewer", name: "Prusa GCode viewer", description: "", executable_path: "prusa-slicer --gcodeviewer %F", icon: PrusaSlicer-gcodeviewer }
-    - { plugin_id: '520', filename: "com.pcloud.PCloud", name: "pcloud", description: "pCloud Drive Client built using electron and node.js. Distributed with AppImage.", executable_path: "/home/sandi/pcloud %U", icon: appimagekit-pcloud }
-    - { plugin_id: '521', filename: "net.thunderbird.Thunderbird", name: "Thunderbird", description: "Send and receive mail with Thunderbird", executable_path: "/usr/lib/thunderbird/thunderbird %u", icon: thunderbird }
-    - { plugin_id: '522', filename: "com.github.whoozle.AndroidFileTransfer", name: "Android File Transfer (MTP)", description: "Transfer files from/to MTP devices", executable_path: "android-file-transfer", icon: android-file-transfer }
+    - { plugin_id: '511', filename: "org.keepassxc.KeePassXC", name: "KeePassXC", description: "Community-driven port of the Windows application 'KeePass Password Safe'", executable_path: "keepassxc %f", icon: keepassxc }
+    - { plugin_id: '512', filename: "org.joplinapp.Joplin", name: "Joplin", description: "Joplin - a note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS.", executable_path: "/usr/bin/joplin-desktop", icon: /usr/share/joplin-desktop/resources/build/icons/128x128.png }
+    - { plugin_id: '513', filename: "org.meldmerge.Meld", name: "Meld", description: "Compare and merge your files", executable_path: "meld %f", icon: org.gnome.Meld }
+    - { plugin_id: '514', filename: "io.sourceforge.doublecmd.DoubleCmd", name: "Double Commander", description: "Double Commander is a cross platform open source file manager with two panels side by side.", executable_path: "doublecmd %F", icon: doublecmd }
+    - { plugin_id: '515', filename: "org.torproject.TorBrowser", name: "Tor Browser", description: "Launch Tor Browser", executable_path: "torbrowser-launcher %u", icon: torbrowser }
+    - { plugin_id: '516', filename: "io.github.johnfactotum.Foliate", name: "Foliate", description: "View eBooks", executable_path: "foliate %U", icon: com.github.johnfactotum.Foliate }
+    - { plugin_id: '517', filename: "com.autodesk.eagle.Eagle", name: "Autodesk EAGLE", description: "Autodesk Eagle", executable_path: "eagle %U", icon: eagle }
+    - { plugin_id: '518', filename: "io.github.gerbv.Gerbv", name: "Gerbv Gerber File Viewer", description: "Gerber file viewer for PCB design", executable_path: "gerbv %F", icon: gerbv }
+    - { plugin_id: '519', filename: "org.freecad.FreeCAD", name: "FreeCAD", description: "Feature based Parametric Modeler", executable_path: "FreeCAD - --single-instance %F", icon: org.freecad.FreeCAD }
+    - { plugin_id: '520', filename: "com.prusa3d.PrusaSlicer", name: "PrusaSlicer", description: "", executable_path: "prusa-slicer %F", icon: PrusaSlicer }
+    - { plugin_id: '520', filename: "com.prusa3d.PrusaGCodeViewer", name: "Prusa GCode viewer", description: "", executable_path: "prusa-slicer --gcodeviewer %F", icon: PrusaSlicer-gcodeviewer }
+    - { plugin_id: '521', filename: "com.pcloud.PCloud", name: "pcloud", description: "pCloud Drive Client built using electron and node.js. Distributed with AppImage.", executable_path: "/home/sandi/pcloud %U", icon: appimagekit-pcloud }
+    - { plugin_id: '522', filename: "net.thunderbird.Thunderbird", name: "Thunderbird", description: "Send and receive mail with Thunderbird", executable_path: "/usr/lib/thunderbird/thunderbird %u", icon: thunderbird }
+    - { plugin_id: '523', filename: "com.github.whoozle.AndroidFileTransfer", name: "Android File Transfer (MTP)", description: "Transfer files from/to MTP devices", executable_path: "android-file-transfer", icon: android-file-transfer }
 
 - name: "Setup Launchers for {{ item.value }}"
   community.general.xfconf:
@@ -58,30 +59,32 @@
     - { property: 'plugin-507', subproperty: "/items", forcearray: true, type: string, value: "us.zoom.Zoom.desktop" }
     - { property: 'plugin-508', subproperty: "", forcearray: false, type: string, value: "launcher" }
     - { property: 'plugin-508', subproperty: "/items", forcearray: true, type: string, value: "com.microsoft.en-us.microsoft-teams.Teams.desktop" }
-    - { property: "plugin-509", subproperty: "", forcearray: false, type: string, value: "separator" }
-    - { property: 'plugin-510', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-510', subproperty: "/items", forcearray: true, type: string, value: "org.keepassxc.KeePassXC.desktop" }
+    - { property: 'plugin-509', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-509', subproperty: "/items", forcearray: true, type: string, value: "com.microsoft.en-us.microsoft-teams.TeamsForLinux.desktop" }
+    - { property: "plugin-510", subproperty: "", forcearray: false, type: string, value: "separator" }
     - { property: 'plugin-511', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-511', subproperty: "/items", forcearray: true, type: string, value: "org.joplinapp.Joplin.desktop" }
+    - { property: 'plugin-511', subproperty: "/items", forcearray: true, type: string, value: "org.keepassxc.KeePassXC.desktop" }
     - { property: 'plugin-512', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-512', subproperty: "/items", forcearray: true, type: string, value: "org.meldmerge.Meld.desktop" }
+    - { property: 'plugin-512', subproperty: "/items", forcearray: true, type: string, value: "org.joplinapp.Joplin.desktop" }
     - { property: 'plugin-513', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-513', subproperty: "/items", forcearray: true, type: string, value: "io.sourceforge.doublecmd.DoubleCmd.desktop" }
+    - { property: 'plugin-513', subproperty: "/items", forcearray: true, type: string, value: "org.meldmerge.Meld.desktop" }
     - { property: 'plugin-514', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-514', subproperty: "/items", forcearray: true, type: string, value: "org.torproject.TorBrowser.desktop" }
+    - { property: 'plugin-514', subproperty: "/items", forcearray: true, type: string, value: "io.sourceforge.doublecmd.DoubleCmd.desktop" }
     - { property: 'plugin-515', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-515', subproperty: "/items", forcearray: true, type: string, value: "io.github.johnfactotum.Foliate.desktop" }
+    - { property: 'plugin-515', subproperty: "/items", forcearray: true, type: string, value: "org.torproject.TorBrowser.desktop" }
     - { property: 'plugin-516', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-516', subproperty: "/items", forcearray: true, type: string, value: "com.autodesk.eagle.Eagle.desktop" }
+    - { property: 'plugin-516', subproperty: "/items", forcearray: true, type: string, value: "io.github.johnfactotum.Foliate.desktop" }
     - { property: 'plugin-517', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-517', subproperty: "/items", forcearray: true, type: string, value: "io.github.gerbv.Gerbv.desktop" }
+    - { property: 'plugin-517', subproperty: "/items", forcearray: true, type: string, value: "com.autodesk.eagle.Eagle.desktop" }
     - { property: 'plugin-518', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-518', subproperty: "/items", forcearray: true, type: string, value: "org.freecad.FreeCAD.desktop" }
+    - { property: 'plugin-518', subproperty: "/items", forcearray: true, type: string, value: "io.github.gerbv.Gerbv.desktop" }
     - { property: 'plugin-519', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-519', subproperty: "/items", forcearray: true, type: string, value: "com.prusa3d.PrusaSlicer.desktop,com.prusa3d.PrusaGCodeViewer.desktop" }
+    - { property: 'plugin-519', subproperty: "/items", forcearray: true, type: string, value: "org.freecad.FreeCAD.desktop" }
     - { property: 'plugin-520', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-520', subproperty: "/items", forcearray: true, type: string, value: "com.pcloud.PCloud.desktop" }
+    - { property: 'plugin-520', subproperty: "/items", forcearray: true, type: string, value: "com.prusa3d.PrusaSlicer.desktop,com.prusa3d.PrusaGCodeViewer.desktop" }
     - { property: 'plugin-521', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-521', subproperty: "/items", forcearray: true, type: string, value: "net.thunderbird.Thunderbird.desktop" }
+    - { property: 'plugin-521', subproperty: "/items", forcearray: true, type: string, value: "com.pcloud.PCloud.desktop" }
     - { property: 'plugin-522', subproperty: "", forcearray: false, type: string, value: "launcher" }
-    - { property: 'plugin-522', subproperty: "/items", forcearray: true, type: string, value: "com.github.whoozle.AndroidFileTransfer.desktop" }
+    - { property: 'plugin-522', subproperty: "/items", forcearray: true, type: string, value: "net.thunderbird.Thunderbird.desktop" }
+    - { property: 'plugin-523', subproperty: "", forcearray: false, type: string, value: "launcher" }
+    - { property: 'plugin-523', subproperty: "/items", forcearray: true, type: string, value: "com.github.whoozle.AndroidFileTransfer.desktop" }
