@@ -1,0 +1,11 @@
+echo "==== Syntax check ===="
+ansible-playbook 1-setup_system.yaml --syntax-check
+ansible-playbook 2-setup_aur.yaml --syntax-check
+ansible-playbook 3-install_aur_packages.yaml --syntax-check
+ansible-playbook 4-setup_xfce.yaml --syntax-check
+
+echo "==== ansible-lint ===="
+ansible-lint
+
+echo "==== yamllint ===="
+yamllint .
