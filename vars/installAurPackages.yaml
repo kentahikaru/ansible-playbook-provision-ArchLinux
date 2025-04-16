@@ -7,7 +7,7 @@ aur_packages_list:
   - google-chrome
   # - joplin
   # - joplin-desktop
-  - rpi-imager-bin
+  - rpi-imager-git
   - simple-mtpfs
   - teams
   - teams-for-linux
