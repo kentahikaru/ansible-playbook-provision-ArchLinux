@@ -6,7 +6,7 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-    - { property: 'CursorThemeName', subproperty: "", type: string, value: "Adwaita" }
+    - { property: 'CursorThemeName', subproperty: "", type: string, value: "elementary" }
     - { property: 'CursorThemeSize', subproperty: "", type: int, value: "0" }
 
 - name: "Setup theme and icon theme"
@@ -16,5 +16,5 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-    - { property: 'IconThemeName', subproperty: "", type: string, value: "Adwaita" }
+    - { property: 'IconThemeName', subproperty: "", type: string, value: "elementary" }
     - { property: 'ThemeName', subproperty: "", type: string, value: "Adwaita-dark" }
