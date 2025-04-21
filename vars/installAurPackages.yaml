@@ -12,6 +12,7 @@ aur_packages_list:
   - teams
   - teams-for-linux
   # - uim https://aur.archlinux.org/packages/uim
+  - vagrant
   - ventoy-bin
   - visual-studio-code-bin
   # - hplip-plugin # don't know why it's failing in automation, do it manually
