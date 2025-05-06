@@ -3,7 +3,7 @@ aur_packages_list:
   - brave-bin
   - foo2zjs-minimal-nightly
   - eagle
-  - gerbv
+  # - gerbv
   - google-chrome
   # - joplin
   # - joplin-desktop
@@ -11,7 +11,7 @@ aur_packages_list:
   - simple-mtpfs
   - teams
   - teams-for-linux
-  # - uim https://aur.archlinux.org/packages/uim
+  - uim # https://aur.archlinux.org/packages/uim
   - vagrant
   - ventoy-bin
   - visual-studio-code-bin

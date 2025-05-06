@@ -21,7 +21,7 @@
       vars:
         package: "{{ item }}"
       with_items: "{{ aur_packages_list }}"
-      when: installed_aur_packages_number.stdout_lines[0] <= '3'
+      # when: installed_aur_packages_number.stdout_lines[0] <= '3'
 
     # add user to group, don't forget to restart cups by "systemctl restart cups"
     - name: Add user to lp group
@@ -31,7 +31,7 @@
         groups: lp
         append: true
 
-    - name: Cound VS Code extensions already installed
+    - name: Count VS Code extensions already installed
       ansible.builtin.shell: |
         set -o pipefail
         code --list-extensions | wc -l
