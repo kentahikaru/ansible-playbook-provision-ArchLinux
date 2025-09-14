@@ -93,3 +93,6 @@ packages_list:
   - foliate
   - android-file-transfer
   - android-udev
+  - ibus
+  - ibus-anthy
+  - ibus-kkc

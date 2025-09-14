@@ -37,7 +37,7 @@
     loop_var: item_aur
 
 - name: "Sync package {{ package }}"
-  ansible.builtin.command: "aur sync --noview {{ package }}"
+  ansible.builtin.command: "aur sync -C --noview {{ package }}"
   changed_when: true
 
 - name: "Install package {{ package }}"

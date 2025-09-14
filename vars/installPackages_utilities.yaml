@@ -13,6 +13,7 @@ packages_list:
   - wget
   - eog
   - evince
+  - papers
   - mc
   - blueman
   - bluez
@@ -23,7 +24,7 @@ packages_list:
   - gnome-packagekit
   - usbutils
   - doublecmd
-  - yubikey-manager-qt
+  - yubikey-manager
   - yubikey-personalization-gui
   - yubikey-touch-detector
   - ntfs-3g
@@ -33,3 +34,8 @@ packages_list:
   - fakeroot
   - meld
   - doublecmd
+  - acpid
+  - acpica
+  - acpi_call
+  - amd-ucode
+  - linux-firmware-realtek
