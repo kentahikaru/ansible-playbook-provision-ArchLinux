@@ -1,0 +1,23 @@
+---
+- name: Copy Ibus config 
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: ~/
+    mode: 0755
+  with_items:
+  - "files/ibus.config"
+  - "files/anthy.config"
+
+- name: Load Ibus config 
+  ansible.builtin.shell: dconf load /desktop/ibus/ < ~/ibus.config
+
+- name: Load Ibus-Anthy config 
+  ansible.builtin.shell: dconf load /org/freedesktop/ibus/engine/anthy/ < ~/anthy.config
+
+- name: "Setup Ibus autostart"
+  ansible.builtin.template:
+    src: "../../files/templates/autostart.desktop.j2"
+    dest: "~/.config/autostart/{{ item.name }}.desktop"
+    mode: '0755'
+  with_items:
+    - {name : "ibus-daemon -rxRd", exec: "/usr/bin/ibus-daemon -rxRd", version: "0.9.4"}

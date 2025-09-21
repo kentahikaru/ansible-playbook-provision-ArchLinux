@@ -2,6 +2,7 @@
 as_user: sandi
 as_user_password: sandi
 as_user_add_to_sudoers: true
+as_user_add_to_sudoers_no_password: false
 home: "/home/{{ as_user }}/"
 config_redshift_dest_path: ~/.config/redshift
 config_redshift_dest_path_dir: ~/.config

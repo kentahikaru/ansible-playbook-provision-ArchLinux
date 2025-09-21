@@ -1,4 +1,10 @@
 ---
+- name: Make direcotry for xfce autostart
+  ansible.builtin.file:
+    path: "~/.config/autostart"
+    state: directory
+    mode: 0744
+
 - name: Reset all panels
   ansible.builtin.command: xfconf-query -c xfce4-panel -r -R -p /panels
   changed_when: true
@@ -29,8 +35,11 @@
 - name: Import setupXfceKeyboard
   ansible.builtin.import_tasks: tasks/xfce/setupXfceKeyboard.yaml
 
+# - name: Import setupUim
+#   ansible.builtin.import_tasks: tasks/xfce/setupUim.yaml
+
 - name: Import setupUim
-  ansible.builtin.import_tasks: tasks/xfce/setupUim.yaml
+  ansible.builtin.import_tasks: tasks/xfce/setupIbus.yaml
 
 - name: Import setupDefaults
   ansible.builtin.import_tasks: tasks/xfce/setupDefaults.yaml
