@@ -17,7 +17,7 @@
       changed_when: false
 
     - name: Include installAurPackages
-      ansible.builtin.include_tasks: tasks/installAurPackages.yaml
+      ansible.builtin.include_tasks: tasks/aur/installAurPackages.yaml
       vars:
         package: "{{ item }}"
       with_items: "{{ aur_packages_list }}"
@@ -45,3 +45,10 @@
     #   with_items: "{{ vscode_extentions }}"
     #   when: vs_code_extension_number.stdout_lines[0] <= '5'
     #   changed_when: false
+
+    - name: Load list of aur variables
+      ansible.builtin.include_vars:
+        file: vars/setupAur.yaml
+
+    - name: Remove aurbuild user
+      ansible.builtin.import_tasks: tasks/aur/removeAurbuildUser.yaml

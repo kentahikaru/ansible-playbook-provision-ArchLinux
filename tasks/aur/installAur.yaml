@@ -160,4 +160,4 @@
     owner: "{{ as_user }}"
     group: "{{ aurutils_group }}"
     recurse: true
-    mode: 0755
+    mode: 0775

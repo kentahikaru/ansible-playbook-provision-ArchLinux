@@ -23,7 +23,7 @@
 
   tasks:
     - name: Add aurbuild user
-      ansible.builtin.import_tasks: tasks/addUsers.yaml
+      ansible.builtin.import_tasks: tasks/aur/addUsers.yaml
     - name: Import installPackages
       ansible.builtin.import_tasks: tasks/installPackages.yaml
     - name: Import setupSystem

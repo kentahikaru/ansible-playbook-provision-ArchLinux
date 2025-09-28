@@ -20,15 +20,15 @@ aur_packages_list:
   - zoom
 
 vscode_extentions:
+  - ms-dotnettools.csharp
+  - redhat.vscode-yaml
   - bbenoist.vagrant
   - kreativ-software.csharpextensions
   - mhutchie.git-graph
+  - shd101wyy.markdown-preview-enhanced
+  - yzhang.markdown-all-in-one
+  - schneiderpat.aspnet-helper
   - ms-azuretools.vscode-azureappservice
   - ms-azuretools.vscode-azurefunctions
   - ms-azuretools.vscode-docker
-  - ms-dotnettools.csharp
   - ms-vscode.azure-account
-  - redhat.vscode-yaml
-  - schneiderpat.aspnet-helper
-  - shd101wyy.markdown-preview-enhanced
-  - yzhang.markdown-all-in-one

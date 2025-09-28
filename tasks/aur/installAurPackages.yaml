@@ -37,6 +37,7 @@
     loop_var: item_aur
 
 - name: "Sync package {{ package }}"
+  become: true
   become_user: "{{ aurutils_user }}"
   ansible.builtin.shell: "aur sync -C --noview {{ package }}"
   args:

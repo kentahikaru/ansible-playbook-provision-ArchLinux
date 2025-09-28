@@ -1,0 +1,24 @@
+---
+
+- name: remove aurbuild user
+  ansible.builtin.user:
+    name: "{{ aurutils_user }}"
+    state: absent
+  become: true
+
+- name: remove aurbuild user to sudoers file
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    regexp: '^{{ aurutils_user }}'
+    state: absent
+  become: true
+
+- name: set repo dir mode
+  become: true
+  ansible.builtin.file:
+    path: "{{ repo_dir }}"
+    state: directory
+    owner: "{{ as_user }}"
+    group: "{{ as_user }}"
+    recurse: true
+    mode: 0755
