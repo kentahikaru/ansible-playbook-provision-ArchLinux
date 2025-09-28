@@ -40,3 +40,4 @@ packages_list:
   - amd-ucode
   - linux-firmware-realtek
   - dhclient
+  - btop
