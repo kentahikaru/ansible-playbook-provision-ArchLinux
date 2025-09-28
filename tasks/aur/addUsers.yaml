@@ -1,5 +1,5 @@
 ---
-- name: add aurutils group
+- name: Add aurutils group
   ansible.builtin.group:
     name: aurutils
 
