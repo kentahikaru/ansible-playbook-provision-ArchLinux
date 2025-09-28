@@ -39,3 +39,4 @@ packages_list:
   - acpi_call
   - amd-ucode
   - linux-firmware-realtek
+  - dhclient

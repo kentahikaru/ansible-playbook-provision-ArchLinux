@@ -5,8 +5,8 @@
   vars_files:
     - vars/main.yaml
 
-  roles:
-    - role: adduser
+  # roles:
+  #   - role: adduser
 
   pre_tasks:
     - name: Install archlinux-keyring
@@ -22,6 +22,8 @@
         upgrade: true
 
   tasks:
+    - name: Add aurbuild user
+      ansible.builtin.import_tasks: tasks/addUsers.yaml
     - name: Import installPackages
       ansible.builtin.import_tasks: tasks/installPackages.yaml
     - name: Import setupSystem

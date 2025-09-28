@@ -37,7 +37,10 @@
     loop_var: item_aur
 
 - name: "Sync package {{ package }}"
-  ansible.builtin.command: "aur sync -C --noview {{ package }}"
+  become_user: "{{ aurutils_user }}"
+  ansible.builtin.shell: "aur sync -C --noview {{ package }}"
+  args:
+    executable: /bin/bash
   changed_when: true
 
 - name: "Install package {{ package }}"
@@ -45,3 +48,4 @@
   community.general.pacman:
     name: "{{ package }}"
     state: present
+    update_cache: true

@@ -101,7 +101,8 @@
     path: "{{ repo_dir }}"
     state: directory
     owner: "{{ as_user }}"
-    group: "{{ uid_guid }}"
+    # group: "{{ uid_guid }}"
+    group: "{{ aurutils_group }}"
     mode: 0755
 
 - name: Does repo db already exists?
@@ -150,3 +151,13 @@
   become: true
   community.general.pacman:
     update_cache: true
+
+- name: set repo dir mode
+  become: true
+  ansible.builtin.file:
+    path: "{{ repo_dir }}"
+    state: directory
+    owner: "{{ as_user }}"
+    group: "{{ aurutils_group }}"
+    recurse: true
+    mode: 0755

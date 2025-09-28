@@ -1,1 +1,2 @@
-ansible-playbook 4-setup_xfce.yaml -K --extra-vars '{"uid_guid":"1050"}'
+ansible-playbook 4-setup_xfce.yaml -K
+#ansible-playbook 4-setup_xfce.yaml -K --extra-vars '{"uid_guid":"1050"}'

@@ -1,9 +1,14 @@
 ---
 as_user: sandi
 as_user_password: sandi
+as_user_additional_groups: "{{ aurutils_group }}"
+as_user_system_account: false
 as_user_add_to_sudoers: true
 as_user_add_to_sudoers_no_password: false
 home: "/home/{{ as_user }}/"
 config_redshift_dest_path: ~/.config/redshift
 config_redshift_dest_path_dir: ~/.config
 config_redshift_src_file: files/redshift_config
+
+aurutils_user: aurbuild
+aurutils_group: aurutils

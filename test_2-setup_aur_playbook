@@ -1,1 +1,2 @@
-ansible-playbook 2-setup_aur.yaml --extra-vars '{"uid_guid":"1050"}' -K
+ansible-playbook 2-setup_aur.yaml -K
+#ansible-playbook 2-setup_aur.yaml --extra-vars '{"uid_guid":"1050"}' -K

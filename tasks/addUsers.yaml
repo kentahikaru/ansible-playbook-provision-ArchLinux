@@ -1,0 +1,28 @@
+---
+- name: add aurutils group
+  ansible.builtin.group:
+    name: aurutils
+
+- name: Add sandi user
+  ansible.builtin.include_role:
+    name: adduser
+
+- name: Add aurbuild user
+  ansible.builtin.include_role:
+    name: adduser
+  vars:
+    as_user: "{{ aurutils_user }}"
+    as_user_password: "{{ aurutils_user }}"
+    uid_guid: 1010
+    as_user_system_account: true
+    as_user_add_to_sudoers: false
+    as_user_add_to_sudoers_no_password: false
+
+- name: Add aurbuild user to sudoers file
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    regexp: '{{ aurutils_user }}'
+    line: '{{ aurutils_user }} ALL = (root) NOPASSWD: /usr/bin/pacman, /usr/bin/pacsync'
+    insertafter: '^root'
+    validate: 'visudo -cf %s'
+  become: true
