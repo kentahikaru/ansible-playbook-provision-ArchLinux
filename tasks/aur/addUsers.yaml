@@ -2,6 +2,7 @@
 - name: Add aurutils group
   ansible.builtin.group:
     name: aurutils
+    gid: 1020
 
 - name: Add sandi user
   ansible.builtin.include_role:
