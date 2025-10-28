@@ -1,5 +1,5 @@
 ---
-- name: Remove some custom shortcuts
+- name: Remove some /commands/custom shortcuts
   community.general.xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/custom/{{ item.property }}"
@@ -11,7 +11,7 @@
     - { property: "<Alt>F2", value: ""}
     - { property: "<Alt>F3", value: ""}
 
-- name: Remove some default shortcuts
+- name: Remove some /commands/default shortcuts
   community.general.xfconf:
     channel: "xfce4-keyboard-shortcuts"
     property: "/commands/default/{{ item.property }}"
@@ -58,6 +58,27 @@
     - { property: "Calculator", value: "gnome-calculator"}
     - { property: "Search", value: "xfce4-settings-manager"}
     - { property: "HomePage", value: "google-chrome-stable"}
+
+- name: Remove some /xfwm4/custom shortcuts
+  community.general.xfconf:
+    channel: "xfce4-keyboard-shortcuts"
+    property: "/xfwm4/custom/{{ item.property }}"
+    value_type: "string"
+    value: "{{ item.value }}"
+    state: absent
+  with_items:
+    - { property: "<Primary>F1", value: "workspace_1_key"}
+    - { property: "<Primary>F2", value: "workspace_2_key"}
+    - { property: "<Primary>F3", value: "workspace_3_key"}
+    - { property: "<Primary>F4", value: "workspace_4_key"}
+    - { property: "<Primary>F5", value: "workspace_5_key"}
+    - { property: "<Primary>F6", value: "workspace_6_key"}
+    - { property: "<Primary>F7", value: "workspace_7_key"}
+    - { property: "<Primary>F8", value: "workspace_8_key"}
+    - { property: "<Primary>F9", value: "workspace_9_key"}
+    - { property: "<Primary>F10", value: "workspace_10_key"}
+    - { property: "<Primary>F11", value: "workspace_11_key"}
+    - { property: "<Primary>F12", value: "workspace_12_key"}
 
 - name: Setup xfce4 keyboard shortcuts
   community.general.xfconf:
