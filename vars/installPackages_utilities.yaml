@@ -6,7 +6,7 @@ packages_list:
   - cups-pdf
   - hplip
   - keepassxc
-  - screen
+  - tmux
   - links
   - htop
   - tree
@@ -34,10 +34,15 @@ packages_list:
   - fakeroot
   - meld
   - doublecmd
+  - dua-cli
   - acpid
   - acpica
   - acpi_call
   - amd-ucode
   - linux-firmware-realtek
+  - linux-firmware-intel
+  - linux-firmware-nvidia
+  - linux-firmware-whence
   - dhclient
   - btop
+  - syncthing

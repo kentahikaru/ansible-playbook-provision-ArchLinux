@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "archlinuxbox"
-  config.vm.box_version = ">= 2025.09.01"
+  config.vm.box_version = ">= 2025.11.01"
   # config.vm.box_version = "20230515.150700"
   config.ssh.insert_key = false
 
