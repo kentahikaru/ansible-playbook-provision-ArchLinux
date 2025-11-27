@@ -1,7 +1,20 @@
 ---
 install_what: "xorg"
 packages_list:
+# xorg
   - xorg
+  - xorg-font-util
+  - xorg-fonts-100dpi
+  - xorg-fonts-75dpi
+  - xorg-fonts-alias-100dpi
+  - xorg-fonts-alias-75dpi
+  - xorg-fonts-alias-misc
+  - xorg-fonts-encodings
+  - xorg-fonts-misc
+  - xorg-fonts-type1
+  - xorg-mkfontscale
+  - xorg-xfontsel
+  - xorg-xlsfonts
   - adobe-source-code-pro-fonts
   - adobe-source-han-sans-hk-fonts
   - adobe-source-han-sans-jp-fonts
@@ -22,18 +35,7 @@ packages_list:
   - otf-ipamjfont
   - terminus-font
   - ttf-ubuntu-font-family
-  - xorg-font-util
-  - xorg-fonts-100dpi
-  - xorg-fonts-75dpi
-  - xorg-fonts-alias-100dpi
-  - xorg-fonts-alias-75dpi
-  - xorg-fonts-alias-misc
-  - xorg-fonts-encodings
-  - xorg-fonts-misc
-  - xorg-fonts-type1
-  - xorg-mkfontscale
-  - xorg-xfontsel
-  - xorg-xlsfonts
+# xfce
   - xfce4
   - xfce4-goodies
   - xfce4-cpugraph-plugin
@@ -56,6 +58,10 @@ packages_list:
   - xfce4-screenshooter
   - xfce4-taskmanager
   - xfconf
+  - ibus
+  - ibus-anthy
+  - ibus-kkc
+  # drivers
   - xf86-video-fbdev
   - xf86-video-vesa
   - xf86-input-evdev
@@ -63,11 +69,10 @@ packages_list:
   - nvidia-utils
   - sdl
   - sdl2
+  # utils
   - xterm
   - libxml2
-  - anthy
   - ristretto
-  # - uim
   - pulseaudio
   - pulseaudio-alsa
   - pulseaudio-bluetooth
@@ -77,22 +82,9 @@ packages_list:
   - pavucontrol
   - pamixer
   - gnome-bluetooth
-  - firefox
-  - libreoffice
-  - stardict
-  - deluge
-  - gnome-calculator
-  - audacious
-  - smplayer
-  - libgsf
-  - thunderbird
-  - prusa-slicer
-  - freecad
-  - tor
-  - torbrowser-launcher
-  - foliate
-  - android-file-transfer
-  - android-udev
-  - ibus
-  - ibus-anthy
-  - ibus-kkc
+  - blueman
+  - bluez
+  - bluez-utils
+  - bluez-hid2hci
+
+

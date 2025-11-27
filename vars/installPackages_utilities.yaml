@@ -1,12 +1,22 @@
 ---
 install_what: "utilities"
 packages_list:
-  - cups
-  - cups-filters
-  - cups-pdf
-  - hplip
+  - firefox
+  - tor
+  - torbrowser-launcher
+  - libreoffice
+  - stardict
+  - deluge
+  - gnome-calculator
+  - audacious
+  - smplayer
+  - libgsf
+  - prusa-slicer
+  - freecad
+  - foliate
+  - android-file-transfer
+  - android-udev
   - keepassxc
-  - tmux
   - links
   - htop
   - tree
@@ -15,10 +25,6 @@ packages_list:
   - evince
   - papers
   - mc
-  - blueman
-  - bluez
-  - bluez-utils
-  - bluez-hid2hci
   - deluge
   - gsmartcontrol
   - gnome-packagekit
@@ -27,14 +33,22 @@ packages_list:
   - yubikey-manager
   - yubikey-personalization-gui
   - yubikey-touch-detector
-  - ntfs-3g
-  - netctl
 # - openresolv
-  - ntp
-  - fakeroot
   - meld
   - doublecmd
-  - dua-cli
+  - syncthing
+  #system
+  - cups
+  - cups-filters
+  - cups-pdf
+  - hplip
+  - tmux
+  - ntfs-3g
+  - netctl
+  - ntp
+  - fakeroot
+  - dhclient
+  - btop
   - acpid
   - acpica
   - acpi_call
@@ -43,6 +57,4 @@ packages_list:
   - linux-firmware-intel
   - linux-firmware-nvidia
   - linux-firmware-whence
-  - dhclient
-  - btop
-  - syncthing
+  - dua-cli
