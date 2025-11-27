@@ -61,7 +61,7 @@ packages_list:
   - ibus
   - ibus-anthy
   - ibus-kkc
-  # drivers
+# drivers
   - xf86-video-fbdev
   - xf86-video-vesa
   - xf86-input-evdev
@@ -69,7 +69,7 @@ packages_list:
   - nvidia-utils
   - sdl
   - sdl2
-  # utils
+# utils
   - xterm
   - libxml2
   - ristretto
@@ -86,5 +86,3 @@ packages_list:
   - bluez
   - bluez-utils
   - bluez-hid2hci
-
-

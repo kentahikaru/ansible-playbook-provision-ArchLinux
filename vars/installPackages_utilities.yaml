@@ -37,7 +37,7 @@ packages_list:
   - meld
   - doublecmd
   - syncthing
-  #system
+# system
   - cups
   - cups-filters
   - cups-pdf
