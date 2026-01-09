@@ -9,7 +9,7 @@ aur_packages_list:
   # - joplin-desktop
   # - rpi-imager-git
   - simple-mtpfs
-  - teams
+  # - teams
   - teams-for-linux
   # - uim  # https://aur.archlinux.org/packages/uim
   - vagrant

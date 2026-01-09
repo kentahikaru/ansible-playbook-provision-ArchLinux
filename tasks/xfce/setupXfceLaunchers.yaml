@@ -12,7 +12,7 @@
     - { plugin_id: '505', filename: "org.virtualbox.Virtualbox", name: "Oracle VM VirtualBox", description: "Run several virtual systems on a single host computer", executable_path: "VirtualBox %U", icon: virtualbox }
     # Separator
     - { plugin_id: '507', filename: "us.zoom.Zoom", name: "Zoom", description: "Zoom Video Conference", executable_path: "/usr/bin/zoom %U", icon: Zoom }
-    - { plugin_id: '508', filename: "com.microsoft.en-us.microsoft-teams.Teams", name: "Microsoft Teams", description: "Microsoft Teams for Office365", executable_path: "teams %U", icon: teams }
+    # - { plugin_id: '508', filename: "com.microsoft.en-us.microsoft-teams.Teams", name: "Microsoft Teams", description: "Microsoft Teams for Office365", executable_path: "teams %U", icon: teams }
     - { plugin_id: '509', filename: "com.microsoft.en-us.microsoft-teams.TeamsForLinux", name: "Microsoft Teams for Linux", description: "Unofficial Microsoft Teams client for Linux.", executable_path: "teams-for-linux %U", icon: teams-for-linux }
     # Separator
     - { plugin_id: '511', filename: "org.keepassxc.KeePassXC", name: "KeePassXC", description: "Community-driven port of the Windows application 'KeePass Password Safe'", executable_path: "keepassxc %f", icon: keepassxc }
