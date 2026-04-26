@@ -1,6 +1,0 @@
----
-- name: Copy Uim config directory
-  ansible.builtin.copy:
-    src: files/.uim.d
-    dest: ~/
-    mode: 0755
