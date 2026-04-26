@@ -33,7 +33,10 @@
     value_type: "{{ item.type }}"
     value: "{{ item.value }}"
   with_items:
-    - { property: "plugin-200", subproperty: "", type: string, value: "datetime" }
+    - { property: "plugin-200", subproperty: "", type: string, value: "clock" }
+    - { property: 'plugin-202', subproperty: "/mode", type: int, value: "2" }
+    - { property: 'plugin-200', subproperty: "/timezone", type: string, value: "Europe/Prague" }
+    - { property: 'plugin-200', subproperty: "/digital-time-font", type: string, value: "Sans Bold 8" }
     - { property: 'plugin-201', subproperty: "", type: string, value: "clock" }
     - { property: 'plugin-201', subproperty: "/digital-format", type: string, value: "%k:%M" }
     - { property: 'plugin-201', subproperty: "/mode", type: int, value: "2" }

@@ -22,7 +22,6 @@ packages_list:
   - tree
   - wget
   - eog
-  - evince
   - papers
   - mc
   - deluge

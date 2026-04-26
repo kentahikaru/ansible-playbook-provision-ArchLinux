@@ -41,7 +41,7 @@
     - { property: "<Alt>w", value: "firefox"}
     - { property: "<Alt>u", value: "xterm -geometry 159x40"}
     - { property: "<Alt>y", value: "xterm -geometry 159x25"}
-    - { property: "<Alt>t", value: "evince"}
+    - { property: "<Alt>t", value: "papers"}
     - { property: "<Alt>f", value: "code"}
     - { property: "<Alt>g", value: "/opt/Rider/bin/rider.sh"}
     - { property: "<Alt>z", value: "teams"}
